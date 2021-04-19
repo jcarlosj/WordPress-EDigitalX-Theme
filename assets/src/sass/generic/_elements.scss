@@ -1,0 +1,57 @@
+html {
+	box-sizing: border-box;
+	font-size: $overall-font-size;		//	variables
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	@include font-family();				//	mixin
+
+	font-size: 1.6rem;
+	line-height: 2;
+}
+
+/** Headings */
+h1 { @include body-text( h1 ); }
+h2 { @include body-text( h2 ); }
+h3 { @include body-text( h3 ); }
+h4 { @include body-text( h4 ); }
+h5 { @include body-text( h5 ); }
+h6 { @include body-text( h6 ); }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font__headers;
+	margin: 10px 0;
+	text-rendering: optimizelegibility;
+}
+
+p {
+	font-size: 1.8rem;
+	line-height:  5rem;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 4rem 0 0;
+}
+ 
+li {
+	padding: .5rem 0;
+}

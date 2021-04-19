@@ -1,0 +1,10 @@
+@mixin social-icons {
+    // Genera iconos de redes sociales
+    @each $social, $icon in $social-networking {
+
+        &[href*='#{ $social }']::before {                       // Genera una clase para cada uno de los iconos de redes sociales
+            // background-image: url( '#{ $path }#{ $icon }' );
+            background-image: background_url_icons( #{ $icon } );
+        }
+    }
+}

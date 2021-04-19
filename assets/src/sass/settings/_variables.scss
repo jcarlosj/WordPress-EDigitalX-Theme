@@ -1,0 +1,20 @@
+// Site variables.
+$site-width: 1200px;
+$wide-width: 1240px;
+
+$padding-left: 15px;
+$padding-right: 15px;
+
+$margin-top: 40px;
+$margin-bottom: 40px;
+
+// mq breakpoints.
+$mq-breakpoints: (
+	small: 600px,
+	medium: 768px,
+	large: 1024px,
+	xlarge: 1240px
+) !default;
+
+// Font sizes
+$overall-font-size: 62.5%;      //  Valor para que cada 1rem represente 10px (ver -> https://nekocalc.com/es/px-a-rem-conversor)

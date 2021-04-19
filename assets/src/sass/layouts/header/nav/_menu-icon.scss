@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-toggler {    
+    background-color: $color__green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq( medium ) {
+        background-color: $color__white;
+        display: none;
+    } 
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+
+    text-align: center;
+
+    @include mq( medium ) {
+        padding: 10px 20px;
+    }
+
+    &__bar-1, 
+    &__bar-2, 
+    &__bar-3 {
+        background-color: $color__white;
+        height: 5px;
+        margin: 6px 0;
+        width: 35px;
+    
+        transition: 0.4s;
+    }
+    
+}
+
+.change-icon {
+
+    .menu-icon__bar-1 {
+        -webkit-transform: rotate( -45deg ) translate( -9px, 6px );
+        transform: rotate( -45deg ) translate( -9px, 6px );
+    }
+    .menu-icon__bar-2 {
+        opacity: 0;
+    }
+    .menu-icon__bar-3 {
+        -webkit-transform: rotate( 45deg ) translate( -8px, -8px );
+        transform: rotate( 45deg ) translate( -8px, -8px );
+    }
+
+}
+
+.not-display {
+    display: none;
+
+    @include mq( medium ) {
+        display: flex;
+    }
+}

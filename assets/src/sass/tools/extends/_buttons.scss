@@ -1,0 +1,37 @@
+@each $name, $colors in $buttons {
+    $bgcolor: nth( $colors, 1 );
+    $fontcolor: nth( $colors, 2 );
+    $bordercolor: nth( $colors, 3 );
+
+    // Genera definiciones para que otros elementos puedan heredar los estilos de los botones */
+    %btn-#{ $name } {
+        background-color: $bgcolor;
+        color: $fontcolor;
+
+        @if $bordercolor == '#FFFFFF' {
+            border: none;
+        }
+        @else { 
+            border: 1px solid $bordercolor;
+        }
+        
+        border-radius: .5rem;
+        cursor: pointer;
+        display: block;
+        flex: 1;
+        font-family: $font__headers;
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding: 1rem 2rem;
+        text-align: center;
+        text-transform: uppercase;
+    
+        @include mq( medium ) {
+            display: inline-block;
+            flex: 0 0 auto;       
+        }
+
+    }
+
+}
+

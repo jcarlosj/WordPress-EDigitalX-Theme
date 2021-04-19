@@ -1,0 +1,20 @@
+/** Corporate colors */
+$color__red: #A61206;
+$color__orange: #F19F30;
+$color__green: #124727;
+
+/** Colors */
+$color__white: #FFFFFF;
+$color__black: #000000;
+$color__light-gray: #C1C1C1;
+
+/** Buttons */
+$buttons: (
+    // background, text, border
+    primary:   ( $color__orange, $color__white, $color__white ),
+    secondary: ( $color__green, $color__white, $color__white ),
+    tertiary:  ( $color__red, $color__white, $color__white ),
+    outline-primary:    ( $color__white, $color__orange, $color__orange ),
+    outline-secondary:  ( $color__white, $color__green, $color__green ),
+    outline-tertiary:   ( $color__white, $color__red, $color__red )
+);

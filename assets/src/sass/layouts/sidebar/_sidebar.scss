@@ -1,0 +1,65 @@
+.with-sidebar {
+    @include mq( medium ) {
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.sidebar {
+    .widget {
+
+        .searchform {
+            position: relative;
+
+            div {
+                display: flex;
+            }
+
+            label {
+                display: none;
+            }
+
+            input {
+                // height: 4rem;
+
+                &[type="text"] {
+                    flex: 1;
+                    padding: 1rem;
+                }
+                &[type="submit"] {
+                    background-color: $color__red;
+                    background-image: background_search_image( $search-icon );
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: none;
+                    display: block;
+                    font-size: 0;
+                    height: 100%;
+                    right: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 5rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        a {
+            color: $color__green;
+            margin-left: 2rem;
+
+            &:hover {
+                color: $color__orange;
+            }
+        }
+
+        &-title {
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+    }
+}

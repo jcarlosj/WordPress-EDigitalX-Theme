@@ -1,0 +1,73 @@
+/** Fuentes del sitio */
+$font__main:    'Open Sans', sans-serif;
+$font__headers: 'Raleway', sans-serif;
+
+/** Tamaños de fuente del texto del cuerpo */
+$body-text: (
+	"h1": (
+		"small": (
+			font-size: 4.8rem,
+			line-height: 1.27,
+		),
+	),
+	"h2": (
+		"small": (
+			font-size: 4rem,
+			line-height: 1.27,
+		),
+	),
+	"h3": (
+		"small": (
+			font-size: 3.8rem,
+			line-height: 1.64,
+		),
+	),
+	"h4": (
+		"small": (
+			font-size: 3rem,
+			line-height: 1.142,
+		),
+	),
+	"h5": (
+		"small": (
+			font-size: 2.8rem,
+			line-height: 1.43,
+		),
+	),
+	"h6": (
+		"small": (
+			font-size: 2rem,
+			line-height: 1.681,
+		),
+	),
+	"body": (
+		"small": (
+			font-size: 16px,
+			line-height: 1.43,
+		),
+		"large": (
+			font-size: 18px,
+			line-height: 1.43,
+		),
+	),
+	"l": (
+		"small": (
+			font-size: 18px,
+		),
+	),
+	"m": (
+		"small": (
+			font-size: 16px,
+		),
+	),
+	"s": (
+		"small": (
+			font-size: 12px,
+		),
+	),
+	"xs": (
+		"small": (
+			font-size: 11px,
+		),
+	),
+);

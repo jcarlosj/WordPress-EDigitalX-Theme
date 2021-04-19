@@ -1,0 +1,38 @@
+/* Menú menu-social */
+
+.menu-social {
+
+    a {
+        @include social-icons();
+
+        &:before {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 3rem;
+            content: '';
+            display: inline-block;
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0 0 0;
+
+        @include mq( medium ) {
+            justify-content: flex-end;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+        }
+    }
+
+}
+
+.sr-text {
+    display: none;
+}
