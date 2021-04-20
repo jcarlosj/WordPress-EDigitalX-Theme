@@ -21,14 +21,27 @@
 
         <div class="site-branding">
         
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img id="logo" src="<?php echo PATH_LOGO; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
-                <?php #echo get_bloginfo( 'name' ); ?>
+            <div class="navbar-toggler">
+                <div id="menu-icon" class="menu menu-icon">
+                    <div class="menu-icon__bar-1"></div>
+                    <div class="menu-icon__bar-2"></div>
+                    <div class="menu-icon__bar-3"></div>
+                </div>
+            </div>
+
+            <a class="brand-link not-display" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <img id="logo" class="brand-logo" src="<?php echo PATH_LOGO; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
+                <span class="brand-name"><?php #echo get_bloginfo( 'name' ); ?></span>
             </a>
         
         </div>
         <div class="site-navigation">
-        
+
+            <a class="brand-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <img id="logo" class="brand-logo" src="<?php echo PATH_LOGO; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
+                <span class="brand-name"><?php #echo get_bloginfo( 'name' ); ?></span>
+            </a>
+
             <?php if( has_nav_menu( 'edigitalx-header-menu' ) ):
             
                 $args = [

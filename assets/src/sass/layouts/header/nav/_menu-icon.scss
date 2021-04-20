@@ -1,10 +1,4 @@
-.navbar {
-    display: flex;
-    flex-direction: column;
-}
-
 .navbar-toggler {    
-    background-color: $color__green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +23,7 @@
     &__bar-1, 
     &__bar-2, 
     &__bar-3 {
-        background-color: $color__white;
+        background-color: $color__black;
         height: 5px;
         margin: 6px 0;
         width: 35px;
@@ -53,12 +47,4 @@
         transform: rotate( 45deg ) translate( -8px, -8px );
     }
 
-}
-
-.not-display {
-    display: none;
-
-    @include mq( medium ) {
-        display: flex;
-    }
 }

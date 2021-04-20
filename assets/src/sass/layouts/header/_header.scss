@@ -9,16 +9,23 @@
     top: 0;
     width: 100vw;
 
-    a {
-        align-items: center;
-        display: flex;
-        justify-content: center;
+    .brand {
+        &-link {
+            align-items: center;
+            display: flex;
+            justify-content: center;
 
-        #logo {
+            @include mq( medium ) {
+                display: none;
+            }
+        }
+        &-logo {
             width: 7rem;
         }
-    }
+        &-name {
 
+        }
+    }
     
     .site-branding,
     .site-search {
@@ -26,4 +33,13 @@
         display: flex;
         justify-content: center;
     }
+
+    .not-display {
+        display: none;
+    
+        @include mq( medium ) {
+            display: inline;
+        }
+    }
+
 }
