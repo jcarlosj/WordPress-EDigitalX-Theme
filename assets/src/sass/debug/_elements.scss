@@ -1,0 +1,14 @@
+header {
+    border: 1px solid orange;
+    box-sizing: border-box;
+
+    & > div {
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+
+    ul {
+        border: 1px solid green;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,29 @@
+#header {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 20rem auto 20rem;
+    left: 0;
+    max-width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+    a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        #logo {
+            width: 7rem;
+        }
+    }
+
+    
+    .site-branding,
+    .site-search {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}

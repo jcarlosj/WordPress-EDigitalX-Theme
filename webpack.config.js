@@ -78,7 +78,13 @@ const plugins = ( argv ) => [
         combineAssets: true         //  Crea un archivo de activos para cada punto de entrada. Cuando esta marca se establece en verdadero, toda la información sobre los activos se combina en un solo archivo assets. (Json | php) generado en el directorio de salida (Ejecute: npm run prod & npm run dev)
     }),
     new GoogleFontsPlugin({
-        fonts: [],
+        fonts: [
+            {   
+                family: "Source Sans Pro", 
+                formats: [ "eot", "woff", "woff2", "ttf", "svg" ],
+                variants: [ "200", "200italic", "300", "300italic", "regular", "italic", "600", "600italic", "700", "700italic", "900", "900italic" ] 
+            }
+        ],
         path: 'fonts',
         filename: 'fonts/fonts.css'
     }),
