@@ -10,5 +10,22 @@ header {
     ul {
         border: 1px solid green;
         box-sizing: border-box;
+
+        &.menu li a {
+            border: 1px solid purple;
+            box-sizing: border-box;
+        }
+
+    }
+
+    ul {
+        border: 1px solid green;
+        box-sizing: border-box;
+
+        &.sub-menu li a {
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+
     }
 }

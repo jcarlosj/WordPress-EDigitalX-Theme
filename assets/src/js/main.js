@@ -8,5 +8,8 @@ import '../images/svg/youtube.svg';
 // StyleSheets
 import '../sass/main.scss';
 
+// JavaScript
+import './main-menu';
+
 // eslint-disable-next-line no-console
 console.log( 'Endpoint master.js' );

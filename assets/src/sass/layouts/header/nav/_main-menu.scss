@@ -6,124 +6,103 @@
 
 nav.menu-header {
    justify-content: center;
+}
 
-   ul {
-      align-items: center;
+/** Menu */
+ul.menu {
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: .5rem;
+   position: absolute;
+   top: 7rem;
+   left: 0;
+   width: 70vw;
+   max-width: 100%;
+
+   @include mq( medium ) {
+      flex-direction: row;
+      padding: 0;
+      position: initial;
+   }
+
+   li {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      padding: 0;
+      position: relative;
+
+      max-width: 100%;
+      width: 100%;
 
       @include mq( medium ) {
-         flex-direction: row;
+         background-color: transparent;
+         padding: 1rem .5rem;
+         width: initial;
       }
 
-      li {
-         background-color: $color__green;
-         display: flex;
-         flex-direction: column;
-         padding: 0;
-         position: relative;
-
-         @include mq( medium ) {
-            background-color: transparent;
-            padding: 1rem;
-         }
+      &:hover {
 
          ul {
-            background-color: lighten( $color: $color__orange, $amount: 10 );
-            display: none;
-            left: 0;
-            position: relative;
-            top: 0;
-            width: calc( 100% + 1.6em );
-
-            @include mq( medium ) {
-               position: absolute;
-               top: 100%;
-            }
-
-            li {
-               padding: 0;
-
-               &:hover {
-                  @include mq( medium ) {
-                     border: none;
-                  }
-               }
-
-               a {
-                  padding: 10px;
-
-                  @include mq( medium ) {
-                     padding: 20px;
-                  }
-               }
-            }
-         }
-
-         &:hover {
-            background-color: lighten( $color: $color__green, $amount: 10 );
-
-            @include mq( medium ) {
-               background-color: transparent;
-               //border-bottom: .5rem solid lighten( $color: $color__red, $amount: 20 );
-            }
-
-            ul {
-               display: flex;
-               flex-direction: column;    /* Técnicamente esta linea sobra si se desea desplegar verticalmente */
-   
-               @include mq( medium ) {
-                  width: 100%;
-               }
-
-               li {
-                  background-color: $color__orange;
-
-                  a {
-                     color: darken( $color: $color__white, $amount: 10 );
-
-                     &:hover {
-                        background-color: lighten( $color: $color__orange, $amount: 10 );
-                        color: $color__green;   
-
-                        @include mq( medium ) {
-                           // background-color: transparent;
-                        }
-                     }
-                  }
-               }
-
-            }
-         }
-         
-         &.current_page_item {
-            border-bottom: .5rem solid $color__red;
-         }
-
-         a {
-            color: $color__white;
-            font-size: 2rem;
-            padding: 7px;
-            text-align: center;
-            text-decoration: none;
-
-            @include mq( medium ) {
-               color: $color__black;
-               font-size: 1.8rem;
-               padding: 0;
-            }
-
-            &:hover {
-               color: $color__orange;
-
-               @include mq( medium ) {
-                  color: lighten( $color: $color__black, $amount: 5 );
-               }
-
-            }
-
+            display: flex;
+            flex-direction: column;    /* Técnicamente esta linea sobra si se desea desplegar verticalmente */
          }
       }
+      
+      &.current_page_item {
+         // border-bottom: .5rem solid $color__red;
+      }
+
    }
 }
+
+
+/** Sub Menu */
+ul.sub-menu {
+   background-color: $bg-color__submenu;
+   display: none;
+   left: 0;
+   padding: .5rem;
+   position: relative;
+   top: 0;
+
+   @include mq( medium ) {
+      position: absolute;
+      top: 100%;
+   }
+
+   li {
+      padding: 0;
+
+      @include mq( medium ) {
+         background-color: transparent;
+         padding: 0;
+      }
+
+      &:hover {
+         @include mq( medium ) {
+            border: none;
+         }
+      }
+
+      a {
+         color: $font-color__submenu;
+         display: block;
+         font-size: 2rem;
+         text-align: left;
+         text-decoration: none;
+         width: 100%;
+
+         @include mq( medium ) {
+            font-size: 1.8rem;
+            padding: 0;
+            width: $wide-submenu;
+         }
+
+      }
+   }
+
+}
+
+

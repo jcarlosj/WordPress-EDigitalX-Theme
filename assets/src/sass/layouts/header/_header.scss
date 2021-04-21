@@ -1,13 +1,17 @@
 #header {
     background-color: white;
     display: grid;
-    grid-template-columns: 20rem auto 20rem;
+    grid-template-columns: 7rem auto 7rem;
     left: 0;
     max-width: 100%;
     padding: 1rem;
     position: fixed;
     top: 0;
     width: 100vw;
+
+    @include mq( medium ) {
+        grid-template-columns: 20rem auto 20rem;
+    }
 
     .brand {
         &-link {
