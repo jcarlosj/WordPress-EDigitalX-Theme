@@ -4,13 +4,22 @@
     grid-template-columns: 7rem auto 7rem;
     left: 0;
     max-width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
     position: fixed;
     top: 0;
     width: 100vw;
 
     @include mq( medium ) {
-        grid-template-columns: 20rem auto 20rem;
+        grid-template-columns: 12rem auto 12rem;
+        padding: 1rem;
+    }
+
+    @include mq( large ) {
+        grid-template-columns: 17rem auto 17rem;
+    }
+
+    @include mq( xlarge ) {
+        grid-template-columns: 22rem auto 22rem;
     }
 
     .brand {
@@ -36,6 +45,25 @@
         align-items: center;
         display: flex;
         justify-content: center;
+
+        .dashicons, 
+        .dashicons-before:before {
+            font-size: 2.7rem;
+            height: initial;
+            width: initial;
+
+            @include mq( medium ) {
+                font-size: 2.4rem;
+            }
+        
+            @include mq( large ) {
+                font-size: 2.8rem;
+            }
+        
+            @include mq( xlarge ) {
+                font-size: 3.2rem;
+            }
+        }
     }
 
     .not-display {

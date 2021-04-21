@@ -12,6 +12,10 @@ nav {
             a {
                 font-family: $font__headers;
                 font-size: 2rem;
+
+                @include mq( medium ) {
+                    font-size: 1.6rem;
+                }
             }
         }
     }

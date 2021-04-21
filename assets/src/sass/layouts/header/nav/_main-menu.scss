@@ -13,18 +13,22 @@ ul.menu {
    align-items: center;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   height: 100vh;
+   justify-content: start;
    padding: .5rem;
    position: absolute;
-   top: 7rem;
+   top: 7.2rem;
    left: 0;
-   width: 70vw;
+   width: $wide-menu;
    max-width: 100%;
 
    @include mq( medium ) {
       flex-direction: row;
+      height: initial;
+      justify-content: center;
       padding: 0;
       position: initial;
+      width: 100%;
    }
 
    li {
