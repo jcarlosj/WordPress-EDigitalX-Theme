@@ -74,4 +74,36 @@
         }
     }
 
+    .search-form {
+        left: 0;
+        position: absolute;
+        top: 7.2rem;
+        width: 100%;
+        
+        div {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: .5rem;
+
+            label {
+                text-align: left;
+                width: 100%;
+            }
+
+            input[type="text"] {
+                font-size: 25px;
+                padding: .5rem;
+                width: 100%;
+
+                &::placeholder {
+                    color: blue;
+                    font-size: 1.5em;
+                }
+            }
+        }
+        
+    }
+
 }
