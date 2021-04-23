@@ -29,8 +29,17 @@ header {
 
     }
 
-    .search-form {
+    .search {
         border: 1px solid blue;
         box-sizing: border-box;
+
+        #search-form {
+
+            & > * {
+                border: 1px solid fuchsia;
+                box-sizing: border-box;
+            }
+
+        }
     }
 }

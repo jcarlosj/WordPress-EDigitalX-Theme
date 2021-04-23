@@ -51,6 +51,7 @@ ul.menu {
          ul {
             display: flex;
             flex-direction: column;    /* Técnicamente esta linea sobra si se desea desplegar verticalmente */
+            z-index: 1;
          }
       }
       

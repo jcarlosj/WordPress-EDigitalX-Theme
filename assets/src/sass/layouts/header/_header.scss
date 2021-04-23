@@ -74,34 +74,47 @@
         }
     }
 
-    .search-form {
+    .search{
         left: 0;
         position: absolute;
         top: 7.2rem;
         width: 100%;
         
-        div {
+        #search-form {
             align-items: center;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: center;
             padding: .5rem;
 
             label {
                 text-align: left;
-                width: 100%;
+                flex: 1 0 100%;
             }
 
-            input[type="text"] {
+            input[type="search"] {
                 font-size: 25px;
                 padding: .5rem;
+                flex: 1 0 80%;
+                max-width: 100vw;
                 width: 100%;
 
                 &::placeholder {
                     color: blue;
-                    font-size: 1.5em;
                 }
             }
+
+            button[type="submit"] {
+                flex: 0 0 auto;
+            }
+        }
+        
+        .search-icon {
+            align-items: center;
+            display: flex;
+            height: 4rem;
+            justify-content: center;
+            width: 4rem;
         }
         
     }

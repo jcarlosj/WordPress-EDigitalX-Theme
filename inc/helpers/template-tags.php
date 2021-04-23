@@ -138,3 +138,21 @@ function theme_post_pagination() {
         )
     );
 }
+
+/** Cambia estructura del formulario, agrega placeholder */
+function theme_wp_search_form( $form ) { 
+    $form = '
+        <section class="search">
+            <form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
+                <label class="screen-reader-text" for="s">' . __( 'Search for:',  'edigitalx' ) . '</label>
+                <input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="' .__( 'Search...',  'edigitalx' ). '" />
+                <button type="submit" id="searchsubmit"> 
+                    <span class="dashicons dashicons-search search-icon"></span>
+                </button>
+            </form>
+        </section>';
+
+    return $form;
+}
+
+add_filter( 'get_search_form', 'theme_wp_search_form' );
