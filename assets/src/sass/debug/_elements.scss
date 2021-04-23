@@ -1,45 +1,50 @@
 header {
-    border: 1px solid orange;
+    border: 1px dotted orange;
     box-sizing: border-box;
 
     & > div {
-        border: 1px solid red;
+        border: 1px dotted red;
         box-sizing: border-box;
     }
 
     ul {
-        border: 1px solid green;
+        border: 1px dotted green;
         box-sizing: border-box;
 
         &.menu li a {
-            border: 1px solid purple;
+            border: 1px dotted purple;
             box-sizing: border-box;
         }
 
     }
 
     ul {
-        border: 1px solid green;
+        border: 1px dotted green;
         box-sizing: border-box;
 
         &.sub-menu li a {
-            border: 1px solid blue;
+            border: 1px dotted blue;
             box-sizing: border-box;
         }
 
     }
 
-    .search {
-        border: 1px solid blue;
+    #search {
+        border: 1px dotted blue;
         box-sizing: border-box;
 
         #search-form {
 
             & > * {
-                border: 1px solid fuchsia;
+                border: 1px dotted fuchsia;
                 box-sizing: border-box;
             }
 
         }
+    }
+
+    #search-icon {
+        border: 1px dotted orange;
+        box-sizing: border-box;
     }
 }

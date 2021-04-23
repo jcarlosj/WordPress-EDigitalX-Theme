@@ -1,5 +1,5 @@
 #header {
-    background-color: white;
+    background-color: $bg-color__header;
     display: grid;
     grid-template-columns: 7rem auto 7rem;
     left: 0;
@@ -65,7 +65,7 @@
             }
         }
     }
-
+    
     .not-display {
         display: none;
     
@@ -74,7 +74,9 @@
         }
     }
 
-    .search{
+    #search {
+        background-color: $bg-color__search;
+        display: none;
         left: 0;
         position: absolute;
         top: 7.2rem;
@@ -85,7 +87,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: .5rem;
+            padding: 1rem;
 
             label {
                 text-align: left;
@@ -116,7 +118,7 @@
             justify-content: center;
             width: 4rem;
         }
-        
+
     }
 
 }

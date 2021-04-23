@@ -142,7 +142,7 @@ function theme_post_pagination() {
 /** Cambia estructura del formulario, agrega placeholder */
 function theme_wp_search_form( $form ) { 
     $form = '
-        <section class="search">
+        <section id="search" class="search">
             <form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
                 <label class="screen-reader-text" for="s">' . __( 'Search for:',  'edigitalx' ) . '</label>
                 <input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="' .__( 'Search...',  'edigitalx' ). '" />

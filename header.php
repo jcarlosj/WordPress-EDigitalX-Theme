@@ -57,8 +57,8 @@
         
         </div>
         <div class="site-search">
-            <span class="dashicons dashicons-search search-icon"></span>
-            <span class="dashicons dashicons-no-alt"></span>
+            <span id="search-icon" class="search-icon dashicons dashicons-search"></span>
+            <!-- <span id="search-icon__close" class="dashicons dashicons-no-alt search-icon"></span> -->
             <?php get_search_form(); ?>
         </div>
     
