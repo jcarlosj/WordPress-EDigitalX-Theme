@@ -1,14 +1,3 @@
 .sr-text {
     display: none;
 }
-
-.section {
-    padding: 1rem;
-    position: relative;
-
-    @include mq( medium ) {
-        background-color: $color__white;
-        margin-top: -9rem;
-        padding: 6rem;
-    }
-}

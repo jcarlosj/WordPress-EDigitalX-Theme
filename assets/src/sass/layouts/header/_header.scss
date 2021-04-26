@@ -8,6 +8,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 1;
 
     @include mq( medium ) {
         grid-template-columns: 12rem auto 12rem;
