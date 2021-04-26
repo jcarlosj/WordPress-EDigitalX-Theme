@@ -6,7 +6,7 @@
   
 <?php if( is_page() || is_single() ) : ?>
 
-    <section class="section container">
+    <section class="section">
         <main class="main-content">
             <?php the_content(); ?>
         </main>
