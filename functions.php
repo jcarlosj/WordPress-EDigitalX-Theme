@@ -48,11 +48,13 @@ function edigitalx_meta_box_featured_post_callback( $current_post ) {
 
     $featured = get_post_meta( 
         $current_post -> ID,        #   ID del Post
+        'featured_post',            #   Nombre del campo o meta box que se desea obtener
+        true                        #   Si se debe devolver un solo valor. Este parámetro no tiene ningún efecto si no se especifica $key. Valor predeterminado: falso
     );
 
     
     echo '<pre>';  var_dump( $featured );   echo '</pre>';
-    echo '<b>' .$featured[ 'featured_post' ][ 0 ]. '</b>';
+    echo '<b>' .$featured. '</b>';
 
     ?>
 
@@ -64,7 +66,7 @@ function edigitalx_meta_box_featured_post_callback( $current_post ) {
                     name="featured_post" 
                     id="featured-post" 
                     value="yes" 
-                    <?php isset( $featured[ 'featured_post' ] ) ? checked( $featured[ 'featured_post' ][ 0 ], 'yes' ) : '';     # Valida si el campo debe estar seleccionado o no ?> 
+                    <?php isset( $featured ) ? checked( $featured, 'yes' ) : '';     # Valida si el campo debe estar seleccionado o no ?> 
                 />
                 <label for="featured-post">
                     <?php _e( 'Hacer el post destacado', 'edigitalx' )?>
