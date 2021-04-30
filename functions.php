@@ -20,71 +20,71 @@ function get_theme_instance() {
 
 get_theme_instance();
 
-/** Obtener vistas de publicaciones */
-if ( ! function_exists( 'set_post_views' ) ) {
+// /** Obtener vistas de publicaciones */
+// if ( ! function_exists( 'set_post_views' ) ) {
 
-    function get_post_views( $post_id ){
+//     function get_post_views( $post_id ){
 
-        $count_key = 'post_views_count';
-        $count = get_post_meta( $post_id, $count_key, true );
+//         $count_key = 'post_views_count';
+//         $count = get_post_meta( $post_id, $count_key, true );
     
-        if( $count == '' ) { 
+//         if( $count == '' ) { 
 
-            delete_post_meta( $post_id, $count_key );
-            add_post_meta( $post_id, $count_key, '0' );
+//             delete_post_meta( $post_id, $count_key );
+//             add_post_meta( $post_id, $count_key, '0' );
             
-            return '0 '. __( 'View', 'edigitalx' );
-        }
+//             return '0 '. __( 'View', 'edigitalx' );
+//         }
     
-        return $count .' '. __( 'Views', 'edigitalx' );
-    }
+//         return $count .' '. __( 'Views', 'edigitalx' );
+//     }
 
-}
+// }
 
-/** Establecer vistas de publicaciones */
-if ( ! function_exists( 'set_post_views' ) ) {
+// /** Establecer vistas de publicaciones */
+// if ( ! function_exists( 'set_post_views' ) ) {
 
-    function set_post_views( $post_id ) {
+//     function set_post_views( $post_id ) {
 
-        $count_key = 'post_views_count';
-        $count = get_post_meta( $post_id, $count_key, true );
+//         $count_key = 'post_views_count';
+//         $count = get_post_meta( $post_id, $count_key, true );
         
-        if( $count == '' ) {
-            $count = 0;
+//         if( $count == '' ) {
+//             $count = 0;
     
-            delete_post_meta( $post_id, $count_key );
-            add_post_meta( $post_id, $count_key, '0' );
-        }
-        else {
-            $count++;
-            update_post_meta( $post_id, $count_key, $count );
-        }
+//             delete_post_meta( $post_id, $count_key );
+//             add_post_meta( $post_id, $count_key, '0' );
+//         }
+//         else {
+//             $count++;
+//             update_post_meta( $post_id, $count_key, $count );
+//         }
 
-    }
+//     }
 
-}
+// }
 
-/** Agregar a una columna en WP-Admin */
-if ( ! function_exists( 'posts_column_views' ) ) {
+// /** Agregar a una columna en WP-Admin */
+// if ( ! function_exists( 'posts_column_views' ) ) {
     
-    function posts_column_views( $defaults ) {
+//     function posts_column_views( $defaults ) {
     
-        $defaults[ 'post_views' ] = __( 'Views', 'edigitalx' );
+//         $defaults[ 'post_views' ] = __( 'Views', 'edigitalx' );
     
-        return $defaults;
-    }
-    add_filter( 'manage_posts_columns', 'posts_column_views' );
+//         return $defaults;
+//     }
+//     add_filter( 'manage_posts_columns', 'posts_column_views' );
 
-}
-if ( ! function_exists( 'posts_custom_column_views' ) ) {
+// }
+// if ( ! function_exists( 'posts_custom_column_views' ) ) {
 
-    function posts_custom_column_views( $column_name, $id ) {
+//     function posts_custom_column_views( $column_name, $id ) {
         
-        if( $column_name === 'post_views' ) {
-            echo get_post_views( get_the_ID() );
-        }
+//         if( $column_name === 'post_views' ) {
+//             echo get_post_views( get_the_ID() );
+//         }
 
-    }
-    add_action( 'manage_posts_custom_column', 'posts_custom_column_views', 5, 2 );
+//     }
+//     add_action( 'manage_posts_custom_column', 'posts_custom_column_views', 5, 2 );
 
-}
+// }

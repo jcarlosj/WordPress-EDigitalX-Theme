@@ -17,7 +17,7 @@ class Theme {
         Assets :: get_instance();
         Hooks :: get_instance();
         Menues :: get_instance();
-        Post :: get_instance();
+        MetaBoxes :: get_instance();
 
         $this -> setup_hooks();
     }

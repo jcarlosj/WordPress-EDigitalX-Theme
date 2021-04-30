@@ -7,21 +7,29 @@ namespace THEME\Inc;
 
 use THEME\Inc\Traits\Singleton;
 
-class Post {
+class MetaBoxes {
     use Singleton;
 
     protected function __construct() {
-        // wp_die( 'Class Post' );
+        // wp_die( 'Class Meta Boxes' );
 
         //  Cargamos Clases.
-        $this -> setup_hooks();
+        $this -> setup_hooks_featured_post();
+        $this -> setup_hooks_post_views_count();
     }
 
-    protected function setup_hooks() {
+    protected function setup_hooks_featured_post() {
 
         /** Actions */
         add_action( 'add_meta_boxes', [ $this, 'meta_box_featured_post' ] );
         add_action( 'save_post', [ $this, 'meta_box_featured_post_save' ], 10, 3 );
+    }
+
+    protected function setup_hooks_post_views_count() {
+
+        /** Actions */
+        add_filter( 'manage_posts_columns', [ $this, 'posts_column_views' ] );
+        add_action( 'manage_posts_custom_column', [ $this, 'posts_custom_column_views' ], 5, 2 );
     }
 
     /** Crea Meta Box: Destacar publicacion */
@@ -111,6 +119,59 @@ class Post {
             $featured_post      #   Valor a actualizar
         );
         
+    }
+
+    /** Obtener vistas de publicaciones */
+    public function get_post_views( $post_id ){
+
+        $count_key = 'post_views_count';
+        $count = get_post_meta( $post_id, $count_key, true );
+    
+        if( $count == '' ) { 
+
+            delete_post_meta( $post_id, $count_key );
+            add_post_meta( $post_id, $count_key, '0' );
+            
+            return '0 '. __( 'View', 'edigitalx' );
+        }
+    
+        return $count .' '. __( 'Views', 'edigitalx' );
+    }
+
+    /** Establecer vistas de publicaciones */
+    public function set_post_views( $post_id ) {
+
+        $count_key = 'post_views_count';
+        $count = get_post_meta( $post_id, $count_key, true );
+        
+        if( $count == '' ) {
+            $count = 0;
+    
+            delete_post_meta( $post_id, $count_key );
+            add_post_meta( $post_id, $count_key, '0' );
+        }
+        else {
+            $count++;
+            update_post_meta( $post_id, $count_key, $count );
+        }
+
+    }
+
+    /** Establece un titulo para la columna en WP-Admin */
+    public function posts_column_views( $defaults ) {
+    
+        $defaults[ 'post_views' ] = __( 'Views', 'edigitalx' );
+    
+        return $defaults;
+    }
+
+    /** Establece los valores de la columna para cada publicacion en WP-Admin */
+    public function posts_custom_column_views( $column_name, $id ) {
+        
+        if( $column_name === 'post_views' ) {
+            echo $this -> get_post_views( get_the_ID() );
+        }
+
     }
         
 }

@@ -3,10 +3,14 @@
  * @package EDigitalX
  */
 
+    namespace THEME\Inc;
+
+    use THEME\Inc\Traits\Singleton;
+
+    MetaBoxes :: set_post_views( get_the_ID() );   /** Establece cuenta para publicaciones vistas */
+
     get_header();
     do_action( 'get_file_name', basename( __FILE__ ) );
-
-    set_post_views( get_the_ID() );   /** Estable cuenta para publicaciones vistas */
 ?>
 
     <div id="site-container">
