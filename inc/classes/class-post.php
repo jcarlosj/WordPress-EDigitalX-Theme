@@ -30,7 +30,7 @@ class Post {
         add_meta_box(
             'edigitalx_mb_featured_post',                       #   ID unico de identificacion
             _x( 'Post Featured', 'edigitalx' ),                 #   Titulo para el Metabox
-            array( $this, 'meta_box_featured_post_callback' ),        #   Callback: Funcion que dibujará formulario para el Metabox
+            array( $this, 'meta_box_featured_post_callback' ),  #   Callback: Funcion que dibujará formulario para el Metabox
             array( 'post' ),                                    #   Nombre del Post o los Post a los que se agregará el Metabox
             'side',                                             #   Contexto dentro de la pantalla donde debe mostrarse el cuadro: 'normal', 'side', and 'advanced'. Valor por defecto: 'advanced'
             'default',                                          #   La prioridad dentro del contexto donde debe mostrarse el cuadro: 'high', 'core', 'default', or 'low'. Valor por defecto: 'default'

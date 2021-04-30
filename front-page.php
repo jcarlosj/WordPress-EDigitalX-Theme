@@ -9,6 +9,10 @@
    
     <div id="site-container">
 
+        <? 
+            query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC'); 
+        ?>
+
         <?php 
             if ( have_posts() ) : 
                 // Loop WP
