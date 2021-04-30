@@ -28,13 +28,12 @@ if ( ! function_exists( 'set_post_views' ) ) {
         $count_key = 'post_views_count';
         $count = get_post_meta( $post_id, $count_key, true );
     
-        if( $count == '' ){
-            $count = 0;
+        if( $count == '' ) { 
 
             delete_post_meta( $post_id, $count_key );
             add_post_meta( $post_id, $count_key, '0' );
             
-            return $count .' '. __( 'View', 'edigitalx' );
+            return '0 '. __( 'View', 'edigitalx' );
         }
     
         return $count .' '. __( 'Views', 'edigitalx' );
