@@ -23,6 +23,10 @@
 
                         // echo '<pre>';   var_dump( $recent_posts );     echo '</pre>'; 
                         // echo '<pre>';   var_dump( get_the_category( $recent_posts[ 0 ][ 'ID' ] ) );     echo '</pre>'; 
+                        // echo '<pre>';   var_dump( get_post_meta( $recent_posts[ 0 ][ 'ID' ], 'estimated_reading_time', true ) );     echo '</pre>'; 
+
+                        $estimated_time = get_post_meta( $recent_posts[ 0 ][ 'ID' ], 'estimated_reading_time', true );      #   Obtengo el valor del Meta Box
+                        $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
 
                     ?>
                     
@@ -50,8 +54,16 @@
                                 </div>
 
                                 <time class="post-footer" datetime="<?php the_time( 'Y-m-d' ); ?>">
-                                    <span class="post-read-time">3 min read</span>
+                                    
+                                    <?php 
+                                        if( $has_estimated_time ) :
+                                            ?>
+                                                <span class="post-read-time"><?php echo $estimated_time; ?> <?php esc_html_e( 'min read', 'edigitalx' ); ?></span>
+                                            <?php
+                                        endif;
+                                    ?>
                                     <span class="post-date"><?php echo get_the_time( 'M' ); ?> <?php echo get_the_time( 'd' ); ?>, <?php echo get_the_time( 'Y' ); ?></span>
+
                                 </time>
 
                             </div>
@@ -87,6 +99,9 @@
                                         while( $popular_posts -> have_posts() ) : 
                                             $popular_posts -> the_post(); 
 
+                                            $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
+                                            $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
+
                                             ?>
 
                                                 <article class="post post-featured-link">
@@ -107,8 +122,16 @@
                                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                         </h3>
                                                         <time class="post-footer" datetime="<?php the_time( 'Y-m-d' ); ?>">
-                                                            <span class="post-read-time">3 min read</span>
+                                                            
+                                                            <?php 
+                                                                if( $has_estimated_time ) :
+                                                                    ?>
+                                                                        <span class="post-read-time"><?php echo $estimated_time; ?> <?php esc_html_e( 'min read', 'edigitalx' ); ?></span>
+                                                                    <?php
+                                                                endif;
+                                                            ?>
                                                             <span class="post-date"><?php echo get_the_time( 'M' ); ?> <?php echo get_the_time( 'd' ); ?>, <?php echo get_the_time( 'Y' ); ?></span>
+
                                                         </time>
                                                     </div>
 
@@ -135,11 +158,14 @@
 
                                     $featured_post = new WP_Query( $args );
 
-                                    # echo '<pre>';   var_dump( $featured_post );     echo '</pre>';   
+                                    # echo '<pre>';   var_dump( $featured_post );     echo '</pre>';     
 
                                     if ( $featured_post -> have_posts() ) : 
                                         while( $featured_post -> have_posts() ) : 
                                             $featured_post -> the_post(); 
+
+                                            $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
+                                            $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
 
                                             ?>
                                                 
@@ -161,8 +187,16 @@
                                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                         </h3>
                                                         <time class="post-footer" datetime="<?php the_time( 'Y-m-d' ); ?>">
-                                                            <span class="post-read-time">3 min read</span>
+                                                        
+                                                            <?php 
+                                                                if( $has_estimated_time ) :
+                                                                    ?>
+                                                                        <span class="post-read-time"><?php echo $estimated_time; ?> <?php esc_html_e( 'min read', 'edigitalx' ); ?></span>
+                                                                    <?php
+                                                                endif;
+                                                            ?>
                                                             <span class="post-date"><?php echo get_the_time( 'M' ); ?> <?php echo get_the_time( 'd' ); ?>, <?php echo get_the_time( 'Y' ); ?></span>
+
                                                         </time>
                                                     </div>
 
