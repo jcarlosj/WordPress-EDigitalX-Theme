@@ -30,6 +30,7 @@ class Theme {
     public function setup_theme() {
         add_action( 'after_setup_theme', [ $this, 'support_settings_for_gutenberg' ] );
         add_action( 'after_setup_theme', [ $this, 'wp_52_backward_compatible' ] );
+        add_action( 'after_setup_theme', [ $this, 'register_image_support' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'load_dashicons_front_end' ] );
     }
 
@@ -53,6 +54,17 @@ class Theme {
     #   Agregar Dashicons en el Front-end de WordPress
     public function load_dashicons_front_end() {
         wp_enqueue_style( 'dashicons' );
+    }
+
+    #   Agrega soporte a imagen destacada de todas las publicaciones del sitio
+    public function register_image_support() {
+        //  Agrega soporte imagen destacada en las publicaciones
+        add_theme_support( 'post-thumbnails' );          
+
+        //  Registra un nuevos tamaños de imagen soportados por el Theme                            //  con cropping activo
+        add_image_size( 'posts-featured-square-mobile', 125, 125, true ); 
+        add_image_size( 'posts-featured-landscape-mobile', 545, 300, true );              //  con cropping activo
+        // add_image_size( 'posts-featured-portrait', 435, 526, true );               //  con cropping activo
     }
         
 }

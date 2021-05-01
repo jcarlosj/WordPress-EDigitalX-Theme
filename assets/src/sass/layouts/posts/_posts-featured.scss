@@ -1,0 +1,45 @@
+.posts-featured {
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+    padding-top: 85px;
+    padding-bottom: 30px;
+
+}
+
+.post-featured {
+
+    &-link {
+        border: 1px dotted;
+        box-sizing: border-box;
+
+        display: flex;
+        padding: 1rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &-title {
+        font-size: .9em;
+        line-height: 1.1;
+        margin: 0;
+        color: #4d4d4d;
+        word-wrap: break-word;
+    }
+
+    &-media {
+        flex: 1 0 30%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-content {
+        flex: 1 0 70%;
+    }
+
+}
