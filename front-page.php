@@ -21,9 +21,9 @@
 
                         $recent_posts = wp_get_recent_posts( $args );
 
-                        // echo '<pre>';   var_dump( $recent_posts );     echo '</pre>';  
+                        // echo '<pre>';   var_dump( $recent_posts );     echo '</pre>'; 
+                        // echo '<pre>';   var_dump( get_the_category( $recent_posts[ 0 ][ 'ID' ] ) );     echo '</pre>'; 
 
-                        foreach( $recent_posts as $post_item ) : 
                     ?>
                     
                         <article id="post-<?php $recent_posts[ 0 ][ 'ID' ]; ?>" class="post-featured-<?php echo $recent_posts[ 0 ][ 'post_title' ]; ?>">
@@ -38,7 +38,9 @@
                                 <div class="post-content flex-grow">
                                     <div class="post-cats">
                                         <div class="post-catetory">
-                                            <a href="https://demo.apalodi.com/kutak/category/lifestyle/?header=classic" rel="category tag">Lifestyle</a>
+                                            <a href="#" rel="category tag">
+                                                <?php echo get_the_category( $recent_posts[ 0 ][ 'ID' ] ) [ 0 ] -> name; ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <a href="<?php echo get_permalink( $recent_posts[ 0 ][ 'ID' ] ); ?>">
@@ -47,15 +49,14 @@
                                     </a>
                                 </div>
 
-                                <div class="post-footer">
+                                <time class="post-footer" datetime="<?php the_time( 'Y-m-d' ); ?>">
                                     <span class="post-read-time">3 min read</span>
-                                    <span class="post-date">October 4, 2018</span>
-                                </div>
+                                    <span class="post-date"><?php echo get_the_time( 'M' ); ?> <?php echo get_the_time( 'd' ); ?>, <?php echo get_the_time( 'Y' ); ?></span>
+                                </time>
+
                             </div>
 
                         </article><!-- #post-## -->
-                            
-                    <?php endforeach; ?>
 
 
                     <div class="posts-featured-sidebar column">
@@ -105,10 +106,10 @@
                                                         <h3 class="post-featured-title">
                                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                         </h3>
-                                                        <div class="post-footer post-featured-footer">
+                                                        <time class="post-footer" datetime="<?php the_time( 'Y-m-d' ); ?>">
                                                             <span class="post-read-time">3 min read</span>
-                                                            <span class="post-date"><?php echo get_the_date('F j, Y'); ?></span>
-                                                        </div>
+                                                            <span class="post-date"><?php echo get_the_time( 'M' ); ?> <?php echo get_the_time( 'd' ); ?>, <?php echo get_the_time( 'Y' ); ?></span>
+                                                        </time>
                                                     </div>
 
                                                 </article><!-- .post .post-featured-link -->
@@ -159,10 +160,10 @@
                                                         <h3 class="post-featured-title">
                                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                         </h3>
-                                                        <div class="post-footer post-featured-footer">
+                                                        <time class="post-footer" datetime="<?php the_time( 'Y-m-d' ); ?>">
                                                             <span class="post-read-time">3 min read</span>
-                                                            <span class="post-date"><?php echo get_the_date('F j, Y'); ?></span>
-                                                        </div>
+                                                            <span class="post-date"><?php echo get_the_time( 'M' ); ?> <?php echo get_the_time( 'd' ); ?>, <?php echo get_the_time( 'Y' ); ?></span>
+                                                        </time>
                                                     </div>
 
                                                 </article><!-- .post .post-featured-link -->
