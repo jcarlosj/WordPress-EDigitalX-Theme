@@ -75,17 +75,21 @@
 
                             <div class="featured-tabs">
 
-                                <button class="featured-tab is-active" data-id="#popular-posts">Trending</button>
-                                <button class="featured-tab" data-id="#recommended-posts">Recommended</button>
+                                <button id="trending" class="btn-trending featured-tab current-tab-item" data-id="#popular-posts">
+                                    <?php esc_html_e( 'Trending', 'edigitalx' ); ?>
+                                </button>
+                                <button id="recommended" class="btn-recommended featured-tab" data-id="#recommended-posts">
+                                    <?php esc_html_e( 'Recommended', 'edigitalx' ); ?>
+                                </button>
                                                                 
                             </div>
                         
-                            <div id="popular-posts" class="featured-panel">
+                            <div id="popular-posts" class="featured-panel is-active">
 
                                 <?php
                                     $args = array (
                                         'post_type' => 'post',
-                                        'posts_per_page' => 3,
+                                        'posts_per_page' => 4,
                                         'meta_key' => 'post_views_count',       //  Nombre del Meta Box
                                         'orderby' => 'meta_value',
                                         'order' => 'DESC',

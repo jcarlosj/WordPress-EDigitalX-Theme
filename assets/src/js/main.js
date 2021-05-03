@@ -11,6 +11,7 @@ import '../sass/main.scss';
 // JavaScript
 import './main-menu';
 import './search-section';
+import './featured-posts-tabs';
 
 // eslint-disable-next-line no-console
 console.log( 'Endpoint master.js' );

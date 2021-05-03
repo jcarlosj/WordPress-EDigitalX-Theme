@@ -43,3 +43,29 @@
     }
 
 }
+
+.featured {
+
+    &-panel {
+        display: none;
+        
+        &.is-active {
+            flex-direction: column;
+        }
+    }
+
+    &-tab {
+        @extend %btn-featured-tab;
+        border-radius: 0;
+
+        &.current-tab-item {
+            border-bottom: 2px solid red;
+        }
+    }
+
+    &-tabs {
+        display: flex;    
+    }
+
+}
+
