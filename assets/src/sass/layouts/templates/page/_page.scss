@@ -1,29 +1,9 @@
 .hero {
-    align-items: center;
-    background-color: $color__green;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    height: 45rem;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-    text-align: center;
-
-    &::after {
-        background-color: rgba( 0, 0, 0, .6 );
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
+    background: $bg-color__hero;
+    border-bottom: 1px solid $border-color__hero;
+    padding: 2rem;
 
     h1 {
-        color: $color__white;
-        position: relative;
-        z-index: 1;
+        color: $color__black;
     }
 }

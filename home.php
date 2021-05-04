@@ -12,7 +12,7 @@
     // var_dump( $image_source );
 ?>
 
-    <div id="site-container">
+    <div id="site-container" class="page-file">
 
         <header 
                 class="hero"
@@ -22,7 +22,7 @@
                     
                 <?php endif; ?>
         >
-            <div class="hero-content">
+            <div class="hero-content container">
                 <h1><?php echo get_the_title( $blog_page_id ); ?></h1>
             </div>
         </header>
@@ -30,23 +30,31 @@
         <section class="section container with-sidebar">
             <main class="main-content">
 
-                <?php while ( have_posts() ) : the_post(); ?>
+                <section class="entries-blog">
 
-                    <article class="entry-blog">
+                    <?php while ( have_posts() ) : the_post(); ?>
+
+                        <article class="entry-blog">
+                            
+                            <?php 
+                                get_template_part( 'template-parts/entry', 'header' ); 
+                                get_template_part( 'template-parts/entry', 'content' );
+                                get_template_part( 'template-parts/entry', 'footer' ); 
+                            ?>
+
+                        </article>
                         
-                        <?php 
-                            get_template_part( 'template-parts/entry', 'header' ); 
-                            get_template_part( 'template-parts/entry', 'content' );
-                            get_template_part( 'template-parts/entry', 'footer' ); 
-                        ?>
+                    <?php endwhile; ?>
 
-                    </article>
-                    
-                <?php endwhile; ?>
+                </section>
+                
+                <section class="entries-pagination">
 
-                <?php 
-                    get_template_part( 'template-parts/entry', 'pagination' );
-                ?>
+                    <?php 
+                        get_template_part( 'template-parts/entry', 'pagination' );
+                    ?>
+
+                </section>
 
             </main>
 
