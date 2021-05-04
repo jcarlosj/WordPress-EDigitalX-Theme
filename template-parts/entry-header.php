@@ -1,5 +1,14 @@
+
+<?php if( is_front_page() ) : ?>
+
+    <a href="<?php the_permalink(); ?>" class="post-featured-media">
+        <div class="image-wrapper">
+            <?php the_post_thumbnail( 'posts-featured-square-mobile' ); ?>
+        </div>
+    </a>
+
 <?php 
-    if( is_page() || is_single() ) : 
+    elseif( is_page() || is_single() ) : 
         $featured_image_url = get_the_post_thumbnail_url();
 ?>
         <header 
