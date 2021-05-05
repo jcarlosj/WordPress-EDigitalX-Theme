@@ -43,13 +43,9 @@
         <?php if( has_excerpt() ): ?>
             <?php echo get_the_excerpt(); ?>
         <?php else: ?>
-            <?php echo wp_trim_words( get_the_content(), 30, '..' ); ?>
+            <?php echo wp_trim_words( get_the_content(), 18, '..' ); ?>
         <?php endif; ?>
     </p>
-
-    <a class="btn btn-primary" href="<?php the_permalink(); ?>">
-        <?php _e( 'Read more', 'edigitalx' ); ?>
-    </a>
 
 <?php endif; ?>
 

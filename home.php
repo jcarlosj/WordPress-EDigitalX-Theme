@@ -34,7 +34,7 @@
 
                     <?php while ( have_posts() ) : the_post(); ?>
 
-                        <article class="entry-blog">
+                        <article class="entry entry-blog">
                             
                             <?php 
                                 get_template_part( 'template-parts/entry', 'header' ); 

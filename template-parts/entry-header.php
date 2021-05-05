@@ -28,23 +28,19 @@
 
 <?php elseif( is_home() ) : ?>
 
-    <a href="<?php the_permalink(); ?>">
+    <a class="entry-link entry-thumbnail" href="<?php the_permalink(); ?>">
         <?php the_post_thumbnail( 'specialties-landscape' ); ?>
     </a>
 
     <header class="entry-info">
                         
-        <time class="entry-date" datetime="<?php the_time( 'Y-m-d' ); ?>">
-            <?php the_time( 'd' ); ?>
-            <span><?php the_time( 'M' ); ?><span>
-        </time>
+        <span class="entry-catetory">
+            <?php the_category(', '); ?>
+        </span>
         
-        <h2 class="entry-title"><?php the_title(); ?></h2>
-        
-        <p class="entry-author">
-            <?php _e( 'Written by: ', 'edigitalx' ); ?>
-            <span><?php the_author(); ?></span>
-        </p>
+        <a class="entry-link" href="<?php the_permalink(); ?>">
+            <h2 class="entry-title"><?php the_title(); ?></h2>
+        </a>
 
     </header>
 

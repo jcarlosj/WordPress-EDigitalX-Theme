@@ -17,4 +17,12 @@
         border: 1px dotted green;
         box-sizing: border-box;
     }
+
+    &-info,
+    &-excerpt,
+    &-footer {
+        border: 1px dotted blue;
+        box-sizing: border-box;
+    }
+
 }
