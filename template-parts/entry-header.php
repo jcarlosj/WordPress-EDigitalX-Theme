@@ -29,7 +29,7 @@
 <?php elseif( is_home() ) : ?>
 
     <a class="entry-link entry-thumbnail" href="<?php the_permalink(); ?>">
-        <?php the_post_thumbnail( 'specialties-landscape' ); ?>
+        <?php the_post_thumbnail( 'posts-featured-landscape-mobile' ); ?>
     </a>
 
     <header class="entry-info">
