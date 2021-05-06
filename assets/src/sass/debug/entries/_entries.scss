@@ -1,0 +1,32 @@
+.entry {    // Block
+    border: 1px dotted rebeccapurple;
+    box-sizing: border-box;
+
+    &__content {
+        border: 1px dotted purple;
+        box-sizing: border-box;
+    }
+
+    &__featured-image {
+        // border: 2px dotted orangered;
+        // box-sizing: border-box;
+    }
+
+    &__content {
+        border: 2px dotted red;
+        box-sizing: border-box;
+
+        // > * {
+        //     border: 2px dotted red;
+        //     box-sizing: border-box;
+        // }
+    }
+
+    &__header,
+    &__excerpt,
+    &__footer {
+        border: 2px dotted orange;
+        box-sizing: border-box;
+    }
+
+}

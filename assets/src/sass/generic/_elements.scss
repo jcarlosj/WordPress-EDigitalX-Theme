@@ -28,13 +28,12 @@ h6 { @include body-text( h6 ); }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__headers;
-	margin: 10px 0;
+	margin: 1rem 0;
 	text-rendering: optimizelegibility;
 }
 
 p {
 	font-size: 1.8rem;
-	line-height:  5rem;
 }
 
 img {
