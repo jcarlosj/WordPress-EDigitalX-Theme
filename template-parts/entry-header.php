@@ -1,11 +1,19 @@
 
-<?php if( is_front_page() ) : ?>
+<?php if( is_front_page() || is_home() ) : ?>
 
-    <a href="<?php the_permalink(); ?>" class="post-featured-media">
-        <div class="image-wrapper">
-            <?php the_post_thumbnail( 'posts-featured-square-mobile' ); ?>
-        </div>
-    </a>
+    <header class="entry__header">
+                                            
+        <span class="entry__categories">
+            <?php the_category( ' ' ); ?>
+        </span>
+        
+        <h2 class="entry__title">
+            <a class="entry__title-link" href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+            </a>
+        </h2>
+
+    </header>
 
 <?php 
     elseif( is_page() || is_single() ) : 

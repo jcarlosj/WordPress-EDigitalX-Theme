@@ -36,11 +36,15 @@
 
                         <article class="entry entry-blog">
                             
-                            <?php 
-                                get_template_part( 'template-parts/entry', 'header' ); 
-                                get_template_part( 'template-parts/entry', 'content' );
-                                get_template_part( 'template-parts/entry', 'footer' ); 
-                            ?>
+                            <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+
+                            <div class="entry__content entry__content--size entry__content--position">
+
+                                <?php get_template_part( 'template-parts/entry', 'header' ); ?>
+                                <?php get_template_part( 'template-parts/entry', 'content' ); ?>
+                                <?php get_template_part( 'template-parts/entry', 'footer' ); ?>
+
+                            </div>
 
                         </article>
                         
