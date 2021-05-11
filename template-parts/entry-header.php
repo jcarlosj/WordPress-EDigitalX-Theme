@@ -18,7 +18,7 @@
                 <?php if( $args[ 'is_entry_featured' ] ) : ?>
                     
                     <?php
-                        $title = theme_limit_string_length( get_the_title(), 80 );
+                        $title = theme_limit_string_length( get_the_title(), 60 );
                         echo esc_html( $title ); 
                     ?>
 
