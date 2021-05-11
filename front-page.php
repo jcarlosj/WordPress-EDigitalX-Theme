@@ -18,7 +18,7 @@
                     <div class="posts-featured-sidebar">
 
                         <?php get_template_part( 'template-parts/posts-featured/posts-featured', 'tabs' ); ?>
-                        <?php get_template_part( 'template-parts/posts-featured/popular', 'posts' ); ?>
+                        <?php get_template_part( 'template-parts/entries-featured/entries', 'popular' ); ?>
                         <?php get_template_part( 'template-parts/posts-featured/recommended', 'posts' ); ?>
                         
                     </div><!-- .posts-featured-sidebar  -->

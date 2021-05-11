@@ -19,15 +19,23 @@
 
             ?>
 
+                <?php 
+                    $args = [ 
+                        'is_entry_featured'  => false,
+                        'has_estimated_time' => $has_estimated_time,
+                        'estimated_time'     => $estimated_time
+                    ]; 
+                ?>
+
                 <article class="entry">
 
                     <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
 
-                    <div class="entry__content entry__content--size entry__content--position">
+                    <div class="entry__content <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--size entry-featured__content--position' : 'entry__content--size entry__content--position'; ?>">
 
                         <?php get_template_part( 'template-parts/entry', 'header' ); ?>
                         <?php get_template_part( 'template-parts/entry', 'content' ); ?>
-                        <?php get_template_part( 'template-parts/entry', 'footer' ); ?>
+                        <?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
 
                     </div>
 

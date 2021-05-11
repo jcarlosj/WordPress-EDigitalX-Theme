@@ -16,7 +16,7 @@
             bottom: -2em;
         }
     }
-    &__featured-image {
+    &__image {
         max-width: $width-image;
         width: 100%;
 
@@ -60,5 +60,34 @@
         padding: .5em 1em;
     }
 
+}
+
+.entry-featured {
+    $width-image: 300px;
+
+    &__content {
+        &--position {
+            flex: 1;
+            flex-direction: row;
+        }
+    }
+
+    &__image {
+        max-width: $width-image;
+        width: calc( #{ $width-image } / 2.2 );
+
+        &--rounded {
+            border-radius: .3em;
+        }
+    }
+
+    &__title {
+        font-size: 1.6rem;
+    }
+
+    &__time-read,
+    &__date {
+        font-size: 1.3rem;
+    }
 
 }

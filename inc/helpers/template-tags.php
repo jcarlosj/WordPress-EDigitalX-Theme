@@ -156,3 +156,12 @@ function theme_wp_search_form( $form ) {
 }
 
 add_filter( 'get_search_form', 'theme_wp_search_form' );
+
+function theme_limit_string_length ( $string, $trim_character_count = 0 ) {
+
+    $string = wp_strip_all_tags( $string );              //  Elimine correctamente todas las etiquetas HTML, incluidos el script y el estilo
+    $string = substr( $string, 0, $trim_character_count );        //  Obtiene un fragmento del extracto que inicia del caracter 0 al $trim_character_count
+    $string = substr( $string, 0, strrpos( $string, ' ' ) );     //  Encuentra la posición de la última aparición de una subcadena y elimina la última parabra "cortada en la mayoría de los casos"
+
+    return $string .'...';
+}

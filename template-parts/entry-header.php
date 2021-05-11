@@ -1,3 +1,8 @@
+<?php 
+    // if( isset ( $args ) ) :
+    //     echo '<pre>';  var_dump( $args );   echo '</pre>';
+    // endif;
+?>
 
 <?php if( is_front_page() || is_home() ) : ?>
 
@@ -7,9 +12,22 @@
             <?php the_category( ' ' ); ?>
         </span>
         
-        <h2 class="entry__title">
+        <h2 class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__title' : 'entry__title'; ?>">
             <a class="entry__title-link" href="<?php the_permalink(); ?>">
-                <?php the_title(); ?>
+
+                <?php if( $args[ 'is_entry_featured' ] ) : ?>
+                    
+                    <?php
+                        $title = theme_limit_string_length( get_the_title(), 80 );
+                        echo esc_html( $title ); 
+                    ?>
+
+                <?php else: ?>
+                    
+                    <?php the_title(); ?>
+                
+                <?php endif; ?>
+                    
             </a>
         </h2>
 
