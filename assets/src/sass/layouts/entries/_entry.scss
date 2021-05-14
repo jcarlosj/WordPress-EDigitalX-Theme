@@ -20,6 +20,8 @@
 
         &--rounded {
             border-radius: .5em;
+            height: calc( #{ $width-image } / 2.4 );
+            object-fit: cover;
         }
     }
 
@@ -46,6 +48,10 @@
         & > *:not( :first-child ) {
             background-color: white;
         }
+
+        .entry__categories {
+            font-size: .8em;
+        }
     }
 
     &__header,
@@ -59,12 +65,12 @@
         background-color: white;
         border-radius: .2em .2em 0 0;
         margin: 0;
-        padding: .2em .4em;
+        padding: .6em;
     }
 
     &__excerpt,
     &__time {
-        padding: .5em 1em;
+        padding: .1em .6em;
     }
 
 }
@@ -78,15 +84,11 @@
             // padding: .8rem 0;
             width: 100%;
 
-            @include mq( small ) {
-                background-color: lawngreen;
-            }
+            @include mq( small ) {}
             @include mq( medium ) {
-                background-color: hotpink;
                 width: 49%;
             }
             @include mq( large ) {
-                background-color: greenyellow;
                 width: 100%;
             }
 
@@ -94,9 +96,7 @@
     }
 
     &__thumbnail {    
-        &--position {
-            // flex: 0 0 150px;
-        }
+        &--position {}
     }
     &__image {
         max-width: $width-image;
@@ -108,12 +108,16 @@
     }
 
     &__title {
-        font-size: 1.6rem;
+        font-size: .9em;
+
+        @include mq ( small ) {
+            font-size: 1em;
+        }
     }
 
     &__time-read,
     &__date {
-        font-size: 1.3rem;
+        font-size: .8em;
     }
 
 }

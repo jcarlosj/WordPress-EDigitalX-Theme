@@ -1,7 +1,11 @@
 #site-container {
-    margin-top: 8rem;
-}
+    margin-top: -2rem;
 
-#site-container.home {
-    margin-top: 3rem;
+    @include mq( small ) {
+        margin-top: 0;
+    }
+
+    @include mq( medium ) {
+        margin-top: 0;
+    }
 }

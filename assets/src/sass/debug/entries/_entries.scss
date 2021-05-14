@@ -31,6 +31,27 @@
 
 }
 
+.entry-featured {
+
+    &__content {
+        &--position {
+            background-color: green;
+
+            @include mq( small ) {
+                background-color: lawngreen;
+            }
+            @include mq( medium ) {
+                background-color: hotpink;
+            }
+            @include mq( large ) {
+                background-color: greenyellow;
+            }
+
+        }
+    }
+    
+}
+
 .featured-panel {
     border: 2px dotted blue;
     box-sizing: border-box;

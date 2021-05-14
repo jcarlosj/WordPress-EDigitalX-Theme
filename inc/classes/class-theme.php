@@ -64,7 +64,7 @@ class Theme {
         //  Registra un nuevos tamaños de imagen soportados por el Theme                            //  con cropping activo
         add_image_size( 'entry-square', 300, 300, true ); 
         add_image_size( 'posts-featured-landscape-mobile', 760, 380, true );              //  con cropping activo
-        add_image_size( 'entry-landscape', 992, 496, true );              //  con cropping activo
+        add_image_size( 'entry-landscape', 1024, 768, true );              //  con cropping activo
         // add_image_size( 'posts-featured-portrait', 435, 526, true );               //  con cropping activo
     }
         
