@@ -7,7 +7,7 @@
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
    
-    <div id="site-container" class="home">
+    <div id="site-container" class="front-page">
 
         <section class="posts-featured">
             <div class="container">
