@@ -98,37 +98,72 @@
 
                     <?php 
 
-                        while ( have_posts() ) : 
-                            the_post();
+                        /** Escribimos la logica de compensacion del query aquí para evitar que afecte a otros queries que se hacen en este archivo, por ejemplo el template part: 
+                         *  entry_last.php (linea 80) */
 
-                            // echo '<code>';   var_dump( $wp_query );      echo '</code>';   
+                        # Verifica si estamos en el home.php
+                        if( is_home() ) :
 
-                            $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
-                            $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
+                            $post_per_page = get_option( 'posts_per_page' );                        #   Obtiene valor predeterminado de publicaciones por pagina
+                            $offset = 1;                                                            #   Desplazamiendo para excluir la última publicación
+                            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;   #   Obtenemos la pagina actual
 
-                            $args = [ 
-                                'is_entry_featured'  => false,
-                                'has_estimated_time' => $has_estimated_time,
-                                'estimated_time'     => $estimated_time
-                            ];
-                    ?>
+                            # Verifica si es un resultado paginado.
+                            if( is_paged() ) :
+                                # No es la primera pagina, es para un resultado paginado.
 
-                        <article class="entry entry-blog">
-                            
-                            <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+                                # Determine manualmente el desplazamiento de la consulta de la página (desplazamiento + página actual (menos uno) x publicaciones por página)
+                                $page_offset = $offset + ( ( $paged - 1 ) * $post_per_page );
 
-                            <div class="entry__content <?php #echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--size entry-featured__content--position' : 'entry__content--size entry__content--position'; ?>">
+                                #echo "Paginado: $page_offset";
 
-                                <?php get_template_part( 'template-parts/entry', 'header' ); ?>
-                                <?php get_template_part( 'template-parts/entry', 'content' ); ?>
-                                <?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
+                                # Aplicar ajustar desplazamiento de página
+                                query_posts( [
+                                    'offset' => $page_offset,   
+                                    'paged' => $paged 
+                                ]); 
+                            else :     
+                                #echo "Pagina principal: $offset";
 
-                            </div>
+                                # Ésta es la primera página. Solo usa el desplazamiento.
+                                query_posts( [
+                                    'offset' => $offset,            # Excluye N publicaciones (a partir de la última realizada)
+                                    'paged' => $paged 
+                                ]);
+                            endif;
 
-                        </article>
+                            /** The Loop */
+                            while ( have_posts() ) : 
+                                the_post();
 
-                    <?php
-                        endwhile;          
+
+                                $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
+                                $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
+
+                                $args = [ 
+                                    'is_entry_featured'  => true,
+                                    'has_estimated_time' => $has_estimated_time,
+                                    'estimated_time'     => $estimated_time
+                                ];
+                        ?>
+
+                            <article class="entry entry-blog">
+                                
+                                <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+
+                                <div class="entry__content <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
+
+                                    <?php get_template_part( 'template-parts/entry', 'header' ); ?>
+                                    <?php get_template_part( 'template-parts/entry', 'content' ); ?>
+                                    <?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
+
+                                </div>
+
+                            </article>
+
+                        <?php
+                            endwhile;          
+                        endif;  # if( is_home() )
                     ?>
 
                 </section>
