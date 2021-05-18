@@ -13,22 +13,20 @@
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
 
-    <div id="site-container">
+    <div id="site-container" class="single">
 
         <?php while ( have_posts() ) : the_post(); ?>
 
-        <div class="container file-name">
-            <span>
-                <?php esc_html_e( basename( __FILE__ ) ); ?>
-            </span>
-        </div>
+            <div class="container file-name">
+                <span>
+                    <?php esc_html_e( basename( __FILE__ ) ); ?>
+                </span>
+            </div>
 
-        <?php 
-            get_template_part( 'template-parts/entry', 'header' ); 
-            get_template_part( 'template-parts/entry', 'content' ); 
-        ?>
+            <?php get_template_part( 'template-parts/entry', 'header' ); ?>
+            <?php get_template_part( 'template-parts/entry', 'content' ); ?>
 
-        <?php comments_template(); ?>
+            <?php comments_template(); ?>
 
         <?php endwhile; ?>
 

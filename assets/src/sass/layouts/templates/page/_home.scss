@@ -1,6 +1,13 @@
 /** Blog */
 .home {
 
+    .posts-featured {
+        background: $color__white;
+        border: none;
+        padding-top: initial;
+        padding-bottom: initial;
+    }
+
     .hero {
 
         .container {

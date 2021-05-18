@@ -26,8 +26,16 @@
 <?php elseif( is_page() || is_single() ) : ?>
 
     <section class="section">
-        <main class="main-content">
+        <main class="main-content container">
+            
+            <span class="entry__categories">
+                <?php the_category( ' ' ); ?>
+            </span>
+
+            <p><?php the_author(); ?></p>
+
             <?php the_content(); ?>
+
         </main>
     </section>
 

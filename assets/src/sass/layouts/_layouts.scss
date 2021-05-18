@@ -1,7 +1,8 @@
 #site-container {
     margin-top: -2rem;
 
-    &.home {
+    &.home,
+    &.single {
         margin-top: 8rem;
     }
 

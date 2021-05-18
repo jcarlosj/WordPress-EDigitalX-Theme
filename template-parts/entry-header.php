@@ -46,8 +46,9 @@
             <?php endif; ?>
         >
 
-            <div class="hero-content">
+            <div class="hero-content container">
                 <h1><?php the_title(); ?></h1>
+                <?php get_template_part( 'template-parts/entry', 'details' ); ?>
             </div>
             
         </header>

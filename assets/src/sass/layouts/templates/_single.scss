@@ -1,0 +1,38 @@
+.single {
+    
+    & .hero {
+        background-size: cover;
+        background-position: center;
+        padding: 10rem 0 5rem 0;
+    
+        h1 {
+            color: $color__white;
+            font-size: 3.4rem;
+            line-height: 1;
+            margin: 0 .2em;
+        }
+
+        .entry__time {
+            color: $color__white;
+            font-size: 1em;
+            margin: 0 .5em;
+            padding: initial;
+        }
+    }
+
+    .main-content {
+        position: relative;
+        top: -3rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: .5rem .5rem 0 0;
+
+        p {
+            font-size: 1em;
+            line-height: 1.7;
+            padding: 1rem 0;
+        }
+    }
+
+}
+
