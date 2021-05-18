@@ -22,7 +22,7 @@ ul.menu {
    left: 0;
    width: $wide-menu;
    max-width: 100%;
-   z-index: 1;
+   z-index: 3;
 
    @include mq( medium ) {
       flex-direction: row;

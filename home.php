@@ -17,7 +17,7 @@
     // var_dump( $image_source );
 ?>
 
-    <div id="site-container" class="home">
+    <div id="site-container" class="blog">
 
         <?php 
             /** Obtenemos el numero de paginas */
@@ -130,7 +130,7 @@
                                 
                                 <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
 
-                                <div class="entry__content <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
+                                <div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
 
                                     <?php get_template_part( 'template-parts/entry', 'header' ); ?>
                                     <?php get_template_part( 'template-parts/entry', 'content' ); ?>

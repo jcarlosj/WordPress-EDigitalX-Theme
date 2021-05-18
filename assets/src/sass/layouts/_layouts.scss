@@ -1,7 +1,8 @@
 #site-container {
     margin-top: -2rem;
 
-    &.home,
+    &.front-page,
+    &.blog,
     &.single {
         margin-top: 8rem;
     }

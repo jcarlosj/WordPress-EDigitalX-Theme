@@ -6,10 +6,9 @@
 
 <?php if( is_front_page() || is_home() ) : ?>
 
-    <!-- <div class="entry__thumbnail entry__thumbnail--position"> -->
     <div class="entry__thumbnail <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
 
-        <a class="entry__thumbnail-link" href="<?php the_permalink(); ?>">
+        <a class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--linkable ' : 'entry__thumbnail--linkable'; ?>" href="<?php the_permalink(); ?>">
             <?php 
 
                 if( $args[ 'is_entry_featured' ] ) {

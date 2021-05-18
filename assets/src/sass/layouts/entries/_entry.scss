@@ -8,10 +8,10 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        
+
         &--position {
             position: relative;
-            bottom: -2em;
+            bottom: -1.25em;
         }
     }
     &__image {
@@ -30,7 +30,6 @@
 
         &.entry-featured__content--position {
             align-items: center;
-            background-color: pink;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,11 +41,11 @@
         }
         &--position {
             position: relative;
-            top: -2em;
+            top: -1.25em;
         }
 
         & > *:not( :first-child ) {
-            background-color: white;
+            background-color: $bg-color__posts-featured;
         }
 
         .entry__categories {
@@ -62,7 +61,7 @@
     }
 
     &__title {
-        background-color: white;
+        background-color: $bg-color__posts-featured;
         border-radius: .2em .2em 0 0;
         margin: 0;
         padding: .6em;
@@ -75,6 +74,36 @@
 
 }
 
+.blog {
+
+    & .entry {
+        &__title,
+        &__excerpt,
+        &__footer {
+            background-color: $bg-color__posts-featured-home;
+        }
+    }
+
+    & .entry-featured__content--position {
+        position: relative;
+        top: -1.25em;
+    }
+}
+
+.front-page {
+    & .entry-featured__content--position {
+        width: 100%;
+        
+        @include mq( medium ) {
+            width: 49%;
+        }
+        @include mq( large ) {
+            width: 100%;
+        }
+    }
+    
+}
+
 .entry-featured {
     $width-image: 300px;
     z-index: 1;
@@ -84,21 +113,9 @@
             flex-direction: row;
             // padding: .8rem 0;
             width: 100%;
-
-            @include mq( small ) {}
-            @include mq( medium ) {
-                width: 49%;
-            }
-            @include mq( large ) {
-                width: 100%;
-            }
-
         }
     }
 
-    &__thumbnail {    
-        &--position {}
-    }
     &__image {
         max-width: $width-image;
         width: calc( #{ $width-image } / 2.2 );
