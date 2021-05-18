@@ -16,6 +16,7 @@ class Theme {
         /** Carga clases */
         Assets :: get_instance();
         Hooks :: get_instance();
+        Queries :: get_instance();
         Menues :: get_instance();
         MetaBoxes :: get_instance();
 

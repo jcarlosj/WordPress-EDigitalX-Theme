@@ -3,6 +3,10 @@
  * @package PizzaShop
  */
 
+    namespace THEME\Inc;
+
+    use THEME\Inc\Traits\Singleton;
+
     get_header();
     do_action( 'get_file_name', basename( __FILE__ ) );
     
@@ -104,33 +108,8 @@
                         # Verifica si estamos en el home.php
                         if( is_home() ) :
 
-                            $post_per_page = get_option( 'posts_per_page' );                        #   Obtiene valor predeterminado de publicaciones por pagina
-                            $offset = 1;                                                            #   Desplazamiendo para excluir la última publicación
-                            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;   #   Obtenemos la pagina actual
-
-                            # Verifica si es un resultado paginado.
-                            if( is_paged() ) :
-                                # No es la primera pagina, es para un resultado paginado.
-
-                                # Determine manualmente el desplazamiento de la consulta de la página (desplazamiento + página actual (menos uno) x publicaciones por página)
-                                $page_offset = $offset + ( ( $paged - 1 ) * $post_per_page );
-
-                                #echo "Paginado: $page_offset";
-
-                                # Aplicar ajustar desplazamiento de página
-                                query_posts( [
-                                    'offset' => $page_offset,   
-                                    'paged' => $paged 
-                                ]); 
-                            else :     
-                                #echo "Pagina principal: $offset";
-
-                                # Ésta es la primera página. Solo usa el desplazamiento.
-                                query_posts( [
-                                    'offset' => $offset,            # Excluye N publicaciones (a partir de la última realizada)
-                                    'paged' => $paged 
-                                ]);
-                            endif;
+                            $arr_args = Queries :: home_offset_exclude_latest_post();
+                            query_posts( $arr_args );
 
                             /** The Loop */
                             while ( have_posts() ) : 
