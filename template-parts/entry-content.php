@@ -27,10 +27,6 @@
 
     <section class="section">
         <main class="main-content container">
-            
-            <span class="entry__categories">
-                <?php the_category( ' ' ); ?>
-            </span>
 
             <p><?php the_author(); ?></p>
 

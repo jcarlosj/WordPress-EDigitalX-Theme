@@ -47,10 +47,6 @@
         & > *:not( :first-child ) {
             background-color: $bg-color__posts-featured;
         }
-
-        .entry__categories {
-            font-size: .8em;
-        }
     }
 
     &__header,
@@ -138,4 +134,42 @@
         font-size: .8em;
     }
 
+}
+
+.entry__categories {
+    position: relative;
+    top: -.5em;
+
+    a {
+        background-color: white;
+        border-radius: .3em;
+        color: gray;
+        font-size: .8em;
+        font-weight: 700;
+        padding: .3em .6em;
+
+        &:hover {
+            color: gray;
+        }
+    }
+
+}
+
+.posts-featured-sidebar {
+    .entry__categories {
+        position: relative;
+        top: initial;
+    
+        a {
+            border: 1px solid black;
+            color: black;
+            font-weight: normal;
+            padding: .2em .4em;
+    
+            &:hover {
+                color: black;
+            }
+        }
+    
+    }    
 }

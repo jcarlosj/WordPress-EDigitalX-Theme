@@ -1,5 +1,11 @@
 .single {
-    
+    $site-width: 1140px;
+
+    .container {
+        max-width: $site-width;
+    }
+
+
     & .hero {
         background-size: cover;
         background-position: center;
