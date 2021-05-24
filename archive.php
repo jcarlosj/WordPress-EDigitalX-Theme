@@ -32,7 +32,15 @@
         >
             <div class="container">
 
-                <h1 class="hero__title"><?php esc_html_e( 'Category: ', 'edigitalx' ); single_cat_title(); ?></h1>
+                <h1 class="hero__title">
+					<?php
+						if( is_category() ) : 
+							esc_html_e( 'Category: ', 'edigitalx' ); single_cat_title(); 
+						elseif( is_author() ) :
+							esc_html_e( 'Author: ', 'edigitalx' ); the_author(); 
+						endif;
+					?>
+				</h1>
                 <ul class="hero__data">
 
                     <li class="hero__item hero__item--publish">
