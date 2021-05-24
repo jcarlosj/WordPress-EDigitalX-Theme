@@ -2,9 +2,14 @@
     margin-top: -2rem;
 
     &.front-page,
-    &.blog,
-    &.single {
+    &.single,
+    &.archive {
         margin-top: 8rem;
+    }
+
+    &.blog,
+    &.archive {
+        margin-top: 4.74rem;
     }
 
     @include mq( small ) {

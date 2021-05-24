@@ -12,8 +12,8 @@
 
 <?php #get_template( 'template-parts/entry', 'read-time', $args ); ?>
 
-<?php if( is_front_page() || is_home() ) : ?>
-
+<?php if( is_front_page() || is_home() || is_archive() ) : ?>
+    
     <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
 
 <?php elseif( is_page() || is_single() ) : ?>

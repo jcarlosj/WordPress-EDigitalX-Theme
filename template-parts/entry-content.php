@@ -4,10 +4,10 @@
  */
 ?>          
 
-<?php if( is_front_page() || is_home() ) : ?>
+<?php if( is_front_page() || is_home() || is_archive() ) : ?>
   
     <p class="entry__excerpt">
-
+    
         <?php if( has_excerpt() ): ?>
 
             <?php 

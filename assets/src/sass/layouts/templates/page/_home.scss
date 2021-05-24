@@ -8,36 +8,7 @@
         padding-bottom: initial;
     }
 
-    .hero {
-
-        .container {
-            align-items: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        &__title {
-            flex: 1 0 auto;
-        }
-
-        &__data {
-            align-items: center;
-            display: flex;
-            flex: 0 1 16%;
-            flex-direction: row;
-            justify-content: space-between;
-    
-            text-align: center;
-    
-            span {
-                display: block;
-            }
-        }
-    }
-
 }
-
 
 .entries-blog {
 

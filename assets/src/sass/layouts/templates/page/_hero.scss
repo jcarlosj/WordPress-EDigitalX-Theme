@@ -1,0 +1,31 @@
+.hero {
+    background: $bg-color__hero;
+    border-bottom: 1px solid $border-color__hero;
+    padding: 2rem;
+
+    .container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__title {
+        color: $color__black;
+        flex: 1 0 auto;
+    }
+
+    &__data {
+        align-items: center;
+        display: flex;
+        flex: 0 1 16%;
+        flex-direction: row;
+        justify-content: space-between;
+
+        text-align: center;
+
+        span {
+            display: block;
+        }
+    }
+}
