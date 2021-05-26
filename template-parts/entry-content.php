@@ -23,12 +23,22 @@
 
     </p>
 
-<?php elseif( is_page() || is_single() ) : ?>
+<?php elseif( is_single() ) : ?>
 
     <section class="section">
         <main class="main-content container">
 
             <p><?php the_author_posts_link(); ?></p>
+
+            <?php the_content(); ?>
+
+        </main>
+    </section>
+
+<?php elseif( is_page() ) : ?>
+
+    <section class="section">
+        <main class="main-content container">
 
             <?php the_content(); ?>
 

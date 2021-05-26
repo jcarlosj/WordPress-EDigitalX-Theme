@@ -34,7 +34,7 @@
     </header>
 
 <?php 
-    elseif( is_page() || is_single() ) : 
+    elseif( is_single() ) : 
         $featured_image_url = get_the_post_thumbnail_url();
 ?>
         <header 
@@ -55,6 +55,23 @@
             </div>
             
         </header>
+
+<?php elseif( is_page() ) : ?>
+
+    <header 
+            class="hero"
+            <?php if( $featured_image_url ) : ?>
+                style="background-image: url( <?php echo $featured_image_url; ?> );"
+            <?php else: ?>
+
+            <?php endif; ?>
+        >
+
+            <div class="hero-content container">
+                <h1><?php the_title(); ?></h1>
+            </div>
+
+    </header>
 
 <?php elseif( is_home() ) : ?>
 
