@@ -30,7 +30,7 @@
 
         <section class="container">
 
-            <h2>Most commented posts</h2>
+            <h2><?php _e( 'Most commented posts', 'pizzashop' ); ?></h2>
 
             <div class="entries-blog">
 

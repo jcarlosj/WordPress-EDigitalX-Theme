@@ -2,17 +2,17 @@
 /** Entry Content Template File (Blog)
  * @package EDigitalX
  */
-?>          
+?>
 
-<?php if( is_front_page() || is_home() || is_archive() ) : ?>
-  
+<?php if( is_front_page() || is_home() || is_archive() || is_search() ) : ?>
+
     <p class="entry__excerpt">
-    
+
         <?php if( has_excerpt() ): ?>
 
-            <?php 
+            <?php
                 $excerpt = wp_strip_all_tags( get_the_excerpt() );
-                echo $excerpt; 
+                echo $excerpt;
             ?>
 
         <?php else: ?>

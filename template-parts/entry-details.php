@@ -11,7 +11,7 @@
 ?>
 
 
-<?php if( is_front_page() || is_home() || is_archive() ) : ?>
+<?php if( is_front_page() || is_home() || is_archive() || is_search() ) : ?>
 
     <footer class="entry__footer">
         <time class="entry__time" datetime="<?php the_time( 'Y-m-d' ); ?>">

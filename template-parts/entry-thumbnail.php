@@ -4,7 +4,7 @@
     // endif;
 ?>
 
-<?php if( is_front_page() || is_home() || is_archive() ) : ?>
+<?php if( is_front_page() || is_home() || is_archive() || is_search() ) : ?>
 
     <div class="entry__thumbnail <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
 
