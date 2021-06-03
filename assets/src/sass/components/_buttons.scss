@@ -9,27 +9,27 @@
     padding: 1rem 3rem;
     text-align: center;
     text-transform: uppercase;
- 
+
     @include mq( medium ) {
         display: inline-block;
-        flex: 0 0 auto;       
+        flex: 0 0 auto;
     }
 
     @each $name, $colors in $buttons {
         $bgcolor: nth( $colors, 1 );
         $fontcolor: nth( $colors, 2 );
         $bordercolor: nth( $colors, 3 );
-        
+
         &-#{ $name } {
             background-color: $bgcolor;
             @if $bordercolor == '#FFFFFF' {
                 border: none;
             }
-            @else { 
+            @else {
                 border: 1px solid $bordercolor;
             }
             color: $fontcolor;
-        }  
+        }
 
     }
 

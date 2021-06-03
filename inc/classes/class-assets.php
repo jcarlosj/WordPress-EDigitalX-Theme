@@ -31,5 +31,5 @@ class Assets {
     public function register_scripts() {
         wp_enqueue_script( 'main', THEME_BUILD_JS_URI . '/main.js', [], filemtime( THEME_BUILD_JS_DIR_PATH .'/main.js' ), true );
     }
-        
+
 }

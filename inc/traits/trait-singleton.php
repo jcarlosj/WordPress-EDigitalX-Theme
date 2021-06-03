@@ -22,7 +22,7 @@ trait Singleton {
             $instance[ $called_class ] = new $called_class();   //  Crea la instancia de la clase obtenida en caso no no existir
 
             do_action( sprintf( 'theme_theme_singleton_init%s', $called_class ) );     //  Ejecuta funciones conectadas al Hook
-                                                                                        //  phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+                                                                                       //  phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
         }
 
         return $instance[ $called_class ];

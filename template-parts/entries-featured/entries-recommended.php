@@ -9,23 +9,23 @@
 
         $featured_post = new WP_Query( $args );
 
-        // echo '<pre>';   var_dump( $featured_post );     echo '</pre>';   
+        // echo '<pre>';   var_dump( $featured_post );     echo '</pre>';
 
-        if ( $featured_post -> have_posts() ) : 
-            while( $featured_post -> have_posts() ) : 
-                $featured_post -> the_post(); 
+        if ( $featured_post -> have_posts() ) :
+            while( $featured_post -> have_posts() ) :
+                $featured_post -> the_post();
 
                 $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
                 $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
 
                 ?>
 
-                    <?php 
-                        $args = [ 
+                    <?php
+                        $args = [
                             'is_entry_featured'  => true,
                             'has_estimated_time' => $has_estimated_time,
                             'estimated_time'     => $estimated_time
-                        ]; 
+                        ];
                     ?>
 
                     <article class="entry <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--position' : ''; ?>">
@@ -42,11 +42,11 @@
                     </article><!-- .entry -->
 
                 <?php
-    
+
             endwhile;
         else:
         endif;
-        wp_reset_postdata(); 
+        wp_reset_postdata();
     ?>
 
 </div>

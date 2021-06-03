@@ -6,5 +6,5 @@
     <button id="recommended" class="btn-recommended featured-tab" data-id="#recommended-posts">
         <?php esc_html_e( 'Recommended', 'edigitalx' ); ?>
     </button>
-                                
+    
 </div>

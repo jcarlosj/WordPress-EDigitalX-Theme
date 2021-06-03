@@ -40,14 +40,14 @@
 
         }
     }
-    
+
     .site-branding,
     .site-search {
         align-items: center;
         display: flex;
         justify-content: center;
 
-        .dashicons, 
+        .dashicons,
         .dashicons-before:before {
             font-size: 2.7rem;
             height: initial;
@@ -56,20 +56,20 @@
             @include mq( medium ) {
                 font-size: 2.4rem;
             }
-        
+
             @include mq( large ) {
                 font-size: 2.8rem;
             }
-        
+
             @include mq( xlarge ) {
                 font-size: 3.2rem;
             }
         }
     }
-    
+
     .not-display {
         display: none;
-    
+
         @include mq( medium ) {
             display: inline;
         }

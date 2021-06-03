@@ -1,11 +1,11 @@
 <?php
-/** Index Template File 
+/** Index Template File
  * @package EDigitalX
  */
 
-    get_header();   
+    get_header();
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
 
-<?php 
+<?php
     get_footer();

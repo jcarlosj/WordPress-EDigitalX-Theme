@@ -21,7 +21,7 @@ class Hooks {
         /** Actions */
 		add_action( 'get_file_name', [ $this, 'show_file_name' ] );		//	Engancha función a una acción específica
 	}
-        
+
     public function show_file_name( $args ) {
 
         if( isset( $args ) && SHOW_FILE_NAME ) :

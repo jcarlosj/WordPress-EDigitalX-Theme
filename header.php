@@ -1,5 +1,5 @@
 <?php
-/** Header Template File 
+/** Header Template File
  * @package EDigitalX
  */
 
@@ -15,12 +15,13 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
     <?php wp_body_open(); ?>
-   
+
     <header id="header" class="container-fluid">
 
         <div class="site-branding">
-        
+
             <div class="navbar-toggler">
                 <div id="menu-icon" class="menu menu-icon">
                     <div class="menu-icon__bar-1"></div>
@@ -33,7 +34,7 @@
                 <img id="logo" class="brand-logo" src="<?php echo PATH_LOGO; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
                 <span class="brand-name"><?php #echo get_bloginfo( 'name' ); ?></span>
             </a>
-        
+
         </div>
         <div class="site-navigation">
 
@@ -43,7 +44,7 @@
             </a>
 
             <?php if( has_nav_menu( 'edigitalx-header-menu' ) ):
-            
+
                 $args = [
                     'theme_location'    => 'edigitalx-header-menu',
                     'container'         => 'nav',
@@ -54,12 +55,12 @@
             ?>
 
             <?php endif; ?>
-        
+
         </div>
         <div class="site-search">
             <span id="search-icon" class="search-icon dashicons dashicons-search"></span>
             <!-- <span id="search-icon__close" class="dashicons dashicons-no-alt search-icon"></span> -->
             <?php get_search_form(); ?>
         </div>
-    
+
     </header>

@@ -25,22 +25,22 @@
 
     & .entry {    // Block
         $width-image: 992px;
-    
+
         &__image {
-    
+
             &--rounded {
                 height: calc( #{ $width-image } / 4 );
             }
         }
 
         &__content {
-    
+
             &--size {
                 max-width: $width-image;
                 width: 100%;
             }
         }
-        
+
     }
 
 }

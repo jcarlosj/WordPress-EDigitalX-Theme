@@ -27,5 +27,5 @@ class Menues {
             'edigitalx-header-menu' => esc_html__( 'Header Menu', 'edigitalx' ),
         ]);
     }
-        
+
 }

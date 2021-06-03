@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
 
-    &__thumbnail { 
+    &__thumbnail {
         align-items: center;
         display: flex;
         justify-content: center;
@@ -89,7 +89,7 @@
 .front-page {
     & .entry-featured__content--position {
         width: 100%;
-        
+
         @include mq( medium ) {
             width: 49%;
         }
@@ -97,7 +97,7 @@
             width: 100%;
         }
     }
-    
+
 }
 
 .entry-featured {

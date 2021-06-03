@@ -1,5 +1,5 @@
 <?php
-/** Footer Template File 
+/** Footer Template File
  * @package EDigitalX
  */
 
@@ -7,7 +7,7 @@
 ?>
 
     <footer class="site-footer">
-       
+
     </footer>
 
     <?php wp_footer(); ?>

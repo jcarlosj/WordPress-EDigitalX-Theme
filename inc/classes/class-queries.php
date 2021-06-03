@@ -20,7 +20,7 @@ class Queries {
     }
 
     protected function setup_hooks() {
-        
+
         /** Actions */
         //wp_die( 'Class Queries setup_hooks' );
         add_action( 'found_posts', [ $this, 'home_adjust_offset_pagination' ], 1, 2 );
@@ -31,11 +31,11 @@ class Queries {
 
         # Asegúrese de que estamos modificando el objeto de consulta correcto ...
         if ( $query -> is_home() ) {
-            
+
             #Reducir el recuento de publicaciones encontradas de WordPress por el desplazamiento ...
             return $found_posts - self :: OFFSET_HOME;
         }
-        
+
         return $found_posts;
     }
 
@@ -54,18 +54,18 @@ class Queries {
 
             # Aplicar ajustar desplazamiento de página
             return [
-                'offset' => $page_offset,   
-                'paged' => $paged 
-            ]; 
-        else :     
+                'offset' => $page_offset,
+                'paged' => $paged
+            ];
+        else :
             #echo "Pagina principal: self :: OFFSET_HOME";
 
             # Ésta es la primera página. Solo usa el desplazamiento.
             return [
                 'offset' => self :: OFFSET_HOME,            # Excluye N publicaciones (a partir de la última realizada)
-                'paged' => $paged 
+                'paged' => $paged
             ];
         endif;
     }
-       
+
 }

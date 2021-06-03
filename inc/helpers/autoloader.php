@@ -29,41 +29,41 @@ function autoloader( $resource = '' ) {
 		str_replace( '_', '-', strtolower( $resource ) )
 	);
 
-	/** Es hora de determinar qué tipo de ruta de recursos es, 
+	/** Es hora de determinar qué tipo de ruta de recursos es,
      * para que podamos deducir la ruta de archivo correcta para ella.
 	 */
-	if ( empty( $path[0] ) || empty( $path[1] ) ) {
+	if ( empty( $path[ 0 ] ) || empty( $path[ 1 ] ) ) {
 		return;
 	}
 
-	// echo '<pre><b>autoloader - path</b><br />'; 
-	// print_r( $path ); 
+	// echo '<pre><b>autoloader - path</b><br />';
+	// print_r( $path );
 	// wp_die();
 
 	$directory = '';
 	$file_name = '';
 
-	if ( 'inc' === $path[0] ) {
+	if ( 'inc' === $path[ 0 ] ) {
 
-		switch ( $path[1] ) {
+		switch ( $path[ 1 ] ) {
 			case 'traits':
 				$directory = 'traits';
-				$file_name = sprintf( 'trait-%s', trim( strtolower( $path[2] ) ) );
+				$file_name = sprintf( 'trait-%s', trim( strtolower( $path[ 2 ] ) ) );
 				break;
 
 			case 'widgets':
 			case 'blocks': // phpcs:ignore PSR2.ControlStructures.SwitchDeclaration.TerminatingComment
-				/** Si hay un nombre de clase proporcionado para un directorio específico, cárguelo. 
+				/** Si hay un nombre de clase proporcionado para un directorio específico, cárguelo.
                  * De lo contrario, busque en el directorio inc/.
 				 */
-				if ( ! empty( $path[2] ) ) {
-					$directory = sprintf( 'classes/%s', $path[1] );
-					$file_name = sprintf( 'class-%s', trim( strtolower( $path[2] ) ) );
+				if ( ! empty( $path[ 2 ] ) ) {
+					$directory = sprintf( 'classes/%s', $path[ 1 ] );
+					$file_name = sprintf( 'class-%s', trim( strtolower( $path[ 2 ] ) ) );
 					break;
 				}
 			default:
 				$directory = 'classes';
-				$file_name = sprintf( 'class-%s', trim( strtolower( $path[1] ) ) );
+				$file_name = sprintf( 'class-%s', trim( strtolower( $path[ 1 ] ) ) );
 				break;
 		}
 
@@ -72,8 +72,8 @@ function autoloader( $resource = '' ) {
 	}
 
 	/**
-	 * Si $ is_valid_file tiene 
-     *      0 significa ruta válida o 
+	 * Si $ is_valid_file tiene
+     *      0 significa ruta válida o
      *      2 significa que la ruta del archivo contiene una ruta de unidad de Windows.
 	 */
 	$is_valid_file = validate_file( $resource_path );

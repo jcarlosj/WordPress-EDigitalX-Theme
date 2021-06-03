@@ -11,10 +11,10 @@
         @if $bordercolor == '#FFFFFF' {
             border: none;
         }
-        @else { 
+        @else {
             border: 1px solid $bordercolor;
         }
-        
+
         border-radius: .5rem;
         cursor: pointer;
         display: block;
@@ -25,10 +25,10 @@
         padding: 1rem 2rem;
         text-align: center;
         text-transform: uppercase;
-    
+
         @include mq( medium ) {
             display: inline-block;
-            flex: 0 0 auto;       
+            flex: 0 0 auto;
         }
 
     }

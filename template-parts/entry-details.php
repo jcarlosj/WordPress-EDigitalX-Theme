@@ -2,9 +2,9 @@
 /** Entry Date and Read Time Template File (Blog)
  * @package EDigitalX
  */
-?>    
+?>
 
-<?php 
+<?php
     // if( isset ( $args ) ) :
     //      echo '<pre>';  var_dump( $args );   echo '</pre>';
     // endif;
@@ -16,11 +16,11 @@
     <footer class="entry__footer">
         <time class="entry__time" datetime="<?php the_time( 'Y-m-d' ); ?>">
 
-            <?php 
+            <?php
                 if( $args[ 'has_estimated_time' ] ) :
                     ?>
                         <span class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__time-read' : 'entry__time-read'; ?>">
-                            <?php echo $args[ 'estimated_time' ]; ?> 
+                            <?php echo $args[ 'estimated_time' ]; ?>
                             <?php esc_html_e( 'min read', 'edigitalx' ); ?>
                         </span>
                     <?php
@@ -35,11 +35,11 @@
 
     <time class="entry__time" datetime="<?php the_time( 'Y-m-d' ); ?>">
 
-        <?php 
+        <?php
             if( $args[ 'has_estimated_time' ] ) :
                 ?>
                     <span class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__time-read' : 'entry__time-read'; ?>">
-                        <?php echo $args[ 'estimated_time' ]; ?> 
+                        <?php echo $args[ 'estimated_time' ]; ?>
                         <?php esc_html_e( 'min read', 'edigitalx' ); ?>
                     </span>
                 <?php

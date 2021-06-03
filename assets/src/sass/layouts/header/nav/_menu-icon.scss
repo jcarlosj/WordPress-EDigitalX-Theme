@@ -1,4 +1,4 @@
-.navbar-toggler {    
+.navbar-toggler {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,17 +20,17 @@
         padding: 10px 20px;
     }
 
-    &__bar-1, 
-    &__bar-2, 
+    &__bar-1,
+    &__bar-2,
     &__bar-3 {
         background-color: $color__black;
         height: 3px;
         margin: 8px 0;
         width: 35px;
-    
+
         transition: 0.4s;
     }
-    
+
 }
 
 .change-icon {

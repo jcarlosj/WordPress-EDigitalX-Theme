@@ -59,12 +59,12 @@ class MetaBoxes {
     public function meta_box_featured_post_callback( $current_post ) {
 
         #   Agrega un nonce a un formulario
-        wp_nonce_field( 
+        wp_nonce_field(
             basename( __FILE__ ),       #   Nombre del archivo actual
             'mb_nonce_featured_post'    #   Nombre temporal para el formulario
         );
 
-        $featured = get_post_meta( 
+        $featured = get_post_meta(
             $current_post -> ID,        #   ID del Post
             'featured_post',            #   Nombre del campo o meta box que se desea obtener
             true                        #   Si se debe devolver un solo valor. Este parámetro no tiene ningún efecto si no se especifica $key. Valor predeterminado: falso
@@ -77,21 +77,21 @@ class MetaBoxes {
 
             <p>
                 <div class="sm-row-content">
-                    
-                    <input 
-                        type="checkbox" 
-                        name="featured_post" 
-                        id="featured-post" 
-                        value="yes" 
+
+                    <input
+                        type="checkbox"
+                        name="featured_post"
+                        id="featured-post"
+                        value="yes"
                         <?php isset( $featured ) ? checked( $featured, 'yes' ) : '';     # Valida si el campo debe estar seleccionado o no ?> 
                     />
                     <label for="featured-post">
                         <?php _e( 'Make the post featured', 'edigitalx' )?>
                     </label>
-                    
+
                 </div>
             </p>
-    
+
         <?php
     }
 
@@ -121,12 +121,12 @@ class MetaBoxes {
             $featured_post = $_POST[ 'featured_post' ];
         }
 
-        update_post_meta( 
+        update_post_meta(
             $post_id,           #   ID del Post
             'featured_post',    #   Nombre del campo
             $featured_post      #   Valor a actualizar
         );
-        
+
     }
 
     /** Obtener vistas de publicaciones */
@@ -134,15 +134,15 @@ class MetaBoxes {
 
         $count_key = 'post_views_count';
         $count = get_post_meta( $post_id, $count_key, true );
-    
-        if( $count == '' ) { 
+
+        if( $count == '' ) {
 
             delete_post_meta( $post_id, $count_key );
             add_post_meta( $post_id, $count_key, '0' );
-            
+
             return '0 '. __( 'View', 'edigitalx' );
         }
-    
+
         return $count .' '. __( 'Views', 'edigitalx' );
     }
 
@@ -151,10 +151,10 @@ class MetaBoxes {
 
         $count_key = 'post_views_count';
         $count = get_post_meta( $post_id, $count_key, true );
-        
+
         if( $count == '' ) {
             $count = 0;
-    
+
             delete_post_meta( $post_id, $count_key );
             add_post_meta( $post_id, $count_key, '0' );
         }
@@ -167,15 +167,15 @@ class MetaBoxes {
 
     /** Establece un titulo para la columna en WP-Admin */
     public function posts_column_views( $defaults ) {
-    
+
         $defaults[ 'post_views' ] = __( 'Views', 'edigitalx' );
-    
+
         return $defaults;
     }
 
     /** Establece los valores de la columna para cada publicacion en WP-Admin */
     public function posts_custom_column_views( $column_name, $id ) {
-        
+
         if( $column_name === 'post_views' ) {
             echo $this -> get_post_views( get_the_ID() );
         }
@@ -201,12 +201,12 @@ class MetaBoxes {
     public function meta_box_estimated_reading_time_callback( $current_post ) {
 
         #   Agrega un nonce a un formulario
-        wp_nonce_field( 
+        wp_nonce_field(
             basename( __FILE__ ),       #   Nombre del archivo actual
             'mb_nonce_estimated_reading_time'    #   Nombre temporal para el formulario
         );
 
-        $estimated_reading_time = get_post_meta( 
+        $estimated_reading_time = get_post_meta(
             $current_post -> ID,        #   ID del Post
             'estimated_reading_time',   #   Nombre del campo o meta box que se desea obtener
             true                        #   Si se debe devolver un solo valor. Este parámetro no tiene ningún efecto si no se especifica $key. Valor predeterminado: falso
@@ -221,22 +221,22 @@ class MetaBoxes {
 
             <p>
                 <div class="sm-row-content">
-                    
-                    <input 
-                        type="number" 
-                        name="estimated_reading_time" 
-                        id="estimated_reading_time" 
-                        value="<?php echo $estimated_time; ?>" 
+
+                    <input
+                        type="number"
+                        name="estimated_reading_time"
+                        id="estimated_reading_time"
+                        value="<?php echo $estimated_time; ?>"
                         min="0"
                         minlength="2"
                     />
                     <label for="estimated_reading_time">
                         <?php _e( 'minutes', 'edigitalx' )?>
                     </label>
-                    
+
                 </div>
             </p>
-    
+
         <?php
     }
 
@@ -266,12 +266,12 @@ class MetaBoxes {
             $estimated_time = $_POST[ 'estimated_reading_time' ];
         }
 
-        update_post_meta( 
+        update_post_meta(
             $post_id,                   #   ID del Post
             'estimated_reading_time',   #   Nombre del campo
             $estimated_time             #   Valor a actualizar
         );
-        
+
     }
-        
+
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
     // if( isset ( $args ) ) :
     //     echo '<pre>';  var_dump( $args );   echo '</pre>';
     // endif;
@@ -19,7 +19,7 @@
 
                     <?php
                         $title = theme_limit_string_length( get_the_title(), 60 );
-                        echo esc_html( $title ); 
+                        echo esc_html( $title );
                     ?>
 
                 <?php else: ?>
@@ -33,43 +33,45 @@
 
     </header>
 
-<?php 
-    elseif( is_single() ) : 
+<?php
+    elseif( is_single() ) :
         $featured_image_url = get_the_post_thumbnail_url();
 ?>
-        <header 
-            class="hero"
-            <?php if( $featured_image_url ) : ?>
-                style="background-image: url( <?php echo $featured_image_url; ?> );"
-            <?php else: ?>
+    <header
+        class="hero"
+        <?php if( $featured_image_url ) : ?>
+            style="background-image: url( <?php echo $featured_image_url; ?> );"
+        <?php else: ?>
 
-            <?php endif; ?>
-        >
+        <?php endif; ?>
+    >
 
-            <div class="hero-content container">
-                <h1><?php the_title(); ?></h1>
-                <?php get_template_part( 'template-parts/entry', 'details' ); ?>
-                <span class="entry__categories">
-                    <?php the_category( ' ' ); ?>
-                </span>
-            </div>
+        <div class="hero-content container">
+            <h1><?php the_title(); ?></h1>
 
-        </header>
+            <?php get_template_part( 'template-parts/entry', 'details' ); ?>
+
+            <span class="entry__categories">
+                <?php the_category( ' ' ); ?>
+            </span>
+        </div>
+
+    </header>
 
 <?php elseif( is_page() ) : ?>
 
-    <header 
-            class="hero"
-            <?php if( $featured_image_url ) : ?>
-                style="background-image: url( <?php echo $featured_image_url; ?> );"
-            <?php else: ?>
+    <header
+        class="hero"
+        <?php if( $featured_image_url ) : ?>
+            style="background-image: url( <?php echo $featured_image_url; ?> );"
+        <?php else: ?>
 
-            <?php endif; ?>
-        >
+        <?php endif; ?>
+    >
 
-            <div class="hero-content container">
-                <h1><?php the_title(); ?></h1>
-            </div>
+        <div class="hero-content container">
+            <h1><?php the_title(); ?></h1>
+        </div>
 
     </header>
 

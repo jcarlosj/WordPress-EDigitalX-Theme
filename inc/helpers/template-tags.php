@@ -22,7 +22,7 @@ function get_the_post_custom_thumbnail( $post_id, $size = 'featured-thumbnail', 
         $attributes = array_merge( $additional_attributes, $default_attributes );
 
         /** Obtiene elemento img que representa un archivo adjunto de imagen */
-        $custom_thumbnail = wp_get_attachment_image(  
+        $custom_thumbnail = wp_get_attachment_image(
             get_post_thumbnail_id( $post_id ),      //  ID de imagen adjunta
             $size,                                  //  Tamaño de imagen.
             false,                                  //  Si la imagen debe tratarse como un icono.
@@ -63,7 +63,7 @@ function theme_posted_on() {
 }
 
 function theme_posted_by() {
-    
+
     $byline = sprintf(
         esc_html_x( ' by %s', 'post author', 'edigitalx' ),
         '<span class="author vcard"><a href="' .esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ). '">' .esc_html( get_the_author() ). '</a><span/>'
@@ -130,8 +130,8 @@ function theme_post_pagination() {
         ]
     ];
 
-    printf( 
-        '<nav class="aquila-post-pagination clearfix">%s</nav>', 
+    printf(
+        '<nav class="aquila-post-pagination clearfix">%s</nav>',
         wp_kses(
             paginate_links( $args ),    //  Recupere el enlace paginado para las páginas de publicación de archivos.
             $allowed_tags               //  Etiquetas HTML permitidas
@@ -140,13 +140,13 @@ function theme_post_pagination() {
 }
 
 /** Cambia estructura del formulario, agrega placeholder */
-function theme_wp_search_form( $form ) { 
+function theme_wp_search_form( $form ) {
     $form = '
         <section id="search" class="search">
             <form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
                 <label class="screen-reader-text" for="s">' . __( 'Search for:',  'edigitalx' ) . '</label>
                 <input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="' .__( 'Search...',  'edigitalx' ). '" />
-                <button type="submit" id="searchsubmit"> 
+                <button type="submit" id="searchsubmit">
                     <span class="dashicons dashicons-search search-icon"></span>
                 </button>
             </form>

@@ -4,8 +4,8 @@
  */
 
 if( ! defined( 'THEME_DIR_PATH' ) ) {
-    define( 
-        'THEME_DIR_PATH', 
+    define(
+        'THEME_DIR_PATH',
         untrailingslashit( get_template_directory() )     // WP Func: Elimina las barras inclinadas hacia adelante y hacia atrás si existen.
     );
 }

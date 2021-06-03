@@ -1,10 +1,9 @@
 <?php
-/** Single Template File 
+/** Single Template File
  * @package EDigitalX
  */
 
     namespace THEME\Inc;
-
     use THEME\Inc\Traits\Singleton;
 
     MetaBoxes :: set_post_views( get_the_ID() );   /** Establece cuenta para publicaciones vistas */
@@ -13,24 +12,20 @@
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
 
-    <div id="site-container" class="single">
+    <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+        <div class="container file-name">
+            <span>
+                <?php esc_html_e( basename( __FILE__ ) ); ?>
+            </span>
+        </div>
 
-            <div class="container file-name">
-                <span>
-                    <?php esc_html_e( basename( __FILE__ ) ); ?>
-                </span>
-            </div>
+        <?php get_template_part( 'template-parts/entry', 'header' ); ?>
+        <?php get_template_part( 'template-parts/entry', 'content' ); ?>
 
-            <?php get_template_part( 'template-parts/entry', 'header' ); ?>
-            <?php get_template_part( 'template-parts/entry', 'content' ); ?>
+        <?php comments_template(); ?>
 
-            <?php comments_template(); ?>
+    <?php endwhile; ?>
 
-        <?php endwhile; ?>
-
-    </div>
-
-<?php 
+<?php
     get_footer();
