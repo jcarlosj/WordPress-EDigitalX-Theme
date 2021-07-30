@@ -14,18 +14,11 @@
         while( $popular_posts -> have_posts() ) :
             $popular_posts -> the_post();
 
-            $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
-            $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
+                //  Configura despliege de tiempo estimado de lectura  
+                $args = theme_get_estimated_reading_time();
+                $args[ 'is_entry_featured' ] = false;
 
             ?>
-
-                <?php
-                    $args = [
-                        'is_entry_featured'  => false,
-                        'has_estimated_time' => $has_estimated_time,
-                        'estimated_time'     => $estimated_time
-                    ];
-                ?>
 
                 <article class="entry">
 

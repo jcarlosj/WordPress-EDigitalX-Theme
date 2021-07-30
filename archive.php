@@ -77,11 +77,12 @@
                         //  Configura despliege de tiempo estimado de lectura  
                         $args = theme_get_estimated_reading_time();
                         $args[ 'is_entry_featured' ] = false;
-                ?>
+                        
+                        ?>
 
                             <article class="entry entry-blog">
 
-                                <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+                                <?php get_template_part( 'template-parts/entry', 'thumbnail', $args ); ?>
 
                                 <div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
 
