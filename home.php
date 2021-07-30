@@ -13,9 +13,13 @@
     <?php
         $blog_page_id = get_option( 'page_for_posts' );     //  El valor de 'page_for_posts' puede consultarse en: http://localhost:8080/wp-admin/options.php 
         $featured_image_id = get_post_thumbnail_id( $blog_page_id );
-        $image_source = wp_get_attachment_image_src( $featured_image_id, 'full' ) [ 0 ];
+        if( $featured_image_id ) {
+            $image_source = wp_get_attachment_image_src( $featured_image_id, 'full' ) [ 0 ];
+        }
+        
 
         // var_dump( $image_source );
+        //var_dump( $featured_image_id );
 
         /** Obtenemos el numero de paginas */
         $paged = ( get_query_var( 'paged' ) )
