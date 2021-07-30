@@ -29,11 +29,11 @@
 
                 <article class="entry">
 
-                    <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+                    <?php get_template_part( 'template-parts/entry', 'thumbnail', $args ); ?>
 
                     <div class="entry__content <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--size entry-featured__content--position' : 'entry__content--size entry__content--position'; ?>">
 
-                        <?php get_template_part( 'template-parts/entry', 'header' ); ?>
+                        <?php get_template_part( 'template-parts/entry', 'header', $args ); ?>
                         <?php get_template_part( 'template-parts/entry', 'content' ); ?>
                         <?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
 

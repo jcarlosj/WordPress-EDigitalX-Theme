@@ -96,29 +96,25 @@
 						while ( have_posts() ) :
 							the_post();
 
-							$estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
-							$has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
-
-							$args = [
-								'is_entry_featured'  => false,
-								'has_estimated_time' => $has_estimated_time,
-								'estimated_time'     => $estimated_time
-							];
+							//  Configura despliege de tiempo estimado de lectura  
+							$args = theme_get_estimated_reading_time();
+							$args[ 'is_entry_featured' ] = false;
+						
 				?>
 
-						<article class="entry entry-blog">
+								<article class="entry entry-blog">
 
-							<?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+									<?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
 
-							<div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
+									<div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
 
-								<?php get_template_part( 'template-parts/entry', 'header' ); ?>
-								<?php get_template_part( 'template-parts/entry', 'content' ); ?>
-								<?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
+										<?php get_template_part( 'template-parts/entry', 'header' ); ?>
+										<?php get_template_part( 'template-parts/entry', 'content' ); ?>
+										<?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
 
-							</div>
+									</div>
 
-						</article>
+								</article>
 
 				<?php
 						endwhile;

@@ -26,10 +26,10 @@
         text-align: center;
         text-transform: uppercase;
 
-        @include mq( medium ) {
+        /* @include mq( medium ) {
             display: inline-block;
             flex: 0 0 auto;
-        }
+        } */
 
     }
 

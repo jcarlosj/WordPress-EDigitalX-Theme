@@ -170,3 +170,19 @@ function theme_limit_string_length ( $string, $trim_character_count = 0 ) {
 
     return $string .'...';  //  Retorna cadena recortada
 }
+
+# Obtener metabox de tiempo estimado de lectura
+function theme_get_estimated_reading_time() {
+    $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );      #   Obtengo el valor del Meta Box
+    $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
+
+    $data = [ 'has_estimated_time' => $has_estimated_time ];
+
+    if( $has_estimated_time ) {
+        $data[ 'estimated_time' ] = $estimated_time;
+    }
+
+    //var_dump( $data );
+
+    return $data;
+}

@@ -105,40 +105,34 @@
 
                         # Verifica si estamos en el home.php
                         if( is_home() ) :
-
-                            $arr_args = Queries :: home_offset_exclude_latest_post();
-                            query_posts( $arr_args );
+                            # TODO: Uncaught Error: Non-static method THEME\Inc\Queries::home_offset_exclude_latest_post() cannot be called statically
+                            //$arr_args = Queries :: home_offset_exclude_latest_post();
+                            //query_posts( $arr_args );
 
                             /** The Loop */
                             while ( have_posts() ) :
                                 the_post();
 
+                                //  Configura despliege de tiempo estimado de lectura  
+                                $args = theme_get_estimated_reading_time();
+                                $args[ 'is_entry_featured' ] = false;
+                    ?>
 
-                                $estimated_time = get_post_meta( get_the_ID(), 'estimated_reading_time', true );        #   Obtengo el valor del Meta Box
-                                $has_estimated_time = ( $estimated_time == '' || $estimated_time == 0 ) ? false : true;
+                                    <article class="entry entry-blog">
 
-                                $args = [
-                                    'is_entry_featured'  => true,
-                                    'has_estimated_time' => $has_estimated_time,
-                                    'estimated_time'     => $estimated_time
-                                ];
-                        ?>
+                                        <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
 
-                            <article class="entry entry-blog">
+                                        <div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
 
-                                <?php get_template_part( 'template-parts/entry', 'thumbnail' ); ?>
+                                            <?php get_template_part( 'template-parts/entry', 'header' ); ?>
+                                            <?php get_template_part( 'template-parts/entry', 'content' ); ?>
+                                            <?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
 
-                                <div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured entry-featured__content--size entry-featured__content--position' : 'entry__content entry__content--size entry__content--position'; ?>">
+                                        </div>
 
-                                    <?php get_template_part( 'template-parts/entry', 'header' ); ?>
-                                    <?php get_template_part( 'template-parts/entry', 'content' ); ?>
-                                    <?php get_template_part( 'template-parts/entry', 'footer', $args ); ?>
+                                    </article>
 
-                                </div>
-
-                            </article>
-
-                        <?php
+                    <?php
                             endwhile;
                         endif;  # if( is_home() )
                     ?>

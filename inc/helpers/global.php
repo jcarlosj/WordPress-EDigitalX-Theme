@@ -2,6 +2,11 @@
 /** Template Global Definitions File
  * @package EDigitalX
  */
+    /**
+    echo 'gtd:  ' .get_template_directory(). '<br>';
+    echo 'gtdu: ' .get_template_directory_uri(). '';
+    die();
+    */
 
     /** Archivo del Logo */
     if( ! defined( 'PATH_LOGO' ) ) {
@@ -31,7 +36,7 @@
     if( ! defined( 'THEME_BUILD_CSS_DIR_PATH' ) ) {
         define(
             'THEME_BUILD_CSS_DIR_PATH',
-            untrailingslashit( get_template_directory_uri(). '/assets/build/css' )     // WP Func: Elimina las barras inclinadas hacia adelante y hacia atrás si existen.
+            untrailingslashit( get_template_directory(). '/assets/build/css' )     // WP Func: Elimina las barras inclinadas hacia adelante y hacia atrás si existen.
         );
     }
 

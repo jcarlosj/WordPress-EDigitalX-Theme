@@ -49,7 +49,7 @@
         <div class="hero-content container">
             <h1><?php the_title(); ?></h1>
 
-            <?php get_template_part( 'template-parts/entry', 'details' ); ?>
+            <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
 
             <span class="entry__categories">
                 <?php the_category( ' ' ); ?>
