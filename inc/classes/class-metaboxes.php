@@ -29,8 +29,9 @@ class MetaBoxes {
     protected function setup_hooks_post_views_count() {
 
         /** Actions */
-        add_filter( 'manage_posts_columns', [ $this, 'posts_column_views' ] );
+        add_filter( 'manage_posts_columns', [ $this, 'add_columns_to_admin_posts' ] );
         add_action( 'manage_posts_custom_column', [ $this, 'posts_custom_column_views' ], 5, 2 );
+        add_action( 'manage_posts_custom_column', [ $this, 'posts_custom_column_featured_image' ], 5, 2 );
     }
 
     protected function setup_hooks_estimated_reading_time() {
@@ -140,10 +141,10 @@ class MetaBoxes {
             delete_post_meta( $post_id, $count_key );
             add_post_meta( $post_id, $count_key, '0' );
 
-            return '0 '. __( 'View', 'edigitalx' );
+            return __( 'Views', 'edigitalx' ). '<br />0';
         }
 
-        return $count .' '. __( 'Views', 'edigitalx' );
+        return __( 'Views', 'edigitalx' ). '<br />' . $count;
     }
 
     /** Establecer vistas de publicaciones */
@@ -166,18 +167,28 @@ class MetaBoxes {
     }
 
     /** Establece un titulo para la columna en WP-Admin */
-    public function posts_column_views( $defaults ) {
+    public function add_columns_to_admin_posts( $defaults ) {
 
         $defaults[ 'post_views' ] = __( 'Views', 'edigitalx' );
+        $defaults[ 'featured_image' ] = __( 'Featured image', 'edigitalx' );
 
         return $defaults;
     }
 
-    /** Establece los valores de la columna para cada publicacion en WP-Admin */
+    /** Establece los valores de la columna cantidad de vistas para cada publicacion en WP-Admin */
     public function posts_custom_column_views( $column_name, $id ) {
 
         if( $column_name === 'post_views' ) {
             echo $this -> get_post_views( get_the_ID() );
+        }
+
+    }
+
+    /** Establece los valores de la columna imagen destacada para cada publicacion en WP-Admin */
+    public function posts_custom_column_featured_image( $column_name, $post_id ) {
+        
+        if( $column_name === 'featured_image' ) {
+            echo has_post_thumbnail( $post_id ) ? __( 'Yes', 'edigitalx' ) :  __( 'No', 'edigitalx' ) ;
         }
 
     }
