@@ -4,8 +4,8 @@
     .posts-featured {
         background: $color__white;
         border: none;
-        padding-top: initial;
-        padding-bottom: initial;
+        // padding-top: initial;
+        // padding-bottom: initial;
     }
 
 }
@@ -28,9 +28,9 @@
 
         &__image {
 
-            &--rounded {
-                height: calc( #{ $width-image } / 4 );
-            }
+            // &--rounded {
+            //     height: calc( #{ $width-image } / 4 );
+            // }
         }
 
         &__content {

@@ -2,7 +2,7 @@
 
     <?php
         $args = array (
-            'posts_per_page' => 4,
+            'posts_per_page' => 3,
             'meta_key' => 'featured_post',       //  Nombre del Meta Box
             'orderby' => 'yes',
         );

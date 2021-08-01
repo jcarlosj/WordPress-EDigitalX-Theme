@@ -3,7 +3,7 @@
     <?php
         $args = array (
             'post_type' => 'post',
-            'posts_per_page' => 4,
+            'posts_per_page' => 3,
             'meta_key' => 'post_views_count',       //  Nombre del Meta Box
             'orderby' => 'meta_value',
             'order' => 'DESC',

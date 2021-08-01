@@ -33,9 +33,8 @@
 
     </header>
 
-<?php
-    elseif( is_single() ) :
-        $featured_image_url = get_the_post_thumbnail_url();
+<?php elseif( is_single() ) :
+    $featured_image_url = get_the_post_thumbnail_url();
 ?>
     <header
         class="hero"
@@ -58,14 +57,14 @@
 
     </header>
 
-<?php elseif( is_page() ) : ?>
+<?php elseif( is_page() ) : 
+    $featured_image_url = get_the_post_thumbnail_url(); 
+?>
 
     <header
         class="hero"
         <?php if( $featured_image_url ) : ?>
             style="background-image: url( <?php echo $featured_image_url; ?> );"
-        <?php else: ?>
-
         <?php endif; ?>
     >
 

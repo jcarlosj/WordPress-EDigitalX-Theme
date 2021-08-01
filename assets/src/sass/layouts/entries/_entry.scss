@@ -20,7 +20,7 @@
 
         &--rounded {
             border-radius: .5em;
-            height: calc( #{ $width-image } / 2.4 );
+            // height: calc( #{ $width-image } / 2.4 );
             object-fit: cover;
         }
     }

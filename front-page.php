@@ -7,7 +7,7 @@
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
 
-    <section class="posts-featured">
+    <section class="hero posts-featured">
         <div class="container">
             <div class="featured-content">
 
