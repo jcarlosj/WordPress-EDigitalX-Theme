@@ -1,0 +1,19 @@
+.site-branding {
+    .custom-logo-link {
+        display: none;
+    
+        @include mq( medium ) {
+            display: inline;
+        }
+    }
+}
+
+.site-navigation {
+    .custom-logo-link {
+        display: inline;
+    
+        @include mq( medium ) {
+            display: none;
+        }
+    }
+}
