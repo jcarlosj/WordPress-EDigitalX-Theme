@@ -67,6 +67,28 @@ class Theme {
         add_image_size( 'posts-featured-landscape-mobile', 760, 380, true );        //  con cropping activo
         add_image_size( 'entry-landscape', 1024, 630, true );                       //  con cropping activo
         // add_image_size( 'posts-featured-portrait', 435, 526, true );             //  con cropping activo
+
+        add_theme_support(
+			'custom-logo',
+			[
+				'header-text' => [
+					'site-title',
+					'site-description',
+				],
+				'height'      => 68,
+				'width'       => 116,
+				'flex-height' => true,
+				'flex-width'  => true,
+			]
+		);
     }
+
+    // public function change_custom_logo_classes( $html ) {
+
+    //     $html = str_replace( 'custom-logo', 'your-custom-class', $html );
+    //     $html = str_replace( 'custom-logo-link', 'your-custom-class', $html );
+    
+    //     return $html;
+    // }
 
 }

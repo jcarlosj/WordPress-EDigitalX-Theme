@@ -30,18 +30,20 @@
                 </div>
             </div>
 
-            <a class="brand-link not-display" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img id="logo" class="brand-logo" src="<?php echo PATH_LOGO; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
-                <span class="brand-name"><?php #echo get_bloginfo( 'name' ); ?></span>
-            </a>
+            <?php
+                if ( function_exists( 'the_custom_logo' ) ) :
+                    the_custom_logo();
+                endif;
+            ?>
 
         </div>
         <div class="site-navigation">
 
-            <a class="brand-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img id="logo" class="brand-logo" src="<?php echo PATH_LOGO; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
-                <span class="brand-name"><?php #echo get_bloginfo( 'name' ); ?></span>
-            </a>
+            <?php
+                if ( function_exists( 'the_custom_logo' ) ) :
+                    the_custom_logo();
+                endif;
+            ?>
 
             <?php if( has_nav_menu( 'edigitalx-header-menu' ) ):
 
