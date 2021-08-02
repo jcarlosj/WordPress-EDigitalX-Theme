@@ -186,3 +186,15 @@ function theme_get_estimated_reading_time() {
 
     return $data;
 }
+
+# Lo que desplegara cuando no haya una imagen destacada para mostrar en el preview de una entrada
+function has_no_featured_image() {
+    ?>
+        <div class="entry__image--rounded has-no-featured-image">
+            <span class="dashicons dashicons-camera-alt"></span>
+            <p class="">
+                <?php _e( 'Has no featured image', 'edigitalx' ); ?>
+            </p>
+        </div>
+    <?php
+}

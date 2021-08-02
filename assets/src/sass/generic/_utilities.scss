@@ -5,3 +5,24 @@
 .is-active {
     display: flex;
 }
+
+.has-no-featured-image {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 375px;
+    padding: 5rem 0 0 0;
+
+    .dashicons-camera-alt {
+        align-items: flex-end;
+        display: flex;
+        font-size: 6rem;
+        justify-content: center;
+    }
+
+    @include mq( medium ) {
+        height: 246px;
+    }
+}

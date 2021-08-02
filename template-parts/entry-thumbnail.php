@@ -6,32 +6,37 @@
 
 <?php if( is_front_page() || is_home() || is_archive() || is_search() ) : ?>
 
-    <div class="entry__thumbnail <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
+    <div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
 
         <a
             class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--linkable ' : 'entry__thumbnail--linkable'; ?>" 
             href="<?php the_permalink(); ?>"
         >
             <?php
+                if( has_post_thumbnail( get_the_ID() ) ) :
 
-                if( $args[ 'is_entry_featured' ] ) :
+                    if( $args[ 'is_entry_featured' ] ) :
 
-                    the_post_thumbnail(
-                        'entry-square',
-                        [
-                            'class' => 'entry-featured__image entry-featured__image--rounded'
-                        ]
-                    );
+                        the_post_thumbnail(
+                            'entry-square',
+                            [
+                                'class' => 'entry-featured__image entry-featured__image--rounded'
+                            ]
+                        );
+
+                    else :
+
+                        the_post_thumbnail(
+                            'entry-landscape',
+                            [
+                                'class' => 'entry__image entry__image--rounded'
+                            ]
+                        );
+
+                    endif;
 
                 else :
-
-                    the_post_thumbnail(
-                        'entry-landscape',
-                        [
-                            'class' => 'entry__image entry__image--rounded'
-                        ]
-                    );
-
+                    has_no_featured_image();
                 endif;
 
             ?>
