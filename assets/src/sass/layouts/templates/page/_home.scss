@@ -45,6 +45,36 @@
 
 }
 
+.entries-found {
+    article {
+        margin: 2rem 0;
+    }
+
+    .entry-featured__thumbnail--position {
+        max-width: 300px;
+        width: calc( 300px / 2 );
+    }
+
+    .has-no-featured-image {
+        height: calc( 300px / 2.2 );
+        padding: 3rem 0 0 0;
+
+        .dashicons-camera-alt {
+            font-size: 3rem;
+        }   
+        p {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+    }
+
+    .entry__header {
+        .entry__categories {
+            display: none;
+        }
+    }
+}
+
 .paginate, 
 .pagination {
     align-items: center;

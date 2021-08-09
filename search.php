@@ -22,7 +22,7 @@
 
 	<header
 		class="hero"
-		<?php if( $featured_image_id ) : ?>
+		<?php if( ! empty( $featured_image_id ) ) : ?>
 			style="background-image: url( <?php echo $image_source; ?> );"
 		<?php else: ?>
 
@@ -88,7 +88,7 @@
 	<section class="section with-sidebar">
 		<main class="main-content">
 
-			<section class="container entries-blog">
+			<section class="container entries-found">
 
 				<?php
 					if ( have_posts() ) :
@@ -98,11 +98,11 @@
 
 							//  Configura despliege de tiempo estimado de lectura  
 							$args = theme_get_estimated_reading_time();
-							$args[ 'is_entry_featured' ] = false;
+							$args[ 'is_entry_featured' ] = true;
 						
 				?>
 
-								<article class="entry entry-blog">
+								<article class="entry <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--position' : ''; ?>">
 
 									<?php get_template_part( 'template-parts/entry', 'thumbnail', $args ); ?>
 
