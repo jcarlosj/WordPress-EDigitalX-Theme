@@ -1,6 +1,7 @@
 html {
 	box-sizing: border-box;
 	font-size: $overall-font-size;		//	variables
+	scroll-behavior: smooth;
 }
 
 *,

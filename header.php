@@ -18,10 +18,11 @@
 
     <?php wp_body_open(); ?>
 
+    <div id="theme-container">
+    
     <header id="header" class="container-fluid">
 
         <div class="site-branding">
-
             <div class="navbar-toggler">
                 <div id="menu-icon" class="menu menu-icon">
                     <div class="menu-icon__bar-1"></div>
@@ -66,3 +67,5 @@
         </div>
 
     </header>
+    <div id="top">&nbsp;</div>
+
