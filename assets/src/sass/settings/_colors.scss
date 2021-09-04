@@ -1,40 +1,65 @@
-/** Corporate colors */
-$color__white: #FFFFFF;
+/* Explicacion Digital - Palete Colors */
+$dark-blue: #05668D;
+$light-blue: #427AA1;
+$dark-white: #FFF8F0;
+$dark-green: #679436;
+$light-green: #A5BE00;
 
-/** Component colors */
-$bg-color__hero: #F5F5F5;
-$border-color__hero: #EEEEEE;
+/* Tradicional Colors */
+$white: #FFFFFF;
+$gray: #C1C1C1;
+$black: #000000;
+$transparent: transparent;
 
-$bg-color__posts-featured: #F5F5F5;
-$bg-color__posts-featured-home: #FFFFFF;
+/* Header Component */
+$bg-color__header: $dark-white;
 
-$bg-color__entry: #FFFFFF;
+/* Main Menu Component */
+$border-color__main-menu: blue;
+$bg-color-ul__menu: orange;
+$bg-color-ul__sub-menu: orange;
+$color-a__sub-menu: red;
+
+/* Icon Menu Component */
+$bg-color__menu-icon: $dark-white;
+$bg-color__menu-bars: $light-blue;
 
 
-$color__red: #A61206;
-$color__orange: #F19F30;
-$color__green: #124727;
+/* Single Component */
+$color-h1__hero-single: green;
+$color__hero_entry-time-single: $dark-white;
+$bg-color__main-content-single: $dark-white;
 
-/** Colors */
-$color__white: #FFFFFF;
-$color__black: #000000;
-$color__light-gray: #C1C1C1;
-$color__transparent: transparent;
+/* Post Featured Component */
+$bg-color__posts-featured: yellow;
+$bg-color__posts-featured-home: yellow;
 
-$bg-color__header: #FFFFFF;
-$bg-color__menu: #FFFFFF;
-$bg-color__submenu: #FFFFFF;
-$font-color__submenu: #124727;
-$bg-color__search: #FFFFFF;
+/* Search Component */
+$bg-color__search: green;
+$color-placeholder-input__search: pink;
+
+/** Hero Component */
+$bg-color__hero: $dark-white;
+$border-color__hero: darken( $dark-white, 10% );
+$color-title__hero: $dark-blue;
+
+/* Smooth scroll Component */
+$bg-btn_smooth-scroll: $light-green;
+$color-arrow_smooth-scroll: $dark-white;
+
+/* Has no featured image Component */
+$bg_has-no-featured-image: $dark-white;
+$bg-icon_has-no-featured-image: $light-blue;
+$color-p_has-no-featured-image: $light-blue;
 
 /** Buttons */
 $buttons: (
-    // background, text, border
-    primary:   ( $color__orange, $color__white, $color__white ),
-    secondary: ( $color__green, $color__white, $color__white ),
-    tertiary:  ( $color__red, $color__white, $color__white ),
-    outline-primary:    ( $color__white, $color__orange, $color__orange ),
-    outline-secondary:  ( $color__white, $color__green, $color__green ),
-    outline-tertiary:   ( $color__white, $color__red, $color__red ),
-    featured-tab:  ( $color__transparent, $color__black, $color__transparent )
+    // name-button: ( background, text, border )
+    primary:   ( $dark-blue, $dark-white, $dark-white ),
+    secondary: ( $dark-white, $dark-blue, $dark-white ),
+    tertiary:  ( $dark-green, $dark-white, $dark-white ),
+    outline-primary:    ( $dark-white, $light-blue, $light-blue ),
+    outline-secondary:  ( $dark-white, $dark-blue, $dark-blue ),
+    outline-tertiary:   ( $dark-white, $dark-green, $dark-green ),
+    featured-tab:  ( $transparent, $black, $transparent )
 );
