@@ -27,7 +27,7 @@
             width: 100%;
 
             &::placeholder {
-                color: blue;
+                color: $color-placeholder-input__search;
             }
         }
 

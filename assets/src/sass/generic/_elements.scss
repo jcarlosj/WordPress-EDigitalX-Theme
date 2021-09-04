@@ -21,7 +21,11 @@ body {
 
 /** Headings */
 h1 { @include body-text( h1 ); }
-h2 { @include body-text( h2 ); }
+h2 { 
+	@include body-text( h2 ); 
+	a { color: $dark-blue; }
+	a:hover { color: $light-blue; }
+}
 h3 { @include body-text( h3 ); }
 h4 { @include body-text( h4 ); }
 h5 { @include body-text( h5 ); }

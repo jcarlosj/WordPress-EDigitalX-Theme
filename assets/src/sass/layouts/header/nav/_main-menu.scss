@@ -1,7 +1,7 @@
 /* Menú menu-header */
 
 .main-menu {
-   border-top: 3px solid $color__light-gray;
+   border-top: 3px solid $border-color__main-menu;
 }
 
 nav.menu-header {
@@ -11,7 +11,7 @@ nav.menu-header {
 /** Menu */
 ul.menu {
    align-items: center;
-   background-color: $bg-color__menu;
+   background-color: $bg-color-ul__menu;
    display: flex;
    flex-direction: column;
    height: 100vh;
@@ -67,7 +67,7 @@ ul.menu {
 
 /** Sub Menu */
 ul.sub-menu {
-   background-color: $bg-color__submenu;
+   background-color: $bg-color-ul__sub-menu;
    display: none;
    left: 0;
    padding: .5rem;
@@ -94,7 +94,7 @@ ul.sub-menu {
       }
 
       a {
-         color: $font-color__submenu;
+         color: $color-a__sub-menu;
          display: block;
          font-size: 2rem;
          text-align: left;

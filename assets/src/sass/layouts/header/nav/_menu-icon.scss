@@ -4,7 +4,7 @@
     align-items: center;
 
     @include mq( medium ) {
-        background-color: $color__white;
+        background-color: $bg-color__menu-icon;
         display: none;
     } 
 }
@@ -23,7 +23,7 @@
     &__bar-1,
     &__bar-2,
     &__bar-3 {
-        background-color: $color__black;
+        background-color: $bg-color__menu-bars;
         height: 3px;
         margin: 8px 0;
         width: 35px;

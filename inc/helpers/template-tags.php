@@ -192,7 +192,7 @@ function has_no_featured_image() {
     ?>
         <div class="entry__image--rounded has-no-featured-image">
             <span class="dashicons dashicons-camera-alt"></span>
-            <p class="">
+            <p>
                 <?php _e( 'Has no featured image', 'edigitalx' ); ?>
             </p>
         </div>

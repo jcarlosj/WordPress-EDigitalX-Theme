@@ -16,14 +16,14 @@
         }
 
         h1 {
-            color: $color__white;
+            color: $color-h1__hero-single;
             font-size: 3.4rem;
             line-height: 1;
             margin: 0 .2em;
         }
 
         .entry__time {
-            color: $color__white;
+            color: $color__hero_entry-time-single;
             font-size: 1em;
             margin: 0 .5em;
             padding: initial;
@@ -33,7 +33,7 @@
     .main-content {
         position: relative;
         top: -3rem;
-        background-color: white;
+        background-color: $bg-color__main-content-single;
         padding: 1rem;
         border-radius: .5rem .5rem 0 0;
 
