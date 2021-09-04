@@ -5,7 +5,9 @@
 
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
-    <a class="smooth-scroll" href="#top">Go top</a>
+    <a class="smooth-scroll" href="#top">
+        <span class="dashicons dashicons-arrow-up-alt"></span>
+    </a>
     <footer class="site-footer">
 
     </footer>
