@@ -40,6 +40,32 @@
     display: none;
 }
 
+.telegram {
+    align-items: center;
+    background-image: background_url_icons( 'telegram.svg' );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    bottom: 90px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    width: 50px;
+    z-index: 1;
+
+    &:hover {
+        cursor:pointer;
+    }
+
+    .dashicons-arrow-up-alt::before {
+        color: $color-arrow_smooth-scroll;
+    }
+
+}
+
 .smooth-scroll {
     align-items: center;
     background: $bg-btn_smooth-scroll;
