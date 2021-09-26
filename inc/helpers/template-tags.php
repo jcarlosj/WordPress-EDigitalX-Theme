@@ -221,7 +221,7 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 
             // Imprime Paginacion
 			echo paginate_links( array(
-				'base'			=> str_replace( $big, '%#%hello', esc_url( get_pagenum_link( $big ) ) ),     # (string) Base de la URL paginada.
+				'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),     # (string) Base de la URL paginada.
 				'format'		=> $format,                                                             # (string) Formato para la estructura de paginación.
 				'current'		=> max( 1, get_query_var( 'paged' ) ),                                  # (int) El número de página actual. El valor predeterminado es la consulta 'paginada' var o 1.
 				'total' 		=> $total,                                                              # (int) La cantidad total de páginas. El valor predeterminado es WP_Query's max_num_pages o 1.
