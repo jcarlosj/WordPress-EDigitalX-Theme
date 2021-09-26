@@ -40,19 +40,20 @@
     display: none;
 }
 
-.telegram {
+#btn-telegram {
     align-items: center;
     background-image: background_url_icons( 'telegram.svg' );
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 50%;
-    bottom: 90px;
+    bottom: 24px;
     display: flex;
     height: 50px;
     justify-content: center;
     position: fixed;
     right: 20px;
+    transition: all 0.5s ease-out;
     width: 50px;
     z-index: 1;
 
@@ -61,17 +62,17 @@
     }
 
     .dashicons-arrow-up-alt::before {
-        color: $color-arrow_smooth-scroll;
+        color: $color-btn_arrow-go-up;
     }
 
 }
 
-.smooth-scroll {
+#btn-go-up {
     align-items: center;
-    background: $bg-btn_smooth-scroll;
+    background: $bg-btn_go-up;
     border-radius: 50%;
-    bottom: 20px;
-    display: flex;
+    bottom: 24px;
+    display: none;  //display: flex;
     height: 50px;
     justify-content: center;
     position: fixed;
@@ -85,7 +86,7 @@
     }
 
     .dashicons-arrow-up-alt::before {
-        color: $color-arrow_smooth-scroll;
+        color: $color-btn_arrow-go-up;
     }
 
 }

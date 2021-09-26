@@ -10,6 +10,7 @@ import '../sass/main.scss';
 
 // JavaScript
 import './main-menu';
+import './floating-button';
 import './search-section';
 import './featured-posts-tabs';
 
