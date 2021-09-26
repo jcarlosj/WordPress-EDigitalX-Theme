@@ -6,7 +6,9 @@
 
 <div class="paginate">
     <?php
-        echo paginate_links(); # Forma con numeracion ?>
+        # echo paginate_links(); # Forma con numeracion 
+        wpex_pagination ();
+    ?>
 </div>
 
 <!-- <div class="pagination">

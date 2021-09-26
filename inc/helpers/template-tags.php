@@ -198,3 +198,38 @@ function has_no_featured_image() {
         </div>
     <?php
 }
+
+// Numbered Pagination
+if ( !function_exists( 'wpex_pagination' ) ) {
+	
+	function wpex_pagination() {
+		$prev_arrow = is_rtl() ? '→' : '←';
+		$next_arrow = is_rtl() ? '←' : '→';
+		
+		global $wp_query;
+		$total = $wp_query -> max_num_pages;
+		$big = 999999999; // need an unlikely integer
+
+		if( $total > 1 )  {
+            if( !$current_page = get_query_var( 'paged' ) )
+                $current_page = 1;
+            if( get_option( 'permalink_structure' ) ) {
+                $format = 'page/%#%/';
+            } else {
+                $format = '&paged=%#%';
+            }
+
+            // Imprime Paginacion
+			echo paginate_links( array(
+				'base'			=> str_replace( $big, '%#%hello', esc_url( get_pagenum_link( $big ) ) ),     # (string) Base de la URL paginada.
+				'format'		=> $format,                                                             # (string) Formato para la estructura de paginación.
+				'current'		=> max( 1, get_query_var( 'paged' ) ),                                  # (int) El número de página actual. El valor predeterminado es la consulta 'paginada' var o 1.
+				'total' 		=> $total,                                                              # (int) La cantidad total de páginas. El valor predeterminado es WP_Query's max_num_pages o 1.
+				'mid_size'		=> 1,                                                                   # (int) Cuántos números a cada lado de las páginas actuales. Por defecto 2.
+				'type' 			=> 'list',                                                              # (string) Controla el formato del valor devuelto. Los valores posibles son 'plane', 'array' y 'list'. El valor predeterminado es "simple".
+				'prev_text'		=> $prev_arrow,                                                         # (bool) El texto de la página anterior. Predeterminado '«Anterior'.
+				'next_text'		=> $next_arrow,                                                         # (bool) El texto de la página siguiente. Predeterminado 'Siguiente »'.
+			) );
+		}
+	}
+}

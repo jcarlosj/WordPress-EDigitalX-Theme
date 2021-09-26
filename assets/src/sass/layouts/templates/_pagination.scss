@@ -1,0 +1,16 @@
+.page-numbers {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1.4rem;
+
+    @extend %btn-secondary;     //  Hereda propiedades
+
+    &.current {
+        @extend %btn-primary;   //  Hereda propiedades
+    }
+
+    &.dots {
+        padding: 0;
+    }
+}

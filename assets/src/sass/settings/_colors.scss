@@ -15,9 +15,9 @@ $transparent: transparent;
 $bg-color__header: $dark-white;
 
 /* Main Menu Component */
-$border-color__main-menu: blue;
-$bg-color-ul__menu: orange;
-$bg-color-ul__sub-menu: orange;
+$border-color__main-menu: orange;
+$bg-color-ul__menu: $dark-white;
+$bg-color-ul__sub-menu: $dark-white;
 $color-a__sub-menu: red;
 
 /* Icon Menu Component */
@@ -31,8 +31,8 @@ $color__hero_entry-time-single: $dark-white;
 $bg-color__main-content-single: $dark-white;
 
 /* Post Featured Component */
-$bg-color__posts-featured: yellow;
-$bg-color__posts-featured-home: yellow;
+$bg-color__posts-featured: $white;
+$bg-color__posts-featured-home: $white;
 
 /* Search Component */
 $bg-color__search: green;

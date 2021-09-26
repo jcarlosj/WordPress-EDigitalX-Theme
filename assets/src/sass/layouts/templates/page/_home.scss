@@ -74,22 +74,3 @@
         }
     }
 }
-
-.paginate, 
-.pagination {
-    align-items: center;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin: 1rem 0;
-}
-
-.page-numbers {
-    @extend %btn-secondary;     //  Hereda propiedades
-    padding: 1rem 2rem;
-
-    &.current {
-        @extend %btn-primary;   //  Hereda propiedades
-    }
-
-}
