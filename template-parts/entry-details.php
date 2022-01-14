@@ -32,8 +32,10 @@
     </footer>
 
 <?php elseif( is_single() ) : ?>
-
-    <time class="entry__time" datetime="<?php the_time( 'Y-m-d' ); ?>">
+    <p class="entry__author entry__author--<?php echo $args[ 'color_entry_author' ]; ?>">
+        <?php esc_html_e( 'Written by:', 'edigitalx' ); ?> <?php the_author_posts_link(); ?>
+    </p>
+    <time class="entry__time entry__time--<?php echo $args[ 'color_entry_author' ]; ?>" datetime="<?php the_time( 'Y-m-d' ); ?>">
 
         <?php
             if( $args[ 'has_estimated_time' ] ) :

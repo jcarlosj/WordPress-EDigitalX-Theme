@@ -28,8 +28,6 @@
     <section class="section">
         <main class="main-content container">
 
-            <p><?php the_author_posts_link(); ?></p>
-
             <?php the_content(); ?>
 
         </main>

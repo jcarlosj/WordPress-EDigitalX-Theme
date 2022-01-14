@@ -48,8 +48,10 @@
         <?php endif; ?>
     >
 
-        <div class="hero-content container">
-            <h1 class="title-entry title-entry--<?php echo $bgcolor; ?>"><?php the_title(); ?></h1>
+        <div class="hero__featured-image container">
+            <h1 class="entry__title entry__title--<?php echo $bgcolor; ?>"><?php the_title(); ?></h1>
+            
+            <?php $args[ 'color_entry_author' ] = $bgcolor; ?>
 
             <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
 

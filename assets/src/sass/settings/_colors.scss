@@ -7,7 +7,8 @@ $light-green: #A5BE00;
 
 /* Tradicional Colors */
 $white: #FFFFFF;
-$gray: #C1C1C1;
+$light-gray: #C1C1C1;
+$gray: gray;
 $black: #000000;
 $transparent: transparent;
 
@@ -29,8 +30,14 @@ $bg-color__menu-bars: $light-blue;
 $color-title-entry__dark-single: $dark-white;
 $color-title-entry__clear-single: $dark-blue;
 
-$color__hero_entry-time-single: $dark-white;
-$bg-color__main-content-single: $dark-white;
+$color-author-entry__dark-single: $dark-white;
+$color-author-entry__clear-single: $dark-blue;
+
+$color-time-entry__dark-single: $dark-white;
+$color-time-entry__clear-single: $dark-blue;
+
+$bg-color-main-content-single: $white;
+$color-paragraph-single: $gray;
 
 /* Post Featured Component */
 $bg-color__posts-featured: $white;
