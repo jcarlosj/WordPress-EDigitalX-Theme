@@ -34,8 +34,11 @@
     </header>
 
 <?php elseif( is_single() ) :
+    $post_title_background = get_post_meta( get_the_ID(), 'post_title_background', true );
     $featured_image_url = get_the_post_thumbnail_url();
+    $bgcolor = $post_title_background == 'dark' ? 'light-color' : 'dark-color';
 ?>
+
     <header
         class="hero"
         <?php if( $featured_image_url ) : ?>
@@ -46,7 +49,7 @@
     >
 
         <div class="hero-content container">
-            <h1><?php the_title(); ?></h1>
+            <h1 class="title-entry title-entry--<?php echo $bgcolor; ?>"><?php the_title(); ?></h1>
 
             <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
 

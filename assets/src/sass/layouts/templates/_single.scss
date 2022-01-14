@@ -1,6 +1,20 @@
 .single {
     $site-width: 1140px;
 
+    .title-entry {
+        font-size: 3.4rem;
+        line-height: 1;
+        margin: 0 .2em;
+        
+        &--light-color {
+            color: $color-title-entry__dark-single;    
+        }
+        &--dark-color {
+            color: $color-title-entry__clear-single;
+        }
+    }
+    
+
     .container {
         max-width: $site-width;
     }
@@ -13,13 +27,6 @@
 
         @include mq( small ) {
             padding: 25rem 0 5rem 0;
-        }
-
-        h1 {
-            color: $color-h1__hero-single;
-            font-size: 3.4rem;
-            line-height: 1;
-            margin: 0 .2em;
         }
 
         .entry__time {
