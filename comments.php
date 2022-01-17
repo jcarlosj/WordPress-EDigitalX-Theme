@@ -15,7 +15,7 @@
         ?>
 
         <h3 class="comment-title">
-            <?php _e( 'Comments', 'pizzashop' ); ?>
+            <?php _e( 'Comments', 'edigitalx' ); ?>
         </h3>
         <ul class="comment-list">
             <?php
@@ -36,7 +36,7 @@
                 else {
                     ?>
                         <p class="comment-message">
-                            <?php _e( 'There are no comments', 'pizzashop' ); ?>
+                            <?php _e( 'There are no comments', 'edigitalx' ); ?>
                         </p>
                     <?php
                 }

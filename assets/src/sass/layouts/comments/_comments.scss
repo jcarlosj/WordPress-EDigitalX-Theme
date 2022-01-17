@@ -29,6 +29,7 @@
     }
     textarea#comment {
         font-size: 16px;
+        padding: 0.6rem;
         height: -webkit-fill-available;
     }
     .btn {
@@ -61,7 +62,6 @@
         }
     }
 }
-
 .comment-notes {
     grid-area: message;
 }
@@ -69,6 +69,79 @@
     grid-area: button;
 }
 
+.comment-body {
+    border: 1px dotted orange;
+    display: grid;
+
+    grid-template-areas: 
+        "author"
+        "date"
+        "comment"
+        "button";
+    grid-template-rows: auto;  
+    grid-template-columns: 1fr;
+    grid-gap: .6em;
+    background: white;
+    padding: 1.2em; 
+
+    @include mq( medium ) {
+        grid-template-areas: 
+            "author date"
+            "comment comment"
+            "button button";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.comment {
+
+    .children {
+        border: 1px dotted blue;
+        display: grid;
+        justify-content: end;
+        grid-auto-columns: 100%;
+        padding: 0;
+
+        .comment {
+            border: 1px dotted green;
+            justify-self: flex-end;
+            width: 95%;
+        }
+    }
+
+    &-author {
+        align-items: center;
+        display: flex;
+        gap: .4em;
+        grid-area: author;
+    }
+    &-meta {
+        grid-area: date;
+        text-align: end;
+    }
+    & p {
+        grid-area: comment;
+    }
+    & .reply {
+        grid-area: button;
+        justify-self: flex-end;
+
+        a {
+            padding: .5rem 2rem;
+        }
+
+        @include mq( medium ) {
+            a {
+                width: fit-content;
+            }
+        }
+    }
+
+}
+
+a.comment-reply-link {
+    @extend %btn-primary;   //  Hereda propiedades
+}
 
 #cancel-comment-reply-link {
     @extend %btn-tertiary;   //  Hereda propiedades
