@@ -25,10 +25,16 @@
     input[type='text'] {
         font-size: 16px;
         padding: 0.6rem;
-        width: 100%;
+        width: 95%;
+
+        @include mq( medium ) {
+            width: 100%;
+        }
     }
     textarea#comment {
-        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.6rem;
+        width: 95%;
         padding: 0.6rem;
         height: -webkit-fill-available;
     }
@@ -70,7 +76,7 @@
 }
 
 .comment-body {
-    border: 1px dotted orange;
+    //border: 1px dotted orange;
     display: grid;
 
     grid-template-areas: 
@@ -93,17 +99,17 @@
     }
 }
 
-.comment {
 
+.comment {
     .children {
-        border: 1px dotted blue;
+        //border: 1px dotted blue;
         display: grid;
         justify-content: end;
         grid-auto-columns: 100%;
         padding: 0;
 
         .comment {
-            border: 1px dotted green;
+            //border: 1px dotted green;
             justify-self: flex-end;
             width: 95%;
         }
@@ -135,6 +141,10 @@
                 width: fit-content;
             }
         }
+    }
+
+    &-list {
+        padding: 0;
     }
 
 }
