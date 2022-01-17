@@ -1,131 +1,74 @@
-.comments {
+.comment-form {
+    display: grid;
+
+    grid-template-areas: 
+        "message"
+        "author"
+        "email"
+        "url"
+        "comments"
+        "consent"
+        "button";
+    grid-template-rows: auto;  
+    grid-template-columns: 1fr;
+    grid-gap: .6em;
+    background: white;
+    padding: 1.2em;   
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    label[for='wp-comment-cookies-consent'] {
+        font-weight: normal;
+    }
+    input[type='text'] {
+        font-size: 16px;
+        padding: 0.6rem;
+        width: 100%;
+    }
+    textarea#comment {
+        font-size: 16px;
+        height: -webkit-fill-available;
+    }
+    .btn {
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    &-author { grid-area: author; }
+    &-email { grid-area: email; }
+    &-url { grid-area: url; }
+    &-cookies-consent { grid-area: consent; }
+    &-comment {
+        display: flex;
+        flex-direction: column;
+        grid-area: comments;
+    }
 
     @include mq( medium ) {
-        width: 60%;
-    }
+        grid-template-areas: 
+            "message message"
+            "author comments"
+            "email comments"
+            "url comments"
+            "consent consent"
+            "button button";
+        grid-template-columns: 18em 1fr;
 
-    h3 {
-        font-weight: 700;
-        text-align: center;
-
-        a {
-            color: $color__green;
-
-            &:hover {
-                color: $color__orange;
-            }
+        .btn {
+            width: unset;
         }
-
-        small {
-            display: block;
-        }
-    }
-
-    a {
-        color: $color__green;
-        display: inline;
-
-        &:hover {
-            color: $color__orange;
-        }
-    }
-
-    .comment {
-
-        &-form {
-            p {
-                display: flex;
-
-                &.logged-in-as {
-                    padding: 0 1rem;
-
-                    @include mq( medium ) {
-                        padding: 0 3rem;
-                    }
-
-                    a {
-                        padding-left: 1rem;
-                    }
-                }
-
-                label {
-                    flex: 0 0 15rem;
-                    font-weight: bold;
-                    margin-right: 2rem;
-                    text-align: right;
-                }
-
-                &.comment-notes {
-                    display: block;
-                }
-
-                &.comment-form-cookies-consent {
-
-                    input {
-                        flex: 0 0 16rem;
-                        height: 2rem;
-
-                        position: relative;
-                        top: .5rem;
-                        right: -6rem;
-                    }
-
-                    label {
-                        flex: 1 1 auto;
-                        font-size: 1.4rem;
-                        font-weight: 400;
-                        line-height: 2;
-                        margin-left: 1rem;
-                        text-align: left;
-                    }
-
-                }
-
-                &.form-submit {
-                    display: flex;
-                    justify-content: center;
-                }
-
-            }
-
-            input:not([type="submit"]),
-            textarea {
-                border: 1px solid $color__light-gray;
-                flex: 1;
-                padding: 2rem;
-                width: 100%;
-            }
-        }
-
-        &-list {
-            .comment {
-                background-color: lighten( $color: $color__light-gray, $amount: 20 );
-                margin-bottom: 2rem;
-                padding: 2rem;
-
-                cite {
-                    color: $color__red;
-                    font-size: 2rem;
-                    font-weight: bold;
-                }
-
-                &-reply-link {
-                    @extend %btn-outline-tertiary;   //  Hereda propiedades
-                }
-
-                ul.children {
-                    li {
-                        background-color: $color__white;
-                        border: none;
-                        margin-top: 2rem;
-                    }
-                }
-
-            }
-        }
-
     }
 }
+
+.comment-notes {
+    grid-area: message;
+}
+.form-submit {
+    grid-area: button;
+}
+
 
 #cancel-comment-reply-link {
     @extend %btn-tertiary;   //  Hereda propiedades

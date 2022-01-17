@@ -6,10 +6,10 @@
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
 
-    <section class="container comments">
+    <section class="comments container">
         <?php
             $args = [
-                'class_submit' => 'btn btn-primary'
+                'class_submit' => 'btn btn-primary',
             ];
             comment_form( $args );
         ?>
