@@ -15,20 +15,19 @@
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <div class="container file-name">
-            <span>
-                <?php esc_html_e( basename( __FILE__ ) ); ?>
-            </span>
-        </div>
-
         <?php
             //  Configura despliege de tiempo estimado de lectura  
             $args = theme_get_estimated_reading_time();
             $args[ 'is_entry_featured' ] = false;
+            get_template_part( 'template-parts/entry', 'header', $args );
+            get_template_part( 'template-parts/entry', 'content' ); 
         ?>
-
-        <?php get_template_part( 'template-parts/entry', 'header', $args ); ?>
-        <?php get_template_part( 'template-parts/entry', 'content' ); ?>
+        
+        <?php 
+            $args[ 'post_id' ] = $post -> ID;
+            $args[ 'related_post' ] = 'categories';
+            get_template_part( 'template-parts/related', 'post', $args );
+        ?>
 
         <?php comments_template(); ?>
 
