@@ -18,6 +18,7 @@ class MetaBoxes {
         $this -> setup_hooks_post_views_count();
         $this -> setup_hooks_estimated_reading_time();
         $this -> setup_hooks_entry_title();
+        $this -> setup_hooks_related_post();
     }
 
     protected function setup_hooks_featured_post() {
@@ -47,6 +48,12 @@ class MetaBoxes {
         /** Actions */
         add_action( 'add_meta_boxes', [ $this, 'meta_box_entry_title' ] );
         add_action( 'save_post', [ $this, 'meta_box_featured_entry_title_save' ], 10, 3 );
+    }
+
+    protected function setup_hooks_related_post() { 
+        /** Actions */
+        add_action( 'add_meta_boxes', [ $this, 'meta_box_related_post' ] );
+        add_action( 'save_post', [ $this, 'meta_box_related_post_save' ], 10, 3 );
     }
 
     /** Crea Meta Box: Destacar publicacion */
@@ -330,7 +337,13 @@ class MetaBoxes {
                         <?php _e( 'The background of the post title is:', 'edigitalx' )?>
                     </label>
                     <select name="value_post_title_background" id="value_post_title_background" class="postbox">
-                        <option value=""><?php esc_html_e( 'Select...', 'edigitalx' ); ?></option>
+                        <?php
+                            if( $value_post_title_background == "" ) :
+                                ?>
+                                    <option value=""><?php esc_html_e( 'Select...', 'edigitalx' ); ?></option>
+                                <?php
+                            endif;
+                        ?>
                         <option value="dark" <?php selected( $value_post_title_background, 'dark' ); ?> >
                             <?php esc_html_e( 'Dark', 'edigitalx' ); ?>
                         </option>
@@ -375,6 +388,105 @@ class MetaBoxes {
                 $value
             );
         }
+    }
+
+    public function meta_box_related_post() {
+
+        add_meta_box(
+            'edigitalx_mb_related_post',                    #   ID unico de identificacion
+            _x( 'Show related posts', 'edigitalx' ),        #   Titulo para el Metabox
+            array( $this, 'meta_box_related_post_callback' ),    #   Callback: Funcion que dibujará formulario para el Metabox
+            array( 'post' ),                                    #   Nombre del Post o los Post a los que se agregará el Metabox
+            'side',                                             #   Contexto dentro de la pantalla donde debe mostrarse el cuadro: 'normal', 'side', and 'advanced'. Valor por defecto: 'advanced'
+            'default',                                          #   La prioridad dentro del contexto donde debe mostrarse el cuadro: 'high', 'core', 'default', or 'low'. Valor por defecto: 'default'
+            null                                                #   Datos que deben establecerse como la propiedad $ args de la matriz de caja (que es el segundo parámetro que se pasa a su devolución de llamada). Valor por defecto: null
+        );
+
+    }
+
+    public function meta_box_related_post_callback( $current_post ) {
+        #   Agrega un nonce a un formulario
+        wp_nonce_field(
+            basename( __FILE__ ),       #   Nombre del archivo actual
+            'mb_nonce_related_post'     #   Nombre temporal para el formulario
+        );
+
+        $value_list_related_entries = get_post_meta(
+            $current_post -> ID,        #   ID del Post
+            'list_related_entries',     #   Nombre del campo o meta box que se desea obtener
+            true                        #   Si se debe devolver un solo valor. Este parámetro no tiene ningún efecto si no se especifica $key. Valor predeterminado: falso
+        );
+
+        ?>
+
+            <p>
+                <div class="sm-row-content">
+                    <?php echo '<pre>';    var_dump( $value_list_related_entries ); echo '</pre><br />' ?>
+
+                    <label for="value_list_related_entries">
+                        <?php _e( 'Show posts:', 'edigitalx' )?>
+                    </label>
+                    <select name="value_list_related_entries" id="value_list_related_entries" class="postbox">
+                        <?php
+                            if( $value_list_related_entries == "" ) :
+                                ?>
+                                    <option value=""><?php esc_html_e( 'Select...', 'edigitalx' ); ?></option>
+                                <?php
+                            else:
+                                ?>
+                                    <option value="" <?php selected( $value_list_related_entries, '' ); ?> >
+                                        <?php esc_html_e( 'No', 'edigitalx' ); ?>
+                                    </option>
+                                <?php
+                            endif;
+                        ?>
+                        <option value="categories" <?php selected( $value_list_related_entries, 'categories' ); ?> >
+                            <?php esc_html_e( 'By categories', 'edigitalx' ); ?>
+                        </option>
+                        <option value="tags" <?php selected( $value_list_related_entries, 'tags' ); ?> >
+                            <?php esc_html_e( 'By tags', 'edigitalx' ); ?>
+                        </option>
+                    </select>
+
+                </div>
+            </p>
+
+        <?php
+    }
+
+    public function meta_box_related_post_save( $post_id ) {
+
+         #   Verifica si NO puede validar el nonce del formulario
+         if( ! isset( $_POST[ 'mb_nonce_related_post' ] ) || ! wp_verify_nonce( $_POST[ 'mb_nonce_related_post' ], basename( __FILE__ ) ) ) {
+            return $post_id;
+        }
+
+        #   Verifica si NO puede el usuario editar el post
+        if( ! current_user_can( 'edit_post', $post_id ) ) {
+            return $post_id;
+        }
+
+        #   Verifica si esta definido el DOING_AUTOSAVE
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return $post_id;
+        }
+
+        #   Verifica que el valor de la variable obtenida del formulario esta definida
+        if( isset( $_POST[ 'value_list_related_entries' ] ) ) {
+            $value = $_POST[ 'value_list_related_entries' ];
+        }
+
+        if( $value == '' ) {
+            delete_post_meta( $post_id, 'list_related_entries' );
+        }
+        else if( array_key_exists( 'value_list_related_entries', $_POST ) ) {
+            update_post_meta(
+                $post_id,
+                'list_related_entries',
+                $value
+            );
+        }
+
     }
 
 }
