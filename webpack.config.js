@@ -93,6 +93,7 @@ const plugins = ( argv ) => [
 module .exports = ( env, argv ) => ({
     entry: {
         main: JS + '/main.js',
+        metaboxes: JS + '/metaboxes.js',
     },
     output: {
         path: BUILD,

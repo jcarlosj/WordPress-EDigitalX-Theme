@@ -336,7 +336,7 @@ class MetaBoxes {
                     <label for="value_post_title_background">
                         <?php _e( 'The background of the post title is:', 'edigitalx' )?>
                     </label>
-                    <select name="value_post_title_background" id="value_post_title_background" class="postbox">
+                    <select name="value_post_title_background" id="value_post_title_background" class="">
                         <?php
                             if( $value_post_title_background == "" ) :
                                 ?>
