@@ -21,6 +21,7 @@
             $args[ 'is_entry_featured' ] = false;
             get_template_part( 'template-parts/entry', 'header', $args );
             get_template_part( 'template-parts/entry', 'content' ); 
+            get_template_part( 'template-parts/post', 'author' );
         ?>
         
         <?php
