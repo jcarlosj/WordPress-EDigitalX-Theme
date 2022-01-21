@@ -1,0 +1,22 @@
+.related-posts {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat( auto-fill, minmax( min( 100%, 33rem ), 1fr ) );
+    margin: 1rem;
+
+    .card .entry__title {
+        font-size: 2.5rem;
+    }
+
+    .card .entry__excerpt {
+        padding: 1em 0;
+    }
+
+    .card .entry__time {
+        color: #808080;
+        font-size: 1em;
+        font-weight: normal;
+    }
+}
