@@ -1,3 +1,11 @@
-.components-panel {
-    background-color: lightseagreen;
+.sm-row-content {
+    // border: 1px dotted blue;
+    .label {
+        display: block;
+    }
+    .selection-field {
+        border: 1px solid rgb( 117, 117, 117 );
+        margin: 0.3rem 0;
+        width: -webkit-fill-available;
+    }
 }

@@ -10,6 +10,8 @@ use THEME\Inc\Traits\Singleton;
 class MetaBoxes {
     use Singleton;
 
+    private $class_name = 'edigitalx';
+
     protected function __construct() {
         // wp_die( 'Class Meta Boxes' );
 
@@ -240,8 +242,8 @@ class MetaBoxes {
 
         $estimated_time = $estimated_reading_time == '' ? 0 : $estimated_reading_time;
 
-        echo '<pre>';  var_dump( $estimated_reading_time );   echo '</pre>';
-        echo '<b>' .$estimated_reading_time. '</b>';
+        #echo '<pre>';  var_dump( $estimated_reading_time );   echo '</pre>';
+        #echo '<b>' .$estimated_reading_time. '</b>';
 
         ?>
 
@@ -257,8 +259,11 @@ class MetaBoxes {
                         minlength="2"
                     />
                     <label for="estimated_reading_time">
-                        <?php _e( 'minutes', 'edigitalx' )?>
+                        <?php _e( 'minutes', 'edigitalx' ); ?>
                     </label>
+                    <p id="components-form-token-suggestions-howto-0" class="components-form-token-field__help">
+                        <?php _e( 'It is recommended to use whole numbers', 'edigitalx' ); ?>
+                    </p>
 
                 </div>
             </p>
@@ -333,10 +338,10 @@ class MetaBoxes {
             <p>
                 <div class="sm-row-content">
 
-                    <label for="value_post_title_background">
+                    <label class="label" for="value_post_title_background">
                         <?php _e( 'The background of the post title is:', 'edigitalx' )?>
                     </label>
-                    <select name="value_post_title_background" id="value_post_title_background" class="">
+                    <select name="value_post_title_background" id="value_post_title_background" class="selection-field">
                         <?php
                             if( $value_post_title_background == "" ) :
                                 ?>
@@ -417,16 +422,17 @@ class MetaBoxes {
             true                        #   Si se debe devolver un solo valor. Este parámetro no tiene ningún efecto si no se especifica $key. Valor predeterminado: falso
         );
 
+        # echo '<pre>';    var_dump( $value_list_related_entries ); echo '</pre><br />';
+
         ?>
 
             <p>
                 <div class="sm-row-content">
-                    <?php echo '<pre>';    var_dump( $value_list_related_entries ); echo '</pre><br />' ?>
 
-                    <label for="value_list_related_entries">
+                    <label class="label" for="value_list_related_entries">
                         <?php _e( 'Show posts:', 'edigitalx' )?>
                     </label>
-                    <select name="value_list_related_entries" id="value_list_related_entries" class="postbox">
+                    <select name="value_list_related_entries" id="value_list_related_entries" class="selection-field">
                         <?php
                             if( $value_list_related_entries == "" ) :
                                 ?>
@@ -456,8 +462,8 @@ class MetaBoxes {
 
     public function meta_box_related_post_save( $post_id ) {
 
-         #   Verifica si NO puede validar el nonce del formulario
-         if( ! isset( $_POST[ 'mb_nonce_related_post' ] ) || ! wp_verify_nonce( $_POST[ 'mb_nonce_related_post' ], basename( __FILE__ ) ) ) {
+        #   Verifica si NO puede validar el nonce del formulario
+        if( ! isset( $_POST[ 'mb_nonce_related_post' ] ) || ! wp_verify_nonce( $_POST[ 'mb_nonce_related_post' ], basename( __FILE__ ) ) ) {
             return $post_id;
         }
 
