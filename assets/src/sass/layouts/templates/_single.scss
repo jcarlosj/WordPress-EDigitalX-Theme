@@ -71,6 +71,15 @@
         &--dark-color {
             color: $color-time-entry__clear-single;
         }
+
+        &-read {
+            padding-left: 1rem;
+        }
+
+        .dashicons, .dashicons-before:before {
+            line-height: 1.8;
+        }
+
     }  
 
     & .entry__categories {

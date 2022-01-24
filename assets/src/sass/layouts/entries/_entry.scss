@@ -68,6 +68,14 @@
         padding: .1em .6em;
     }
 
+    &__time-read {
+        padding-left: 1rem;
+    }
+
+    .dashicons, .dashicons-before:before {
+        line-height: 1.4;
+    }
+
 }
 
 .blog {
@@ -77,6 +85,12 @@
         &__excerpt,
         &__footer {
             background-color: $bg-color__posts-featured-home;
+        }
+
+        &__footer {
+            .dashicons, .dashicons-before:before {
+                line-height: 1.6;
+            }
         }
     }
 
@@ -132,6 +146,10 @@
     &__time-read,
     &__date {
         font-size: .8em;
+    }
+
+    &__time-read {
+        padding-left: 1rem;
     }
 
 }
