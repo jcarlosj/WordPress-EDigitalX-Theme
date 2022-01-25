@@ -1,22 +1,11 @@
-#site-container {
-    // margin-top: -2rem;
-
-    // &.front-page,
-    // &.single,
-    // &.archive {
-    //     margin-top: 8rem;
-    // }
-
-    // &.blog,
-    // &.archive {
-    //     margin-top: 4.74rem;
-    // }
-
-    // @include mq( small ) {
-    //     margin-top: 0;
-    // }
-
-    // @include mq( medium ) {
-    //     margin-top: 2rem;
-    // }
+#top {
+    background-color: black;
+    display: none;
+    height: 100vh;
+    left: 0;
+    opacity: 70%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
