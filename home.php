@@ -16,21 +16,14 @@
         if( $featured_image_id ) {
             $image_source = wp_get_attachment_image_src( $featured_image_id, 'full' ) [ 0 ];
         }
-        
-
-        // var_dump( $image_source );
-        //var_dump( $featured_image_id );
 
         /** Obtenemos el numero de paginas */
         $paged = ( get_query_var( 'paged' ) )
             ?   get_query_var( 'paged' )
             :   1;
-        # echo 'page: ' .$paged;
 
-        /** */
-        $total_post_count = wp_count_posts();
-        $published_post_count = $total_post_count -> publish;
-        $total_pages = ceil( $published_post_count / $posts_per_page );
+        $about_publications = wpex_general_data( $posts_per_page );
+        //echo '<pre>';   print_r( $about_publications ); echo '</pre>';
     ?>
 
         <header
@@ -49,7 +42,16 @@
 
                     <li class="hero__item hero__item--publish">
                         <span class="hero__number hero__number--publish">
-                            <?php echo $published_post_count; ?>
+                            <?php echo $about_publications[ 'authors' ]; ?>
+                        </span>
+                        <span class="hero__description hero__description--publish">
+                            <?php esc_html_e( 'Authors', 'edigitalx' ); ?>
+                        </span>
+                    </li>
+
+                    <li class="hero__item hero__item--publish">
+                        <span class="hero__number hero__number--publish">
+                            <?php echo $about_publications[ 'published_post_count' ]; ?>
                         </span>
                         <span class="hero__description hero__description--publish">
                             <?php esc_html_e( 'Publish', 'edigitalx' ); ?>
@@ -58,7 +60,7 @@
 
                     <li class="hero__item hero__item--pages">
                         <span class="hero__number hero__number--pages">
-                            <?php echo $total_pages; ?>
+                            <?php echo $about_publications[ 'total_pages' ]; ?>
                         </span>
                         <span class="hero__description hero__description--pages">
                             <?php esc_html_e( 'Pages', 'edigitalx' ); ?>
@@ -67,9 +69,8 @@
 
                 </ul>
             </div>
-
+            
         </header>
-
         <section class="section with-sidebar">
             <main class="main-content">
 

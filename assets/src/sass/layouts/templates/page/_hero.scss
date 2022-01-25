@@ -19,7 +19,7 @@
     &__data {
         align-items: center;
         display: flex;
-        flex: 0 1 16%;
+        flex: 0 1 27rem;
         flex-direction: row;
         justify-content: space-between;
 
@@ -27,6 +27,16 @@
 
         span {
             display: block;
+        }
+
+        .hero__number {
+            color: $color_number__info_blog;
+            font-size: 3rem;
+        }
+
+        .hero__description {
+            color: $color_description__info_blog;
+            font-weight: 600;
         }
     }
 }

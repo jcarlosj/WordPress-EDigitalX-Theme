@@ -25,7 +25,6 @@ $color-a__sub-menu: red;
 $bg-color__menu-icon: $dark-white;
 $bg-color__menu-bars: $light-blue;
 
-
 /* Single Component */
 $color-title-entry__dark-single: $dark-white;
 $color-title-entry__clear-single: $dark-blue;
@@ -38,6 +37,10 @@ $color-time-entry__clear-single: $dark-blue;
 
 $bg-color-main-content-single: $white;
 $color-paragraph-single: $gray;
+
+/* Blog Component */
+$color_number__info_blog: lighten( $gray, 20 );
+$color_description__info_blog: lighten( $gray, 10 );
 
 /* Post Featured Component */
 $bg-color__posts-featured: $white;

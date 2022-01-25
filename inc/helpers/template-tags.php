@@ -233,3 +233,22 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 		}
 	}
 }
+
+// Numbered Pagination
+if ( !function_exists( 'wpex_general_data' ) ) {
+	
+	function wpex_general_data( $posts_per_page ) {
+        $total_post_count = wp_count_posts();
+        $authors = get_users([
+            'who' => 'authors',
+            'has_published_posts' => [ 'post' ],
+        ]);
+
+        return [
+            'published_post_count' => $total_post_count -> publish,
+            'total_pages' => ceil( $total_post_count -> publish / $posts_per_page ),
+            'authors' => count( $authors )
+        ];
+    }
+
+}
