@@ -22,7 +22,7 @@
             ?   get_query_var( 'paged' )
             :   1;
 
-        $about_publications = wpex_general_data( $posts_per_page );
+        $about_publications = wpex_general_data( $posts_per_page ); 
         //echo '<pre>';   print_r( $about_publications ); echo '</pre>';
     ?>
 
