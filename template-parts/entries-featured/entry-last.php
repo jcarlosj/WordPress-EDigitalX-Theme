@@ -21,8 +21,15 @@
             ?>
 
                 <article class="entry">
-
-                    <?php get_template_part( 'template-parts/entry', 'thumbnail', $args ); ?>
+                    
+                    <div class="entry-last <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
+                        <a
+                            class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--linkable ' : 'entry__thumbnail--linkable'; ?>" 
+                            href="<?php the_permalink(); ?>"
+                        >
+                            <?php get_template_part( 'template-parts/entry', 'thumbnail', $args ); ?>
+                        </a>
+                    </div>
 
                     <div class="entry__content <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--size entry-featured__content--position' : 'entry__content--size entry__content--position'; ?>">
 

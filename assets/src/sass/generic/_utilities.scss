@@ -14,10 +14,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 300px;
-    max-height: 300px;
-    width: calc( 300px / 2.2 );
-    height: calc( 300px / 2.2 );
     padding: 3rem 0 0 0;
 
     p {
@@ -39,10 +35,33 @@
 
     }
 
-    @include mq( medium ) {
-        
+}
+
+.entry {
+
+    &-classic {
+        .has-no-featured-image {
+            height: 266px;
+            width: 400px;
+        }
+    }
+    &-last {
+        .has-no-featured-image {
+            height: 360px;
+            width: 100%;
+        }
+    }
+    &-popular,
+    &-recommended {
+        .has-no-featured-image {
+            height: calc( 300px / 2.2 );
+            max-height: 300px;
+            max-width: 300px;
+            width: calc( 300px / 2.2 );
+        }
     }
 }
+
 
 .top-anchor {
     display: none;
