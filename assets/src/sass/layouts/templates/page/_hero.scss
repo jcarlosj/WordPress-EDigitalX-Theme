@@ -2,7 +2,10 @@
     background-color: $bg-color__hero;
     border-bottom: 1px solid $border-color__hero;
     margin: 6rem 0 0 0;
-    padding: 2rem;
+
+    @include mq( medium ) {
+        padding: 2rem;
+    }
 
     .container {
         align-items: center;

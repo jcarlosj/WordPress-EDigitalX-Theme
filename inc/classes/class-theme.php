@@ -63,10 +63,13 @@ class Theme {
         add_theme_support( 'post-thumbnails' );
 
         //  Registra un nuevos tamaños de imagen soportados por el Theme
+        add_image_size( 'entry-classic-mobile', 400, 267, true );
+        add_image_size( 'entry-last-mobile', 820, 547, true );
+        add_image_size( 'entry-square-mobile', 300, 300, true );
+        add_image_size( 'entry-classic', 400, 267, true );
+        add_image_size( 'entry-last', 820, 547, true );
         add_image_size( 'entry-square', 300, 300, true );
-        add_image_size( 'posts-featured-landscape-mobile', 760, 380, true );        //  con cropping activo
-        add_image_size( 'entry-landscape', 1024, 630, true );                       //  con cropping activo
-        // add_image_size( 'posts-featured-portrait', 435, 526, true );             //  con cropping activo
+        
 
         add_theme_support(
 			'custom-logo',

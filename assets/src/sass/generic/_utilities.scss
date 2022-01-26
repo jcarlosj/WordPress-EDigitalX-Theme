@@ -38,17 +38,27 @@
 }
 
 .entry {
-
     &-classic {
         .has-no-featured-image {
-            height: 266px;
-            width: 400px;
+            height: 190px;
+            width: 100%;
+
+            @include mq( medium ) {
+                width: 400px;
+                height: 266px;
+            }
         }
     }
     &-last {
+        margin: 1.7rem 0;
+
         .has-no-featured-image {
-            height: 360px;
+            height: 190px;
             width: 100%;
+
+            @include mq( medium ) {
+                height: 360px;
+            }
         }
     }
     &-popular,
@@ -58,6 +68,9 @@
             max-height: 300px;
             max-width: 300px;
             width: calc( 300px / 2.2 );
+        }
+        .entry__time {
+            padding: 0.1em;
         }
     }
 }

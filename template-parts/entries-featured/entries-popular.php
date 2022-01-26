@@ -20,12 +20,13 @@
                 //  Configura despliege de tiempo estimado de lectura  
                 $args = theme_get_estimated_reading_time();
                 $args[ 'is_entry_featured' ] = true;
+                $args[ 'image_size' ] = ( wp_is_mobile() ) ? 'entry-square-mobile' : 'entry-square' ;
 
                 ?>
 
-                    <article class="entry <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--position' : ''; ?>">
+                    <article class="entry entry-popular <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__content--position' : ''; ?>">
 
-                        <div class="entry-popular <?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
+                        <div class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--position' : 'entry__thumbnail--position'; ?>">
                             <a
                                 class="<?php echo $args[ 'is_entry_featured' ] ? 'entry-featured__thumbnail--linkable ' : 'entry__thumbnail--linkable'; ?>" 
                                 href="<?php the_permalink(); ?>"

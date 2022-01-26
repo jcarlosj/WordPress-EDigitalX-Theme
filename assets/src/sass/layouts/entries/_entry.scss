@@ -65,7 +65,13 @@
 
     &__excerpt,
     &__time {
-        padding: .1em .6em;
+        display: flex;
+        flex-direction: column;
+
+        @include mq( medium ) {
+            padding: .1em .6em;
+            flex-direction: row;
+        }
     }
 
     &__time-read {
