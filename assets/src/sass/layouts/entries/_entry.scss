@@ -38,6 +38,7 @@
 
         &--size {
             max-width: $width-image;
+            width: 100%;
         }
         &--position {
             position: relative;
@@ -99,10 +100,6 @@
             }
         }
     }
-
-    & .entry-featured__content--position {
-
-    }
 }
 
 .front-page {
@@ -132,8 +129,6 @@
     }
 
     &__image {
-        max-width: $width-image;
-        width: calc( #{ $width-image } / 2.2 );
 
         &--rounded {
             border-radius: .3em;

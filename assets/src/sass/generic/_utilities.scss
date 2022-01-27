@@ -68,6 +68,11 @@
             max-height: 300px;
             max-width: 300px;
             width: calc( 300px / 2.2 );
+
+            @include mq( medium ) {
+                height: calc( 300px / 1.73 );
+                width: calc( 300px / 1.73 );
+            }
         }
         .entry__time {
             padding: 0.1em;

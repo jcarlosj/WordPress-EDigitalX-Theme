@@ -63,11 +63,11 @@ class Theme {
         add_theme_support( 'post-thumbnails' );
 
         //  Registra un nuevos tamaños de imagen soportados por el Theme
-        add_image_size( 'entry-classic-mobile', 400, 267, true );
-        add_image_size( 'entry-last-mobile', 820, 547, true );
-        add_image_size( 'entry-square-mobile', 300, 300, true );
+        add_image_size( 'entry-last-mobile', 356, 235, true );
+        add_image_size( 'entry-last', 820, 540, true );
+        add_image_size( 'entry-classic-mobile', 356, 190, true );
         add_image_size( 'entry-classic', 400, 267, true );
-        add_image_size( 'entry-last', 820, 547, true );
+        add_image_size( 'entry-square-mobile', 220, 220, true );
         add_image_size( 'entry-square', 300, 300, true );
         
 
