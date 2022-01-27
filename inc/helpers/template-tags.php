@@ -246,9 +246,24 @@ if ( !function_exists( 'wpex_general_data' ) ) {
 
         return [
             'published_post_count' => $total_post_count -> publish,
-            'total_pages' => ceil( $total_post_count -> publish / $posts_per_page ),
+            'total_pages' => ceil( $total_post_dcount -> publish / $posts_per_page ),
             'authors' => count( $authors )
         ];
+    }
+
+}
+
+if( ! function_exists( 'wpex_logo' ) ) {
+
+    function wpex_logo() {
+        if ( has_custom_logo() && function_exists( 'the_custom_logo' ) ) :
+            the_custom_logo();
+        else :
+            echo "
+                <a href=" .get_home_url() ." class='custom-logo-link'>
+                    <span class='site-title'>" .get_bloginfo(). "</span>
+                </a>";      
+        endif;
     }
 
 }

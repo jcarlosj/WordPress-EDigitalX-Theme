@@ -31,30 +31,22 @@
                 </div>
             </div>
 
-            <?php
-                if ( function_exists( 'the_custom_logo' ) ) :
-                    the_custom_logo();
-                endif;
-            ?>
+            <?php wpex_logo(); ?>
 
         </div>
         <div class="site-navigation">
 
             <?php
-                if ( function_exists( 'the_custom_logo' ) ) :
-                    the_custom_logo();
-                endif;
-            ?>
+                wpex_logo();
+                if( has_nav_menu( 'edigitalx-header-menu' ) ):
 
-            <?php if( has_nav_menu( 'edigitalx-header-menu' ) ):
-
-                $args = [
-                    'theme_location'    => 'edigitalx-header-menu',
-                    'container'         => 'nav',
-                    'container_id'      => 'menu',
-                    'container_class'   => 'menu menu-header not-display'
-                ];
-                wp_nav_menu( $args );
+                    $args = [
+                        'theme_location'    => 'edigitalx-header-menu',
+                        'container'         => 'nav',
+                        'container_id'      => 'menu',
+                        'container_class'   => 'menu menu-header not-display'
+                    ];
+                    wp_nav_menu( $args );
             ?>
 
             <?php endif; ?>
