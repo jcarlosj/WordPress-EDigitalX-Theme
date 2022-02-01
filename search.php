@@ -59,28 +59,6 @@
 				</div><!-- .search-result-count -->
 
 			</div>
-
-			<ul class="hero__data">
-
-				<li class="hero__item hero__item--publish">
-					<span class="hero__number hero__number--publish">
-						<?php echo $published_post_count; ?>
-					</span>
-					<span class="hero__description hero__description--publish">
-						<?php esc_html_e( 'Publish', 'edigitalx' ); ?>
-					</span>
-				</li>
-
-				<li class="hero__item hero__item--pages">
-					<span class="hero__number hero__number--pages">
-						<?php echo $total_pages; ?>
-					</span>
-					<span class="hero__description hero__description--pages">
-						<?php esc_html_e( 'Pages', 'edigitalx' ); ?>
-					</span>
-				</li>
-
-			</ul>
 		</div>
 
 	</header>
@@ -99,6 +77,7 @@
 							//  Configura despliege de tiempo estimado de lectura  
 							$args = theme_get_estimated_reading_time();
 							$args[ 'is_entry_featured' ] = true;
+							$args[ 'image_size' ] = ( wp_is_mobile() ) ? 'entry-square-mobile' : 'entry-square' ;
 						
 				?>
 

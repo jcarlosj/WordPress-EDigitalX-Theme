@@ -246,7 +246,7 @@ if ( !function_exists( 'wpex_general_data' ) ) {
 
         return [
             'published_post_count' => $total_post_count -> publish,
-            'total_pages' => ceil( $total_post_dcount -> publish / $posts_per_page ),
+            'total_pages' => ceil( $total_post_count -> publish / $posts_per_page ),
             'authors' => count( $authors )
         ];
     }
