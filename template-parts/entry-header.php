@@ -54,10 +54,6 @@
             <?php $args[ 'color_entry_author' ] = $bgcolor; ?>
 
             <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
-
-            <span class="entry__categories">
-                <?php the_category( ' ' ); ?>
-            </span>
         </div>
 
     </header>

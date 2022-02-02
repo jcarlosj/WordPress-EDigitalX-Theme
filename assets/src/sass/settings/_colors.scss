@@ -26,14 +26,19 @@ $bg-color__menu-icon: $dark-white;
 $bg-color__menu-bars: $light-blue;
 
 /* Single Component */
+$bg-color__hero: $dark-green;
+
 $color-title-entry__dark-single: $dark-white;
-$color-title-entry__clear-single: $dark-blue;
+$color-title-entry__clear-single: darken( $color: $dark-blue, $amount: 10 );
 
 $color-author-entry__dark-single: $dark-white;
-$color-author-entry__clear-single: $dark-blue;
+$color-author-entry__clear-single: darken( $color: $dark-blue, $amount: 10 );
 
 $color-time-entry__dark-single: $dark-white;
-$color-time-entry__clear-single: $dark-blue;
+$color-time-entry__clear-single: darken( $color: $dark-blue, $amount: 10 );
+
+$color-text-shadow__dark-single: $black;
+$color-text-shadow__clear-single: $white;
 
 $bg-color-main-content-single: $white;
 $color-paragraph-single: $gray;
