@@ -2,6 +2,16 @@
     $site-width: 1140px;
     background-color: $dark-white;
 
+    .edit-post-anchor {
+        text-align: right;
+
+        .post-edit-link {
+            display: inline;
+    
+            @extend %btn-tertiary;   //  Hereda propiedades
+        }
+    }
+
     .container {
         max-width: $site-width;
     }
@@ -153,6 +163,10 @@
         
         a {
             color: $dark-blue;
+
+            &.post-edit-link{
+                color: $dark-white;
+            }
         }
 
         .wp-block-quote {

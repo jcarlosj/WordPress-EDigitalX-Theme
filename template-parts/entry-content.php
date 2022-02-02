@@ -27,6 +27,8 @@
 
     <section class="section">
         <main class="main-content container">
+            	
+            <?php edit_post_link( __( 'Edit', 'edigitalx' ), '<div class="edit-post-anchor">', '</div>' ); ?>
 
             <?php the_content(); ?>
 
