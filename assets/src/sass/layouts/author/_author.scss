@@ -1,36 +1,44 @@
 .card  {
     &-author {
-        background-color: white;
-        display: flex;
+        background-color: $white;
+        display: grid;
+        gap: 1.5rem;
+        grid-auto-rows: auto;
+        grid-auto-flow: dense;
+        grid-template-columns: 15rem 1fr;
+        margin: 0 auto;
         padding: 2rem;
 
-        &-footer {
-            position: absolute;
-            bottom: 0;
+        &-content {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            text-align: justify;
 
+            .dashicons .dashicons-admin-site {
+                width: unset;
+                height: unset;
+                font-size: x-large;
+                vertical-align: unset;
+                text-align: center;
+            }
+        }
+        
+        &-footer {
             align-items: center;
             display: flex;
-            gap: 1rem;
-            height: 3rem;
-            justify-content: flex-start;
-            
+            justify-content: end;
+            gap: 0.6rem;
         }
     }
     &-image {
-        flex: 0 0 150px;
-
         .avatar {
             border-radius: 0.5em;
             object-fit: cover;
         }
     }
     &-content {
-        position: relative;
-        top: 0;
-        left: 0;
-
-        display: flex;
-        flex-direction: column;
-        padding: 0 2rem;
+        display: grid;
+        grid-template-rows: 5rem minmax( min( 100%, 5.6rem ), 1fr ) 3rem;
     }
+
 }
