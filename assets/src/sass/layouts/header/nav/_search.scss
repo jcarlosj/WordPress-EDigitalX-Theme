@@ -3,7 +3,7 @@
     display: none;
     left: 0;
     position: absolute;
-    top: 8rem;
+    top: 6.2rem;
     width: 100%;
     z-index: 3;
 
@@ -46,7 +46,9 @@
 
     .search-icon {
         align-items: center;
+        color: $color__search-icon;
         display: flex;
+        font-size: 3rem;
         height: 4rem;
         justify-content: center;
         width: 4rem;

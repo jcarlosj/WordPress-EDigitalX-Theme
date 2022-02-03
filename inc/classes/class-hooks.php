@@ -19,7 +19,7 @@ class Hooks {
 
     protected function setup_hooks() {
         /** Actions */
-		add_action( 'get_file_name', [ $this, 'show_file_name' ] );		//	Engancha función a una acción específica
+		//add_action( 'get_file_name', [ $this, 'show_file_name' ] );		//	Engancha función a una acción específica
 	}
 
     public function show_file_name( $args ) {
