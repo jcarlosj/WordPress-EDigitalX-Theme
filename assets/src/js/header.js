@@ -1,4 +1,5 @@
 const 
+    bodyElement = document .querySelector( 'body' ),
     menuIcon = document .querySelector( '#menu-icon' ),
     menuHeader = document .querySelector( '.menu-header' ),
     searchSection = document .querySelector( '#search' ),
@@ -25,13 +26,14 @@ window .onresize = function () {
     }
 }
 
-
 const hideBackground = () => {
     transparentBackground .style .display = 'none';
+    bodyElement .style .overflowY = 'initial';
 }
 
 const showBackground = () => {
     transparentBackground .style .display = 'block';
+    bodyElement .style .overflowY = 'hidden';
 }
 
 const closeMenu = () => {
