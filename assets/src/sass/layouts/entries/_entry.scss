@@ -11,7 +11,7 @@
 
         &--position {
             position: relative;
-            bottom: -1.25em;
+            bottom: -1.75em;
         }
     }
     &__image {
@@ -42,7 +42,7 @@
         }
         &--position {
             position: relative;
-            top: -1.25em;
+            top: -1.75em;
         }
 
         & > *:not( :first-child ) {
@@ -67,7 +67,8 @@
     &__excerpt,
     &__time {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        padding: 0 .6em;
 
         @include mq( medium ) {
             padding: .1em .6em;
@@ -136,10 +137,12 @@
     }
 
     &__title {
+        margin: 0.3rem 0;
         font-size: .9em;
 
         @include mq ( small ) {
             font-size: 1em;
+            margin: 1rem 0;
         }
     }
 

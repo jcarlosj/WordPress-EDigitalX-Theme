@@ -13,14 +13,15 @@ $black: #000000;
 $transparent: transparent;
 
 /* Header Component */
-$bg-color__header: $dark-white;
+$bg-color__header: $white;
 $color__search-icon: $light-blue;
 
 /* Main Menu Component */
 $border-color__main-menu: orange;
-$bg-color-ul__menu: $dark-white;
+$bg-color-ul__menu: lighten( $light-blue, 10% );
 $bg-color-ul__sub-menu: $dark-white;
 $color-a__sub-menu: red;
+$color-a__menu: $dark-white;
 
 /* Icon Menu Component */
 $bg-color__menu-icon: $dark-white;
@@ -53,7 +54,8 @@ $bg-color__posts-featured: $white;
 $bg-color__posts-featured-home: $white;
 
 /* Search Component */
-$bg-color__search: green;
+$bg-color__search: lighten( $light-blue, 10% );
+$bg-color__search-button: $dark-white;
 $color-placeholder-input__search: pink;
 
 /** Hero Component */

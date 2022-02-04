@@ -25,6 +25,7 @@ ul.menu {
    z-index: 3;
 
    @include mq( medium ) {
+      background-color: $white;
       flex-direction: row;
       height: initial;
       justify-content: center;
