@@ -25,6 +25,8 @@ class Menues {
     public function register_menus() {
         register_nav_menus([
             'edigitalx-header-menu' => esc_html__( 'Header Menu', 'edigitalx' ),
+            'edigitalx-footer-menu' => esc_html__( 'Footer Menu', 'edigitalx' ),
+            'edigitalx-social-footer-menu' => esc_html__( 'Footer Social Menu', 'edigitalx' )
         ]);
     }
 
