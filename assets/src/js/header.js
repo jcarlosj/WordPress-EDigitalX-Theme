@@ -4,7 +4,7 @@ const
     menuHeader = document .querySelector( '.menu-header' ),
     searchSection = document .querySelector( '#search' ),
     searchIcon = document .querySelector( '#search-icon' ),
-    transparentBackground = document .querySelector( '#top' );
+    transparentBackground = document .querySelector( '#background' );
 
 const breakpointMedium = 768;
 let 

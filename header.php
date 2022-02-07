@@ -24,11 +24,11 @@
 
         <div class="site-branding">
             <div class="navbar-toggler">
-                <div id="menu-icon" class="menu menu-icon">
+                <a href="#top" id="menu-icon" class="menu menu-icon">
                     <div class="menu-icon__bar-1"></div>
                     <div class="menu-icon__bar-2"></div>
                     <div class="menu-icon__bar-3"></div>
-                </div>
+                </a>
             </div>
 
             <?php wpex_logo(); ?>
@@ -53,11 +53,12 @@
 
         </div>
         <div class="site-search">
-            <span id="search-icon" class="search-icon dashicons dashicons-search"></span>
+            <a href="#top" id="search-icon" class="search-icon dashicons dashicons-search"></a>
             <!-- <span id="search-icon__close" class="dashicons dashicons-no-alt search-icon"></span> -->
         </div>
 
     </header>
     <?php get_search_form(); ?>
     <div id="top">&nbsp;</div>
+    <div id="background">&nbsp;</div>
 

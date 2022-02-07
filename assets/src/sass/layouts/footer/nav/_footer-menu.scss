@@ -19,14 +19,17 @@
         flex-wrap: wrap;
         width: 100%;
         top: 0;
-        margin: 6rem 0 0 0;
+        margin: 3rem 0 0 0;
+
+        &.menu {
+            z-index: 0;
+        }
 
         @include mq( medium ) {
             margin: initial;
         }
 
         li {
-            border: 1px solid blue;
             padding: 0;
             width: initial;
 
@@ -57,13 +60,11 @@
         }
 
         li {
-            border: 1px solid orange;
             padding: initial;
 
             a {
                 @include dashicons-social-icons();
 
-                color: green;
                 padding: 0;
                 margin: 0 auto;
 
@@ -74,11 +75,10 @@
                 &:before {
                     background-repeat: no-repeat;
                     background-position: center center;
-                    background-size: 3rem;
+                    font-size: 3rem;
+                    padding: 0 1rem;
                     content: '';
                     display: inline-block;
-                    height: 3rem;
-                    width: 3rem;
 
                     @include mq( medium ) {
                         display: initial;
@@ -120,6 +120,6 @@
     flex-direction: column;
 
     a {
-        color: red;
+        color: $color__footer;
     }
 }
