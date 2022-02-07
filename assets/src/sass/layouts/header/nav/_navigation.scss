@@ -14,11 +14,9 @@ nav {
                 font-family: $font__headers;
                 font-size: 2rem;
                 font-weight: normal;
-                padding: 0 1.6rem;
-                color: $dark-white;       
+                padding: 0 1.6rem;       
 
                 @include mq( medium ) {
-                    color: $light-blue;
                     font-size: 1.6rem;
                 }
             }

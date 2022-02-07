@@ -8,3 +8,15 @@
         }
     }
 }
+
+@mixin dashicons-social-icons {
+    // Genera iconos de redes sociales
+    @each $social, $icon in $dashicons-social-networking {
+
+        $codeIconWithBackslash: '"\\#{ $icon }\"';        // Crea String donde se escapan las comillas y el backslash
+        &[href*='#{ $social }']::before {                 // Genera una clase para cada uno de los iconos de redes sociales
+            content: unquote( $codeIconWithBackslash );   // unquote: Remueve las comillas si las tiene
+            font-family: 'Dashicons';
+        }
+    }
+}

@@ -11,8 +11,9 @@
     </a>
     <footer class="site-footer">
         <div class="container">
-            <p><?php echo get_bloginfo( 'description' ); ?></p>
+
             <div class="social-site-navigation">
+                
                 <p><?php _e( 'Follow us:', 'edigitalx' ); ?></p>
                 <?php
                     if( has_nav_menu( 'edigitalx-social-footer-menu' ) ):
@@ -21,14 +22,16 @@
                             'theme_location'    => 'edigitalx-social-footer-menu',
                             'container'         => 'nav',
                             'container_id'      => 'menu',
-                            'container_class'   => 'menu menu-footer-social'
+                            'container_class'   => 'menu menu-footer-social',
+                            'link_before'       => '<span class="menu-social--without-text">',                 # Texto antes del enlace
+                            'link_after'        => '</span>',
                         ];
                         wp_nav_menu( $args );
+                    endif; 
                 ?>
 
-                <?php endif; ?>
-
             </div>
+
             <div class="site-footer-navigation">
 
                 <?php
@@ -43,6 +46,7 @@
                         wp_nav_menu( $args );
                     endif; 
                 ?>
+                <p><?php echo get_bloginfo( 'description' ); ?></p>
                 <p class="copyright">
                     <span class=""><?php echo date( 'Y' ); ?></span>
                     <span class="">&copy;</span>
@@ -50,6 +54,7 @@
                 </p>
 
             </div>
+
         </div>
     </footer>
 
