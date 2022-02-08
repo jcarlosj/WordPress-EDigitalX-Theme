@@ -5,9 +5,21 @@
         gap: 1.5rem;
         grid-auto-rows: auto;
         grid-auto-flow: dense;
-        grid-template-columns: 15rem 1fr;
+        grid-template-columns: 1fr;
         margin: 0 auto;
         padding: 2rem;
+
+        @include mq( medium ) {
+            grid-template-columns: 15rem 1fr;
+        }
+
+        &-header {
+            text-align: center;
+
+            @include mq( medium ) {
+                text-align: left;
+            }
+        }
 
         &-content {
             font-size: 1.5rem;
@@ -28,9 +40,19 @@
             display: flex;
             justify-content: end;
             gap: 0.6rem;
+            padding: 2rem 0;
         }
     }
     &-image {
+        margin: 0 auto;
+        img {
+            width: 200px;
+        }
+
+        @include mq( medium ) {
+            margin: 0 auto;
+        }
+
         .avatar {
             border-radius: 0.5em;
             object-fit: cover;
