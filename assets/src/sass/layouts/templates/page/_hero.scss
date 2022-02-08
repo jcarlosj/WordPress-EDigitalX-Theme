@@ -1,9 +1,25 @@
 .home {
     .hero {
-        margin: 0;    
+        margin: 0;  
     }
 }
 
+.blog {
+    .hero {   
+        &__title {
+            font-size: 3rem;
+        }
+        &__data {
+            flex: 0 1 20rem;
+        }
+        &__number {
+            font-size: 2rem;
+        }
+        &__description {
+            font-size: 1.2rem;
+        }
+    }
+}
 
 .hero {
     background-color: $bg-color__hero;
@@ -40,7 +56,6 @@
 
         .hero__number {
             color: $color_number__info_blog;
-            font-size: 3rem;
         }
 
         .hero__description {
