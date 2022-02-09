@@ -5,3 +5,12 @@
 .is-active {
     display: flex;
 }
+
+#theme-container,
+.show-wp-admin-menu {
+    margin: 46px 0 0 0;
+
+    @include mq( medium ) {
+        margin: 32px 0 0 0;
+    }
+}
