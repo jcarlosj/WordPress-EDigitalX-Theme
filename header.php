@@ -18,8 +18,8 @@
     <div id="top">&nbsp;</div>
     <?php wp_body_open(); ?>
 
-    <div id="theme-container" class="<?php echo ( is_user_logged_in() ) ? 'show-wp-admin-menu' : ''; ?>">
-        <header id="header" class="container-fluid<?php echo ( is_user_logged_in() ) ? ' show-wp-admin-menu' : ''; ?>">
+    <div id="theme-container" class="<?php echo ( is_user_logged_in() ) ? 'wp-is-user-logged-in' : ''; ?>">
+        <header id="header" class="container-fluid<?php echo ( is_user_logged_in() ) ? ' wp-is-user-logged-in' : ''; ?>">
 
             <div class="site-branding">
                 <div class="navbar-toggler">

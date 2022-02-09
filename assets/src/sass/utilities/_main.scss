@@ -6,11 +6,37 @@
     display: flex;
 }
 
-#theme-container,
-.show-wp-admin-menu {
+#theme-container {
     margin: 46px 0 0 0;
 
     @include mq( medium ) {
         margin: 32px 0 0 0;
     }
 }
+
+.wp-is-user-logged-in {
+    &.header--position-up {
+        margin: 0;   
+
+        @include mq( medium ) {
+            margin: 32px 0 0 0;
+        }
+    }
+}
+
+.wp-is-user-logged-in {
+    margin: 46px 0 0 0;
+
+    @include mq( medium ) {
+        margin: 32px 0 0 0;
+    }
+
+    #search {
+        top: 12.4rem;
+
+        @include mq( medium ) {
+            top: 50%;
+        }
+    }
+}
+

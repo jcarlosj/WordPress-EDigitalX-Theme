@@ -11,6 +11,7 @@ let
     displayMenu = false,
     displaySearch = false;
 
+
 /** Seguimiento al cambio de la ventana del navegador */
 window .onresize = function () {
     const windowWidth = document .documentElement .clientWidth;     //  Obtiene el ancho interno del elemento
