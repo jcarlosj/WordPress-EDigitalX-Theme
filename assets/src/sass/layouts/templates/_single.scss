@@ -21,10 +21,10 @@
         background-size: cover;
         background-position: center;
         opacity: 0.85;
-        padding: 10rem 0 5rem 0;
+        padding: 0;
 
         @include mq( small ) {
-            padding: 25rem 0 5rem 0;
+            // padding: 25rem 0 5rem 0;
         }
 
         &__featured-image {
@@ -44,6 +44,7 @@
         background-color: transparent;
         font-size: 4rem;
         line-height: 1;
+        padding: 10rem 0;
         
         &--light-color {
             color: $color-time-entry__dark-single;    
@@ -129,6 +130,11 @@
     }  
 
     & .entry__categories {
+        position: relative;
+        top: -3em;
+        left: 0;
+        width: 100%;
+
         a {
             font-size: 1em;
             font-weight: 700;
