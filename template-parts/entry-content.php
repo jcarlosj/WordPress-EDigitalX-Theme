@@ -27,10 +27,12 @@
 
     <section class="section">
         <main class="main-content container">
-            	
-            <?php edit_post_link( __( 'Edit', 'edigitalx' ), '<div class="edit-post-anchor">', '</div>' ); ?>
 
-            <?php the_content(); ?>
+            <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
+
+            <div class="entry__main-content">
+                <?php the_content(); ?>
+            </div>
 
         </main>
     </section>

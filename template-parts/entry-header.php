@@ -50,10 +50,10 @@
 
         <div class="hero__featured-image container">
             <h1 class="entry__title entry__title--<?php echo $bgcolor; ?>"><?php the_title(); ?></h1>
-            
-            <?php $args[ 'color_entry_author' ] = $bgcolor; ?>
 
-            <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
+            <div class="entry__categories">
+                <?php the_category( ' ' ); ?>
+            </div>
         </div>
 
     </header>
