@@ -121,6 +121,11 @@
         display: flex;
         gap: .4em;
         grid-area: author;
+
+        .avatar {
+            border-radius: 5rem;
+            width: 6rem;
+        }
     }
     &-meta {
         grid-area: date;
