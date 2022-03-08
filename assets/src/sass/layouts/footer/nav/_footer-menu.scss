@@ -123,17 +123,26 @@
     }
 }
 
+/** Social Menu */
 #menu :where( .menu-social, .menu-footer ),
 .copyright {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 #menu :where( .menu-social, .menu-footer ) li {
     padding: 0;
 }
-
 #menu :where( .menu-social, .menu-footer ) li a {
     padding: 0 0.5rem;
+}
+
+.menu-social__link {
+    @include dashicons-social-icons();  // Anida un before
+}
+.menu-social__link::before {
+    font-size: 4rem;
+}
+.menu-social__link-text {
+    display: none;
 }
