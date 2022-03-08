@@ -2,14 +2,6 @@
     background-color: $bg-color__footer;
     padding: 4rem 0 2rem 0;
 
-    @include mq( medium ) {
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-    }
-
     ul#menu-footer-principal {
         background-color: transparent;
         justify-content: flex-start;
@@ -89,6 +81,12 @@
             }
         }
     }
+
+    .copyright {
+        .copyright__icon {
+            padding: 0 .5rem;
+        }
+    }
 }
 
 .social-site-navigation {
@@ -96,6 +94,7 @@
     display: flex;
     justify-content: left;
     flex-direction: column;
+    text-align: center;
     width: 100%;
     
     @include mq( medium ) {
@@ -122,4 +121,19 @@
     a {
         color: $color__footer;
     }
+}
+
+#menu :where( .menu-social, .menu-footer ),
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu :where( .menu-social, .menu-footer ) li {
+    padding: 0;
+}
+
+#menu :where( .menu-social, .menu-footer ) li a {
+    padding: 0 0.5rem;
 }

@@ -23,8 +23,6 @@
                             'container'         => 'nav',
                             'container_id'      => 'menu',
                             'container_class'   => 'menu menu-footer-social',
-                            'menu_id'           => 'menu-social',
-                            'menu_class'        => 'menu-social',
                             'link_before'       => '<span class="menu-social--without-text">',                 # Texto antes del enlace
                             'link_after'        => '</span>',
                         ];
@@ -43,22 +41,18 @@
                             'theme_location'    => 'edigitalx-footer-menu',
                             'container'         => 'nav',
                             'container_id'      => 'menu',
-                            'container_class'   => 'menu menu-footer',
-                            'menu_id'           => 'menu-footer',
-                            'menu_class'        => 'menu-footer',
+                            'container_class'   => 'menu menu-footer'
                         ];
                         wp_nav_menu( $args );
                     endif; 
                 ?>
-
-            </div>
-
-            <div class="site-footer-copyright">
+                <p><?php echo get_bloginfo( 'description' ); ?></p>
                 <p class="copyright">
-                    <span class="copyright__year"><?php echo date( 'Y' ); ?></span>
-                    <span class="copyright__icon">&copy;</span>
-                    <a class="copyright__website-name" href="<?php echo get_home_url(); ?>" class=""><?php echo get_bloginfo( 'name' ); ?></a>
+                    <span class=""><?php echo date( 'Y' ); ?></span>
+                    <span class="">&copy;</span>
+                    <a href="<?php echo get_home_url(); ?>" class=""><?php echo get_bloginfo( 'name' ); ?></a>
                 </p>
+
             </div>
 
         </div>
