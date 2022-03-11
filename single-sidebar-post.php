@@ -33,6 +33,18 @@
             </section>
 
             <?php get_template_part( 'template-parts/post', 'author' ); ?>
+            <?php
+                $filter_related_posts = get_post_meta( get_the_ID(), 'list_related_entries', true ); 
+                #echo '<pre>';  var_dump( $filter_related_posts );   echo '</pre>';
+
+                if( ! empty( $filter_related_posts ) ) :
+                    $args[ 'post_id' ] = $post -> ID;
+                    $args[ 'related_post' ] = $filter_related_posts;
+                    get_template_part( 'template-parts/related', 'posts', $args );
+                endif;
+
+                $filter_related_posts = get_post_meta( get_the_ID(), 'list_related_entries', true ); 
+            ?>
             <?php comments_template(); ?>
 
         <?php endwhile; ?>
