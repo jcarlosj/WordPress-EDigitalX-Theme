@@ -25,17 +25,12 @@
 
 <?php elseif( is_single() ) : ?>
 
-    <section class="section">
-        <main class="main-content container">
-
-            <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
-
-            <div class="entry__main-content">
-                <?php the_content(); ?>
-            </div>
-
+    <div class="container">
+        <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
+        <main class="main-content">
+            <?php the_content(); ?>
         </main>
-    </section>
+    </div>
 
 <?php elseif( is_page() ) : ?>
 

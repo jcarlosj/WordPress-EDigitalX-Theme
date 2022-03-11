@@ -12,9 +12,9 @@
         }
     }
 
-    .container {
-        max-width: $site-width;
-    }
+    // .container {
+    //     max-width: $site-width;
+    // }
 
     .hero {
         background-color: $bg-color__hero;
@@ -35,9 +35,10 @@
     }
 
     & .entry__info {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        margin: 1.5rem;
     }
 
     & .entry__title {
@@ -146,66 +147,39 @@
         font-size: 1.23em;
     }
 
-    & .main-content {
+    .main-content {
+        flex-basis: auto;
+        margin: 1.5rem;
+    }
+
+    .sidebar.widgets {
+        flex: 1 0 33.3%;
+
+        .widget {
+            margin: 1.5rem 1rem;
+        }
+    }
+
+    .comments,
+    .section:not( :first-child ) {
         position: relative;
         top: -3rem;
-        background-color: $bg-color-main-content-single;
-        padding: 1rem;
-        border-radius: .5rem .5rem 0 0;
-
-        @include mq( medium ) {
-            padding: 2rem 4rem;
-        }
-
-        h2, h3, h4, h5, h6 {
-            color: darken( $color: $color-paragraph-single, $amount: 15 );
-            font-size: 3rem;
-            line-height: 1.3;
-            margin: 3rem 0;
-        }
-
-        p {
-            color: $color-paragraph-single;
-            line-height: 1.7;
-            padding: 1rem 0;
-        }
-        
-        a {
-            color: $dark-blue;
-
-            &.post-edit-link{
-                color: $dark-white;
-            }
-        }
-
-        .wp-block-quote {
-            border-color: darken( $color: $color-paragraph-single, $amount: 15 );
-        }
-
-        .wp-block-quote cite, .wp-block-quote footer {
-            color: darken( $color: $color-paragraph-single, $amount: 15 );
-            font-size: 1em;
-        }
-
     }
 
     /** Sidebar Post: Template */
+    .template {
+        .comments, 
+        .section {
+            border: 1px dotted orangered;
+        }
+    }
+
     .template-content {
+        background: white;
         display: flex;
         flex-direction: row;
+        gap: 1rem;
         justify-content: space-around;
-        gap: 3rem;
-
-        .section {
-            &.content {
-                flex: 1 0 auto;
-            }
-        }
-        .section {
-            &.aside {
-                flex: 0 0 38rem;
-            }
-        }
     }
 
 }

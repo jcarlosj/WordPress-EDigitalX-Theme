@@ -24,7 +24,7 @@
             #echo '<pre>';   var_dump( $author_email );    echo '</pre>';
 
             ?>
-                <section class="container card-author">
+                <section class="container card-author section">
                     <picture class="card-image card-image--horizontal">
                         <?php echo $author_avatar; ?>
                     </picture>

@@ -15,26 +15,25 @@
     do_action( 'get_file_name', basename( __FILE__ ) );
 ?>
 
-    <div class="template template-single">
+    <div class="template template-single single-sidebar-post sidebar-post">
         <?php while ( have_posts() ) : the_post(); ?>
 
-            <div class="container-fluid template-hero">    
+            <section class="container-fluid template-hero section">    
                 <?php 
                     //  Configura despliege de tiempo estimado de lectura  
                     $args = theme_get_estimated_reading_time();
                     $args[ 'is_entry_featured' ] = false;
                     get_template_part( 'template-parts/entry', 'header', $args );
                 ?>
-            </div>
+            </section>
             
-            <div class="container template-content">
-                <div class="section content">
-                    Contenido
-                </div>
-                <div class="section aside">
-                    <?php get_sidebar(); ?>
-                </div>
-            </div>
+            <section class="container template-content sidebar-post-content section">
+                <?php get_template_part( 'template-parts/entry', 'content' ); ?>
+                <?php get_sidebar(); ?>
+            </section>
+
+            <?php get_template_part( 'template-parts/post', 'author' ); ?>
+            <?php comments_template(); ?>
 
         <?php endwhile; ?>
     </div>

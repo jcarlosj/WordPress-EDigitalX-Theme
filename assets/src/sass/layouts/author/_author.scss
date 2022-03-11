@@ -6,7 +6,7 @@
         grid-auto-rows: auto;
         grid-auto-flow: dense;
         grid-template-columns: 1fr;
-        margin: 0 auto;
+        margin: 1rem auto;
         padding: 2rem;
 
         @include mq( medium ) {
