@@ -189,5 +189,24 @@
 
     }
 
+    /** Sidebar Post: Template */
+    .template-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 3rem;
+
+        .section {
+            &.content {
+                flex: 1 0 auto;
+            }
+        }
+        .section {
+            &.aside {
+                flex: 0 0 38rem;
+            }
+        }
+    }
+
 }
 

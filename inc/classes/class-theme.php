@@ -18,6 +18,7 @@ class Theme {
         Hooks :: get_instance();
         Queries :: get_instance();
         Menues :: get_instance();
+        Sidebars :: get_instance();
         MetaBoxes :: get_instance();
 
         $this -> setup_hooks();
