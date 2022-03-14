@@ -80,11 +80,11 @@
 
                         ?>
 
-                        <section class="posts-featured">
+                        <!-- <section class="posts-featured">
                             <div class="container">
                                 <div class="featured-content">
 
-                                    <?php get_template_part( 'template-parts/entries-featured/entry', 'last' ); ?>
+                                    <?php #get_template_part( 'template-parts/entries-featured/entry', 'last' ); ?>
 
                                     <div class="posts-featured-sidebar">
 
@@ -92,9 +92,9 @@
 
                                     </div><!-- .posts-featured-sidebar  -->
 
-                                </div>
+                                <!-- </div>
                             </div>
-                        </section>
+                        </section> -->
 
                         <?php
 
@@ -162,7 +162,7 @@
 
             </main>
 
-            <?php get_sidebar() ?>
+            <?php #get_sidebar() ?>
 
         </section>
 
