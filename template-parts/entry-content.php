@@ -25,7 +25,11 @@
 
 <?php elseif( is_single() ) : ?>
 
-    <div class="container">
+    <div class="">
+
+        <div class="entry__categories">
+            <?php the_category( ' ' ); ?>
+        </div>
         <?php get_template_part( 'template-parts/entry', 'details', $args ); ?>
         <main class="main-content">
             <?php the_content(); ?>

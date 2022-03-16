@@ -12,9 +12,16 @@
         }
     }
 
-    // .container {
-    //     max-width: $site-width;
-    // }
+    .header-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .header-background {
+        background-color: rgba(66, 121, 161, 0.75);
+        height: 320px;
+    }
 
     .hero {
         background-color: $bg-color__hero;
@@ -39,22 +46,20 @@
         display: flex;
         justify-content: space-between;
         margin: 1.5rem;
+        position: relative;
+        top: -2em;
+        left: 0;
     }
 
     & .entry__title {
+        align-items: center;
         background-color: transparent;
+        color: $color-time-entry__dark-single;    
+        display: flex;
         font-size: 4rem;
-        line-height: 1;
-        padding: 10rem 0;
-        
-        &--light-color {
-            color: $color-time-entry__dark-single;    
-            text-shadow: 4px 4px 3px $color-text-shadow__dark-single;
-        }
-        &--dark-color {
-            color: $color-title-entry__clear-single;
-            text-shadow: 4px 4px 3px $color-text-shadow__clear-single;
-        }
+        height: 320px;
+        justify-content: center;
+        text-shadow: 4px 4px 3px $color-text-shadow__dark-single;
     }
 
     & p.entry__author {
@@ -150,6 +155,9 @@
     .main-content {
         flex-basis: auto;
         margin: 1.5rem;
+        position: relative;
+        top: -1.5em;
+        left: 0;
     }
 
     .sidebar.widgets {
@@ -180,6 +188,7 @@
         flex-direction: row;
         gap: 1rem;
         justify-content: space-around;
+        border-radius: 0.5rem 0.5rem 0 0;
     }
 
 }

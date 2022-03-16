@@ -39,23 +39,15 @@
     $bgcolor = $post_title_background == 'dark' ? 'light-color' : 'dark-color';
 ?>
 
-    <header
-        class="hero"
-        <?php if( $featured_image_url ) : ?>
-            style="background-image: url( <?php echo $featured_image_url; ?> );"
-        <?php else: ?>
-
-        <?php endif; ?>
+    <header 
+        class="header-image"
+        style="background-image: url( <?php echo $featured_image_url; ?> );"    
     >
-
-        <div class="hero__featured-image container">
-            <h1 class="entry__title entry__title--<?php echo $bgcolor; ?>"><?php the_title(); ?></h1>
-
-            <div class="entry__categories">
-                <?php the_category( ' ' ); ?>
+        <div class="header-background">
+            <div class="container">
+                <h1 class="entry__title"><?php the_title(); ?></h1>
             </div>
         </div>
-
     </header>
 
 <?php elseif( is_page() ) : 

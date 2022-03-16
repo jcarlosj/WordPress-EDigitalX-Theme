@@ -44,7 +44,7 @@ $color-author-entry__clear-single: darken( $color: $dark-blue, $amount: 10 );
 $color-time-entry__dark-single: $dark-white;
 $color-time-entry__clear-single: darken( $color: $dark-blue, $amount: 10 );
 
-$color-text-shadow__dark-single: $black;
+$color-text-shadow__dark-single: lighten( $black, 15 );
 $color-text-shadow__clear-single: $white;
 
 $bg-color-main-content-single: $white;
