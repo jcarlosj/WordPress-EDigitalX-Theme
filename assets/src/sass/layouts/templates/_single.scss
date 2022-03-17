@@ -57,7 +57,7 @@
         color: $color-time-entry__dark-single;    
         display: flex;
         font-size: 4rem;
-        height: 320px;
+        height: 290px;
         justify-content: center;
         text-shadow: 4px 4px 3px $color-text-shadow__dark-single;
     }
@@ -185,10 +185,14 @@
     .template-content {
         background: white;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 1rem;
         justify-content: space-around;
         border-radius: 0.5rem 0.5rem 0 0;
+        
+        @include mq( medium ) {
+            flex-direction: row;
+        }
     }
 
 }
