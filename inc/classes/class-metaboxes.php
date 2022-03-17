@@ -19,7 +19,7 @@ class MetaBoxes {
         $this -> setup_hooks_featured_post();
         $this -> setup_hooks_post_views_count();
         $this -> setup_hooks_estimated_reading_time();
-        $this -> setup_hooks_entry_title();
+        $this -> setup_hooks_page_title();
         $this -> setup_hooks_related_post();
     }
 
@@ -45,11 +45,11 @@ class MetaBoxes {
         add_action( 'save_post', [ $this, 'meta_box_estimated_reading_time_save' ], 10, 3 );
     }
 
-    protected function setup_hooks_entry_title() {
+    protected function setup_hooks_page_title() {
 
         /** Actions */
-        add_action( 'add_meta_boxes', [ $this, 'meta_box_entry_title' ] );
-        add_action( 'save_post', [ $this, 'meta_box_featured_entry_title_save' ], 10, 3 );
+        add_action( 'add_meta_boxes', [ $this, 'meta_box_page_title' ] );
+        add_action( 'save_post', [ $this, 'meta_box_featured_page_title_save' ], 10, 3 );
     }
 
     protected function setup_hooks_related_post() { 
@@ -306,12 +306,12 @@ class MetaBoxes {
     }
 
     /** Crea Meta Box: Fondo del titulo de publicacion o entrada */
-    public function meta_box_entry_title() {
+    public function meta_box_page_title() {
         add_meta_box(
             'edigitalx_mb_entry_title',                         #   ID unico de identificacion
-            _x( 'Entry title background', 'edigitalx' ),        #   Titulo para el Metabox
-            array( $this, 'meta_box_entry_title_callback' ),    #   Callback: Funcion que dibujará formulario para el Metabox
-            array( 'post' ),                                    #   Nombre del Post o los Post a los que se agregará el Metabox
+            _x( 'Hide page title', 'edigitalx' ),               #   Titulo para el Metabox
+            array( $this, 'meta_box_hide_page_title_callback' ),    #   Callback: Funcion que dibujará formulario para el Metabox
+            array( 'page' ),                                    #   Nombre del Post o los Post a los que se agregará el Metabox
             'side',                                             #   Contexto dentro de la pantalla donde debe mostrarse el cuadro: 'normal', 'side', and 'advanced'. Valor por defecto: 'advanced'
             'default',                                          #   La prioridad dentro del contexto donde debe mostrarse el cuadro: 'high', 'core', 'default', or 'low'. Valor por defecto: 'default'
             null                                                #   Datos que deben establecerse como la propiedad $ args de la matriz de caja (que es el segundo parámetro que se pasa a su devolución de llamada). Valor por defecto: null
@@ -319,7 +319,7 @@ class MetaBoxes {
     }
 
     /** Callback para el meta box: Descatar publicacion (formulario) */
-    public function meta_box_entry_title_callback( $current_post ) {
+    public function meta_box_hide_page_title_callback( $current_post ) {
 
         #   Agrega un nonce a un formulario
         wp_nonce_field(
@@ -327,9 +327,9 @@ class MetaBoxes {
             'mb_nonce_entry_title'      #   Nombre temporal para el formulario
         );
 
-        $value_post_title_background = get_post_meta(
+        $value_page_title_hide = get_post_meta(
             $current_post -> ID,        #   ID del Post
-            'post_title_background',    #   Nombre del campo o meta box que se desea obtener
+            'page_title_hide',          #   Nombre del campo o meta box que se desea obtener
             true                        #   Si se debe devolver un solo valor. Este parámetro no tiene ningún efecto si no se especifica $key. Valor predeterminado: falso
         );
 
@@ -338,22 +338,24 @@ class MetaBoxes {
             <p>
                 <div class="sm-row-content">
 
-                    <label class="label" for="value_post_title_background">
-                        <?php _e( 'The background of the post title is:', 'edigitalx' )?>
-                    </label>
+                    <?php
+                        $filter_related_posts = get_post_meta( $current_post -> ID, 'page_title_hide', true ); 
+                        echo '<pre>';  var_dump( $filter_related_posts );   echo '</pre>';
+                    ?>
+
                     <select name="value_post_title_background" id="value_post_title_background" class="selection-field">
                         <?php
-                            if( $value_post_title_background == "" ) :
+                            if( $value_page_title_hide == "" ) :
                                 ?>
                                     <option value=""><?php esc_html_e( 'Select...', 'edigitalx' ); ?></option>
                                 <?php
                             endif;
                         ?>
-                        <option value="dark" <?php selected( $value_post_title_background, 'dark' ); ?> >
-                            <?php esc_html_e( 'Dark', 'edigitalx' ); ?>
+                        <option value="yes" <?php selected( $value_page_title_hide, 'yes' ); ?> >
+                            <?php esc_html_e( 'Yes', 'edigitalx' ); ?>
                         </option>
-                        <option value="clear" <?php selected( $value_post_title_background, 'clear' ); ?> >
-                            <?php esc_html_e( 'Clear', 'edigitalx' ); ?>
+                        <option value="no" <?php selected( $value_page_title_hide, 'no' ); ?> >
+                            <?php esc_html_e( 'No', 'edigitalx' ); ?>
                         </option>
                     </select>
 
@@ -364,7 +366,7 @@ class MetaBoxes {
     }
 
     /** Guarda Meta Box: Valores obtenidos Tiempo estimado de lectura de una publicacion o entrada */
-    public function meta_box_featured_entry_title_save( $post_id ) {
+    public function meta_box_featured_page_title_save( $post_id ) {
 
         #   Verifica si NO puede validar el nonce del formulario
         if( ! isset( $_POST[ 'mb_nonce_entry_title' ] ) || ! wp_verify_nonce( $_POST[ 'mb_nonce_entry_title' ], basename( __FILE__ ) ) ) {
@@ -389,7 +391,7 @@ class MetaBoxes {
         if( array_key_exists( 'value_post_title_background', $_POST ) ) {
             update_post_meta(
                 $post_id,
-                'post_title_background',
+                'page_title_hide',
                 $value
             );
         }
